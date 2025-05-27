@@ -1,6 +1,10 @@
 {
   "meta": {
-    "nom": "UNICEF Suisse et Liechtenstein",
+  "nom_par_langue": {
+    "fr": "Unicef Suisse",
+    "de": "Unicef Schweiz",
+    "it": "Unicef Svizzera"
+  },
     "type": "ONG internationale",
     "domaines": ["droits de l'enfant", "éducation", "santé", "protection", "aide humanitaire"]
   },
