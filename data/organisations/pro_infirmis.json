@@ -1,6 +1,10 @@
 {
   "meta": {
-    "nom": "Pro Infirmis",
+  "nom_par_langue": {
+    "fr": "Pro Infirmis",
+    "de": "Pro Infirmis",
+    "it": "Pro Infirmis"
+  },
     "type": "ONG nationale",
     "domaines": ["inclusion", "autodétermination", "handicap", "conseil social", "participation politique"]
   },
