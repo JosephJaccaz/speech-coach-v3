@@ -5,6 +5,8 @@ from app.ong_context import load_ong_context
 from app.utils import draw_gauge, interpret_note, format_feedback_as_html
 from app.interface_texts import textes, barometre_legendes
 from pathlib import Path
+from app.email_sender import send_feedback_email
+
 
 def run_app():
     st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
@@ -74,4 +76,7 @@ def run_app():
 
             html_feedback = format_feedback_as_html(feedback, detected_lang)
             st.markdown(html_feedback, unsafe_allow_html=True)
+
+send_feedback_email(to=user_email, html_content=html_feedback)
+
 
