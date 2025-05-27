@@ -4,6 +4,23 @@ import numpy as np
 from PIL import Image, ImageChops
 import io
 
+import re
+
+def extract_note(feedback_text: str) -> float | None:
+    """
+    Extrait une note sur 10 (par ex. '7.5/10' ou '8/10') depuis un bloc de texte.
+    Gère les formats avec virgule ou point.
+    """
+    match = re.search(r"(\d+(?:[.,]\d+)?)/10", feedback_text)
+    if match:
+        note_str = match.group(1).replace(",", ".")
+        try:
+            return float(note_str)
+        except ValueError:
+            return None
+    return None
+
+
 def draw_gauge(score):
     import matplotlib.pyplot as plt
     import numpy as np
