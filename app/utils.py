@@ -167,13 +167,26 @@ def format_feedback_as_html(feedback_text, langue):
     """
 def detect_troll_content(transcript: str) -> bool:
     """
-    Retourne True si le texte contient des termes problématiques (injures, troll, tests absurdes).
+    Retourne True si le texte contient des termes problématiques (insultes, provocations, troll) en français, allemand ou italien.
     """
-    
-    mots_suspects = [
-        r"\b(connard|enculé|nique|merde|putain|bordel|ta gueule|pute|bite|nègre|bougnoule)\b",
-        r"\b(c’est une blague|je me fous|aucun sens|parle pour rien dire)\b",
-        r"\b(gpt|openai|chatgpt|robot)\b.*(test|bidon|n’importe quoi)"
-    ]
+    import re
     text = transcript.lower()
+
+    mots_suspects = [
+        # 🇫🇷 Français
+        r"\b(connard|enculé|nique|merde|putain|ta gueule|bordel|bite|nègre|bougnoule)\b",
+        r"\b(c’est une blague|je me fous|aucun sens|parle pour rien dire)\b",
+        r"\b(gpt|openai|chatgpt|robot)\b.*(test|bidon|n’importe quoi)",
+
+        # 🇩🇪 Allemand
+        r"\b(scheisse|arschloch|idiot|dummkopf|blödmann|spasti|verpiss dich|halt die fresse|leck mich)\b",
+        r"\b(ist doch ein witz|interessiert mich nicht|machst du nur test|völliger unsinn)\b",
+        r"\b(chatgpt|gpt|openai|ki|künstliche intelligenz)\b.*(test|fake|blödsinn|verarsche)",
+
+        # 🇮🇹 Italien
+        r"\b(cazzo|merda|stronzo|vaffanculo|cretino|idiota|testa di cazzo|imbecille)\b",
+        r"\b(non me ne frega niente|è una stronzata|che cazzata)\b",
+        r"\b(chatgpt|gpt|intelligenza artificiale)\b.*(prova|finta|scherzo|assurdo)"
+    ]
+
     return any(re.search(p, text) for p in mots_suspects)
