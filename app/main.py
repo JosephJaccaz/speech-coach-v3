@@ -103,4 +103,18 @@ def run_app():
 
             send_feedback_email(to=user_email, html_content=html_feedback)
 
+    if detect_troll_content(transcript):
+        from app.email_sender import send_feedback_email
+
+        send_feedback_email(
+            to="ton.email@corris.com",
+            html_content=f"""
+            <p><b>⚠️ Alerte contenu inapproprié détecté</b></p>
+            <p><b>Utilisateur :</b> {user_email}</p>
+            <p><b>Transcription suspecte :</b></p>
+            <pre>{transcript}</pre>
+            """
+        )
+
+
 
