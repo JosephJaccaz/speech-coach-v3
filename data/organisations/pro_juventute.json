@@ -1,6 +1,10 @@
 {
   "meta": {
-    "nom": "Pro Juventute",
+  "nom_par_langue": {
+    "fr": "Pro Juventute",
+    "de": "Pro Juventute",
+    "it": "Pro Juventute"
+  },
     "type": "Fondation nationale",
     "domaines": ["soutien aux enfants et aux jeunes", "santé mentale", "éducation", "conseil familial", "participation des jeunes"]
   },
