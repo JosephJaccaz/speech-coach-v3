@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Caritas Suisse",
+      "de": "Caritas Schweiz",
+      "it": "Caritas Svizzera"
+    },
+    "type": "ONG nationale",
+    "domaines": [
+      "lutte contre la pauvreté",
+      "inclusion sociale",
+      "aide humanitaire",
+      "migration",
+      "justice climatique"
+    ]
+  },
+  "fr": {
+    "slogan": "Pour une Suisse solidaire et un monde plus juste.",
+    "pitch_reference": "Caritas Suisse agit pour réduire la pauvreté et l'exclusion, en Suisse et dans le monde. Grâce à votre soutien, nous accompagnons les personnes en situation de précarité, défendons leurs droits et construisons des solutions durables.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. Croix-Rouge, HEKS)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de Caritas"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour une société plus solidaire avec Caritas Suisse.",
+    "stats": {
+      "personnes_touchees_pauvrete": 1300000,
+      "taux_pauvrete": 15,
+      "enfants_touches": 323100,
+      "epiceries_caritas_ventes_2024": 1100000
+    },
+    "campagne": {
+      "titre": "Une Suisse sans pauvreté",
+      "message_cle": "Plus d'un million de personnes vivent dans la précarité en Suisse. Ensemble, agissons pour une société plus équitable.",
+      "call_to_action": "Soutenez nos actions pour une Suisse solidaire."
+    }
+  },
+  "de": {
+    "slogan": "Für eine solidarische Schweiz und eine gerechtere Welt.",
+    "pitch_reference": "Caritas Schweiz setzt sich für die Reduktion von Armut und sozialer Ausgrenzung ein – in der Schweiz und weltweit. Mit Ihrer Unterstützung begleiten wir Menschen in prekären Situationen, verteidigen ihre Rechte und bauen nachhaltige Lösungen auf.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. Rotes Kreuz, HEKS)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von Caritas"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit Caritas Schweiz für eine solidarische Gesellschaft engagieren.",
+    "stats": {
+      "menschen_in_armut": 1300000,
+      "armutsquote": 15,
+      "kinder_betroffen": 323100,
+      "caritas_laden_verkaeufe_2024": 1100000
+    },
+    "kampagne": {
+      "titel": "Eine Schweiz ohne Armut",
+      "schluesselbotschaft": "Über eine Million Menschen leben in der Schweiz in prekären Verhältnissen. Gemeinsam handeln wir für eine gerechtere Gesellschaft.",
+      "aufruf_zum_handeln": "Unterstützen Sie unsere Aktionen für eine solidarische Schweiz."
+    }
+  },
+  "it": {
+    "slogan": "Per una Svizzera solidale e un mondo più giusto.",
+    "pitch_reference": "Caritas Svizzera si impegna a ridurre la povertà e l'esclusione sociale, in Svizzera e nel mondo. Con il tuo sostegno, accompagniamo le persone in situazioni precarie, difendiamo i loro diritti e costruiamo soluzioni sostenibili.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. Croce Rossa, HEKS)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di Caritas"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi per una società più solidale con Caritas Svizzera.",
+    "stats": {
+      "persone_colpite_poverta": 1300000,
+      "tasso_poverta": 15,
+      "bambini_colpiti": 323100,
+      "vendite_nelle_botteghe_caritas_2024": 1100000
+    },
+    "campagna": {
+      "titolo": "Una Svizzera senza povertà",
+      "messaggio_chiave": "Oltre un milione di persone vivono in condizioni precarie in Svizzera. Insieme, agiamo per una società più equa.",
+      "invito_all_azione": "Sostieni le nostre azioni per una Svizzera solidale."
+    }
+  }
+}
