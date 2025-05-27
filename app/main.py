@@ -2,13 +2,11 @@ import streamlit as st
 from app.transcription import transcribe_audio
 from app.feedback import generate_feedback
 from app.ong_context import load_ong_context
-from app.utils import draw_gauge, interpret_note, format_feedback_as_html
+from app.utils import draw_gauge, interpret_note, format_feedback_as_html, extract_note, detect_troll_content
 from app.interface_texts import textes, barometre_legendes
-from pathlib import Path
 from app.email_sender import send_feedback_email
+from pathlib import Path
 import json
-from app.utils import extract_note
-
 
 
 def run_app():
@@ -39,28 +37,18 @@ def run_app():
     ong_dir = Path("data/organisations")
     ong_files = list(ong_dir.glob("*.json"))
 
-    # On charge dynamiquement le nom localisé de chaque ONG
     ong_map_list = []
-
     for f in ong_files:
         with open(f, encoding="utf-8") as fp:
             data = json.load(fp)
             name = data["meta"]["nom_par_langue"][langue_choisie]
             ong_map_list.append((name, f))
 
-    # Tri par ordre alphabétique (respecte la casse locale)
     ong_map_list.sort(key=lambda x: x[0].lower())
-
-    # Affichage + mapping
     ong_display_names = [name for name, _ in ong_map_list]
     ong_display_map = {name: path for name, path in ong_map_list}
 
-
-    # Sélecteur avec les noms localisés
     ong_choisie = st.selectbox(t["ong_label"], ong_display_names)
-
-
-
     audio_file = st.file_uploader(t["upload_label"], type=["mp3", "wav"])
     audio_bytes = audio_file.read() if audio_file else None
 
@@ -75,9 +63,20 @@ def run_app():
         st.success(t["messages"]["transcription_done"])
         st.info(f"{t['messages']['langue_detectee']} {detected_lang.upper()}")
 
+        # 🛡️ Vérification contenu inapproprié
+        if detect_troll_content(transcript):
+            send_feedback_email(
+                to="joseph.jaccaz@corris.com",
+                html_content=f"""
+                <p><b>⚠️ Alerte contenu inapproprié détecté</b></p>
+                <p><b>Utilisateur :</b> {user_email}</p>
+                <p><b>Transcription suspecte :</b></p>
+                <pre>{transcript}</pre>
+                """
+            )
+
         ong_path = ong_display_map[ong_choisie]
         prompt = load_ong_context(ong_path, langue_choisie, transcript)
-
 
         with st.spinner(t["messages"]["generation_feedback"]):
             feedback, note = generate_feedback(prompt)
@@ -102,19 +101,3 @@ def run_app():
             st.markdown(html_feedback, unsafe_allow_html=True)
 
             send_feedback_email(to=user_email, html_content=html_feedback)
-
-    if detect_troll_content(transcript):
-        from app.email_sender import send_feedback_email
-
-        send_feedback_email(
-            to="joseph.jaccaz@corris.com",
-            html_content=f"""
-            <p><b>⚠️ Alerte contenu inapproprié détecté</b></p>
-            <p><b>Utilisateur :</b> {user_email}</p>
-            <p><b>Transcription suspecte :</b></p>
-            <pre>{transcript}</pre>
-            """
-        )
-
-
-
