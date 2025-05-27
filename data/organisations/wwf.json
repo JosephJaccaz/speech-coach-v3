@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "WWF Suisse",
+      "de": "WWF Schweiz",
+      "it": "WWF Svizzera"
+    },
+    "type": "ONG internationale",
+    "domaines": ["protection de la nature", "climat", "biodiversité", "forêts", "océans", "eau douce"]
+  },
+  "fr": {
+    "slogan": "Pour une planète vivante.",
+    "pitch_reference": "Le WWF est l'une des plus grandes organisations environnementales au monde, active dans plus de 100 pays. En Suisse, nous œuvrons pour la protection de la biodiversité, la lutte contre le changement climatique et la promotion d'une consommation durable.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. Greenpeace, Pro Natura)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions du WWF"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour la nature avec le WWF.",
+    "stats": {
+      "pays_presence": 100,
+      "projets_actifs": 1000,
+      "diminution_faune_sauvage_50_ans": "73%",
+      "collaborateurs_monde": 6000
+    },
+    "campagne": {
+      "titre": "Planète Vivante 2024",
+      "message_cle": "En 50 ans, les populations de faune sauvage ont chuté de 73%. Il est urgent d'agir pour inverser cette tendance.",
+      "call_to_action": "Agissez avec nous pour préserver la biodiversité."
+    }
+  },
+  "de": {
+    "slogan": "Für eine lebendige Erde.",
+    "pitch_reference": "Der WWF ist eine der größten Umweltorganisationen weltweit und in über 100 Ländern aktiv. In der Schweiz setzen wir uns für den Schutz der Biodiversität, den Kampf gegen den Klimawandel und die Förderung eines nachhaltigen Konsums ein.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. Greenpeace, Pro Natura)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen des WWF"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit dem WWF für die Natur engagieren.",
+    "stats": {
+      "länder_präsenz": 100,
+      "aktive_projekte": 1000,
+      "rückgang_wildtierbestände_50_jahre": "73%",
+      "mitarbeitende_weltweit": 6000
+    },
+    "kampagne": {
+      "titel": "Living Planet Report 2024",
+      "schluesselbotschaft": "In 50 Jahren sind die Wildtierbestände um 73% zurückgegangen. Es ist dringend notwendig zu handeln, um diesen Trend umzukehren.",
+      "aufruf_zum_handeln": "Handeln Sie mit uns, um die Biodiversität zu bewahren."
+    }
+  },
+  "it": {
+    "slogan": "Per un pianeta vivente.",
+    "pitch_reference": "Il WWF è una delle più grandi organizzazioni ambientali al mondo, attiva in oltre 100 paesi. In Svizzera, ci impegniamo per la protezione della biodiversità, la lotta contro il cambiamento climatico e la promozione di un consumo sostenibile.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. Greenpeace, Pro Natura)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni del WWF"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi per la natura con il WWF.",
+    "stats": {
+      "paesi_presenza": 100,
+      "progetti_attivi": 1000,
+      "diminuzione_fauna_selvatica_50_anni": "73%",
+      "collaboratori_mondo": 6000
+    },
+    "campagna": {
+      "titolo": "Pianeta Vivente 2024",
+      "messaggio_chiave": "In 50 anni, le popolazioni di fauna selvatica sono diminuite del 73%. È urgente agire per invertire questa tendenza.",
+      "invito_all_azione": "Agisci con noi per preservare la biodiversità."
+    }
+  }
+}
