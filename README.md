@@ -33,12 +33,11 @@ speech-coach-v2/
 │   └── prompt_it.txt
 │
 ├── data/
-│   └── organisations/*.json    ← infos ONG (slogan, redflags, pitch modèle...)
+│   └── organisations/*.json    ← infos ONG (slogan, redflags, speech modèle...)
 │
 ├── assets/                     ← images, logo (si besoin)
 ├── streamlit_app.py            ← point d’entrée de l’app (à la racine)
 ├── requirements.txt
-├── .gitignore
 └── README.md                   ← ce fichier
 ```
 
