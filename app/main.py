@@ -77,5 +77,5 @@ def run_app():
             html_feedback = format_feedback_as_html(feedback, detected_lang)
             st.markdown(html_feedback, unsafe_allow_html=True)
 
-send_feedback_email(to=user_email, html_content=html_feedback)
+    send_feedback_email(to=user_email, html_content=html_feedback)
 
