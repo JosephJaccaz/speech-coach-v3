@@ -35,7 +35,6 @@ speech-coach-v2/
 ├── data/
 │   └── organisations/*.json    ← infos ONG (slogan, redflags, speech modèle...)
 │
-├── assets/                     ← images, logo (si besoin)
 ├── streamlit_app.py            ← point d’entrée de l’app (à la racine)
 ├── requirements.txt
 └── README.md                   ← ce fichier
