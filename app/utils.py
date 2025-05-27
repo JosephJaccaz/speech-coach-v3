@@ -169,7 +169,7 @@ def detect_troll_content(transcript: str) -> bool:
     """
     Retourne True si le texte contient des termes problématiques (injures, troll, tests absurdes).
     """
-    import re
+    
     mots_suspects = [
         r"\b(connard|enculé|nique|merde|putain|bordel|ta gueule|pute|bite|nègre|bougnoule)\b",
         r"\b(c’est une blague|je me fous|aucun sens|parle pour rien dire)\b",
