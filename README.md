@@ -41,30 +41,6 @@ speech-coach-v2/
 └── README.md                   ← ce fichier
 ```
 
----
-
-## 🚀 Lancer l’application en local
-```bash
-pip install -r requirements.txt
-streamlit run streamlit_app.py
-```
-
----
-
-## ☁️ Déploiement sur Streamlit Cloud
-1. Crée un nouveau dépôt GitHub avec ce code
-2. Sur [streamlit.io/cloud](https://streamlit.io/cloud), connecte ton dépôt
-3. Indique `streamlit_app.py` comme **main file**
-4. Ajoute tes clés dans `.streamlit/secrets.toml` :
-```toml
-openai_key = "sk-..."
-email_user = "..."
-email_password = "..."
-```
-5. Clique sur "Deploy" 🎉
-
----
-
 ## 📌 Notes importantes
 - Aucun fichier audio n’est stocké : tout reste local à la session
 - L’outil est pensé pour un usage pédagogique, bienveillant, et respectueux de la vie privée
