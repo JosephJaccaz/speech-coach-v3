@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Swissaid",
+      "de": "Swissaid",
+      "it": "Swissaid"
+    },
+    "type": "ONG suisse",
+    "domaines": [
+      "agroécologie",
+      "égalité des genres",
+      "sécurité alimentaire",
+      "eau et assainissement",
+      "société civile",
+      "aide d'urgence"
+    ]
+  },
+  "fr": {
+    "slogan": "Sur le terrain. Contre la faim.",
+    "pitch_reference": "SWISSAID est une organisation suisse de coopération au développement, active depuis 1948. Elle œuvre dans 9 pays du Sud pour un monde sans faim, en misant sur l’agroécologie, l’égalité entre femmes et hommes et le renforcement de la société civile. En Suisse, elle s'engage politiquement pour une solidarité internationale renforcée.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. Helvetas, Caritas)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de SWISSAID"
+    ],
+    "formulation_formulaire": "Je souhaite soutenir la lutte contre la faim avec SWISSAID.",
+    "stats": {
+      "personnes_beneficiaires_2023": 383667,
+      "pays_intervention": 9,
+      "budget_total_chf": 18000000,
+      "semences_locales_distribuees": 41057,
+      "personnes_acces_eau_potable": 75775
+    },
+    "campagne": {
+      "titre": "Agroécologie pour la souveraineté alimentaire",
+      "message_cle": "En promouvant l'agroécologie, SWISSAID renforce la résilience des communautés face aux crises climatiques et alimentaires.",
+      "call_to_action": "Agissez avec nous pour un monde sans faim."
+    }
+  },
+  "de": {
+    "slogan": "Vor Ort. Gegen den Hunger.",
+    "pitch_reference": "SWISSAID ist eine Schweizer Entwicklungsorganisation, die seit 1948 in 9 Ländern des globalen Südens tätig ist. Sie setzt sich für eine Welt ohne Hunger ein, durch Förderung der Agrarökologie, Gleichstellung der Geschlechter und Stärkung der Zivilgesellschaft. In der Schweiz engagiert sie sich politisch für mehr internationale Solidarität.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. Helvetas, Caritas)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von SWISSAID"
+    ],
+    "formulation_formulaire": "Ich möchte den Kampf gegen den Hunger mit SWISSAID unterstützen.",
+    "stats": {
+      "begünstigte_personen_2023": 383667,
+      "einsatzländer": 9,
+      "gesamtbudget_chf": 18000000,
+      "verteilte_lokale_samen": 41057,
+      "personen_mit_zugang_zu_trinkwasser": 75775
+    },
+    "kampagne": {
+      "titel": "Agrarökologie für Ernährungssouveränität",
+      "schluesselbotschaft": "Durch die Förderung der Agrarökologie stärkt SWISSAID die Resilienz der Gemeinschaften gegenüber Klima- und Ernährungskrisen.",
+      "aufruf_zum_handeln": "Handeln Sie mit uns für eine Welt ohne Hunger."
+    }
+  },
+  "it": {
+    "slogan": "Sul campo. Contro la fame.",
+    "pitch_reference": "SWISSAID è un'organizzazione svizzera di cooperazione allo sviluppo, attiva dal 1948. Opera in 9 paesi del Sud globale per un mondo senza fame, promuovendo l'agroecologia, l'uguaglianza di genere e il rafforzamento della società civile. In Svizzera, si impegna politicamente per una solidarietà internazionale rafforzata.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. Helvetas, Caritas)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di SWISSAID"
+    ],
+    "formulation_formulaire": "Desidero sostenere la lotta contro la fame con SWISSAID.",
+    "stats": {
+      "persone_beneficiarie_2023": 383667,
+      "paesi_intervento": 9,
+      "budget_totale_chf": 18000000,
+      "semi_locali_distribuiti": 41057,
+      "persone_con_accesso_acqua_potabile": 75775
+    },
+    "campagna": {
+      "titolo": "Agroecologia per la sovranità alimentare",
+      "messaggio_chiave": "Promuovendo l'agroecologia, SWISSAID rafforza la resilienza delle comunità di fronte alle crisi climatiche e alimentari.",
+      "invito_all_azione": "Agisci con noi per un mondo senza fame."
+    }
+  }
+}
