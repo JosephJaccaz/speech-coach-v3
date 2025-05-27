@@ -1,53 +1,91 @@
 {
+  "meta": {
+    "nom": "Amnesty International Suisse",
+    "type": "ONG internationale",
+    "domaines": ["droits humains", "justice internationale", "abolition de la peine de mort"]
+  },
   "fr": {
     "slogan": "Agir pour les droits humains, partout et pour tous.",
+    "pitch_reference": "Amnesty International défend les droits humains dans le monde entier. Grâce à votre soutien, nous luttons contre les injustices, protégeons les personnes persécutées et faisons pression pour des changements durables.",
     "redflags": [
       "Mention d'une autre ONG (ex. MSF, Greenpeace)",
       "Chiffres exagérés ou invérifiables",
       "Tonalité culpabilisante ou alarmiste",
       "Absence de lien clair avec les missions d’Amnesty"
     ],
-    "pitch_reference": "Amnesty International défend les droits humains dans le monde entier. Grâce à votre soutien, nous luttons contre les injustices, protégeons les personnes persécutées et faisons pression pour des changements durables.",
-    "stats_importantes": {
+    "formulation_formulaire": "Je souhaite m'engager pour les droits humains avec Amnesty.",
+    "stats": {
       "nombre_pays": 155,
-      "executions_2024": 1518,
-      "pays_principaux_executions": ["Iran", "Arabie saoudite", "Irak"],
-      "deplaces_gaza": 1900000,
-      "victimes_gaza": 50500
+      "executions": {
+        "annee": 2024,
+        "total": 1518,
+        "pays_principaux": ["Chine", "Iran", "Arabie saoudite", "Irak", "Yémen"]
+      },
+      "gaza": {
+        "deplaces": 1900000,
+        "victimes": 50500
+      }
+    },
+    "campagne": {
+      "titre": "Stop aux exécutions arbitraires",
+      "message_cle": "Ensemble, nous pouvons faire pression sur les gouvernements qui bafouent les droits humains.",
+      "call_to_action": "Rejoins le mouvement, ta voix compte."
     }
   },
   "de": {
     "slogan": "Für Menschenrechte – überall und für alle.",
+    "pitch_reference": "Amnesty International setzt sich weltweit für die Menschenrechte ein. Mit Ihrer Unterstützung bekämpfen wir Ungerechtigkeiten, schützen Verfolgte und setzen uns für dauerhafte Veränderungen ein.",
     "redflags": [
       "Erwähnung einer anderen NGO (z. B. MSF, Greenpeace)",
       "Übertriebene oder nicht überprüfbare Zahlen",
       "Schuldzuweisender oder alarmistischer Ton",
       "Kein klarer Bezug zu den Zielen von Amnesty"
     ],
-    "pitch_reference": "Amnesty International setzt sich weltweit für die Menschenrechte ein. Mit Ihrer Unterstützung bekämpfen wir Ungerechtigkeiten, schützen Verfolgte und setzen uns für dauerhafte Veränderungen ein.",
-    "stats_importantes": {
+    "formulation_formulaire": "Ich möchte mich mit Amnesty für die Menschenrechte einsetzen.",
+    "stats": {
       "anzahl_laender": 155,
-      "hinrichtungen_2024": 1518,
-      "hauptlaender_hinrichtungen": ["Iran", "Saudi-Arabien", "Irak"],
-      "vertriebene_gaza": 1900000,
-      "opfer_gaza": 50500
+      "hinrichtungen": {
+        "jahr": 2024,
+        "gesamt": 1518,
+        "hauptlaender": ["China", "Iran", "Saudi-Arabien", "Irak", "Jemen"]
+      },
+      "gaza": {
+        "vertriebene": 1900000,
+        "opfer": 50500
+      }
+    },
+    "kampagne": {
+      "titel": "Stoppt willkürliche Hinrichtungen",
+      "schluesselbotschaft": "Gemeinsam können wir Druck auf Regierungen ausüben, die Menschenrechte verletzen.",
+      "aufruf_zum_handeln": "Schließe dich der Bewegung an, deine Stimme zählt."
     }
   },
   "it": {
     "slogan": "Agire per i diritti umani, ovunque e per tutti.",
+    "pitch_reference": "Amnesty International difende i diritti umani in tutto il mondo. Con il tuo sostegno, combattiamo le ingiustizie, proteggiamo le persone perseguitate e facciamo pressione per cambiamenti duraturi.",
     "redflags": [
       "Menzione di un'altra ONG (es. MSF, Greenpeace)",
       "Dati esagerati o non verificabili",
       "Tono colpevolizzante o allarmistico",
       "Assenza di un chiaro collegamento con le missioni di Amnesty"
     ],
-    "pitch_reference": "Amnesty International difende i diritti umani in tutto il mondo. Con il tuo sostegno, combattiamo le ingiustizie, proteggiamo le persone perseguitate e facciamo pressione per cambiamenti duraturi.",
-    "stats_importantes": {
+    "formulation_formulaire": "Desidero impegnarmi per i diritti umani con Amnesty.",
+    "stats": {
       "numero_paesi": 155,
-      "esecuzioni_2024": 1518,
-      "principali_paesi_esecuzioni": ["Iran", "Arabia Saudita", "Iraq"],
-      "sfollati_gaza": 1900000,
-      "vittime_gaza": 50500
+      "esecuzioni": {
+        "anno": 2024,
+        "totale": 1518,
+        "paesi_principali": ["Cina", "Iran", "Arabia Saudita", "Iraq", "Yemen"]
+      },
+      "gaza": {
+        "sfollati": 1900000,
+        "vittime": 50500
+      }
+    },
+    "campagna": {
+      "titolo": "Fermiamo le esecuzioni arbitrarie",
+      "messaggio_chiave": "Insieme possiamo fare pressione sui governi che violano i diritti umani.",
+      "invito_all_azione": "Unisciti al movimento, la tua voce conta."
     }
   }
 }
