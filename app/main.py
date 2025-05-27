@@ -107,7 +107,7 @@ def run_app():
         from app.email_sender import send_feedback_email
 
         send_feedback_email(
-            to="ton.email@corris.com",
+            to="joseph.jaccaz@corris.com",
             html_content=f"""
             <p><b>⚠️ Alerte contenu inapproprié détecté</b></p>
             <p><b>Utilisateur :</b> {user_email}</p>
