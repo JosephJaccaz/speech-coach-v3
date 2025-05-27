@@ -1,21 +1,76 @@
 {
+  "meta": {
+    "nom": "UNICEF Suisse et Liechtenstein",
+    "type": "ONG internationale",
+    "domaines": ["droits de l'enfant", "éducation", "santé", "protection", "aide humanitaire"]
+  },
   "fr": {
-    "slogan": "Chaque enfant compte",
-    "pitch_reference": "Bonjour ! Tu connais l’UNICEF ? On agit pour chaque enfant...",
-    "redflags": ["don obligatoire", "sauver tous les enfants"]
+    "slogan": "Pour chaque enfant, une chance équitable.",
+    "pitch_reference": "UNICEF Suisse et Liechtenstein s'engage pour les droits et le bien-être des enfants dans le monde entier. Grâce à votre soutien, nous finançons des programmes essentiels en matière de santé, d'éducation et de protection, et nous intervenons en cas d'urgence pour aider les enfants les plus vulnérables.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. MSF, Terre des Hommes)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de l'UNICEF"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour les droits des enfants avec l'UNICEF.",
+    "stats": {
+      "nombre_pays": 190,
+      "programmes_finances": 38,
+      "recettes_2023_chf": 71387619,
+      "donateurs_2023": 173457,
+      "membres_2023": 10961
+    },
+    "campagne": {
+      "titre": "Écoutons l'avenir",
+      "message_cle": "Chaque enfant a le droit d'être entendu. Ensemble, construisons un avenir où leurs voix comptent.",
+      "call_to_action": "Rejoignez-nous pour défendre les droits des enfants."
+    }
   },
   "de": {
-    "slogan": "Jedes Kind zählt",
-    "pitch_reference": "Hallo! Kennst du UNICEF? Wir helfen weltweit Kindern...",
-    "redflags": ["verpflichtend", "alle Kinder retten"]
+    "slogan": "Für jedes Kind eine faire Chance.",
+    "pitch_reference": "UNICEF Schweiz und Liechtenstein setzt sich weltweit für die Rechte und das Wohlergehen von Kindern ein. Mit Ihrer Unterstützung finanzieren wir wichtige Programme in den Bereichen Gesundheit, Bildung und Schutz und leisten Nothilfe für die verletzlichsten Kinder.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. MSF, Terre des Hommes)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von UNICEF"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit UNICEF für die Rechte der Kinder engagieren.",
+    "stats": {
+      "anzahl_laender": 190,
+      "finanzierte_programme": 38,
+      "einnahmen_2023_chf": 71387619,
+      "spender_2023": 173457,
+      "mitglieder_2023": 10961
+    },
+    "kampagne": {
+      "titel": "Hören wir auf die Zukunft",
+      "schluesselbotschaft": "Jedes Kind hat das Recht, gehört zu werden. Gemeinsam bauen wir eine Zukunft, in der ihre Stimmen zählen.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um die Rechte der Kinder zu verteidigen."
+    }
   },
   "it": {
-    "slogan": "Ogni bambino conta",
-    "pitch_reference": "Ciao! Conosci UNICEF? Agiamo in tutto il mondo per i bambini...",
-    "redflags": ["obbligatorio", "salvare tutti i bambini"]
-  },
-  "stats_importantes": {
-    "enfants_aides": "plus de 190 pays",
-    "budget": "7 milliards $"
+    "slogan": "Per ogni bambino, un'opportunità equa.",
+    "pitch_reference": "UNICEF Svizzera e Liechtenstein si impegna per i diritti e il benessere dei bambini in tutto il mondo. Con il tuo sostegno, finanziamo programmi essenziali in ambito sanitario, educativo e di protezione, e interveniamo in situazioni di emergenza per aiutare i bambini più vulnerabili.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. MSF, Terre des Hommes)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni dell'UNICEF"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi per i diritti dei bambini con l'UNICEF.",
+    "stats": {
+      "numero_paesi": 190,
+      "programmi_finanziati": 38,
+      "entrate_2023_chf": 71387619,
+      "donatori_2023": 173457,
+      "membri_2023": 10961
+    },
+    "campagna": {
+      "titolo": "Ascoltiamo il futuro",
+      "messaggio_chiave": "Ogni bambino ha il diritto di essere ascoltato. Insieme, costruiamo un futuro in cui le loro voci contano.",
+      "invito_all_azione": "Unisciti a noi per difendere i diritti dei bambini."
+    }
   }
 }
