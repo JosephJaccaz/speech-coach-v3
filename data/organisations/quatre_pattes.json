@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "nom": "QUATRE PATTES Suisse",
+    "type": "ONG internationale",
+    "domaines": ["protection animale", "bien-être animal", "sauvetage", "législation", "sensibilisation"]
+  },
+  "fr": {
+    "slogan": "Pour une vie meilleure pour les animaux.",
+    "pitch_reference": "QUATRE PATTES est une organisation internationale de protection des animaux qui s'engage pour un monde où les animaux sont traités avec respect, compassion et compréhension. En Suisse, nous menons des campagnes pour améliorer les conditions de vie des animaux de rente, des animaux sauvages et des animaux de compagnie.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. WWF, Greenpeace)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de QUATRE PATTES"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour le bien-être animal avec QUATRE PATTES.",
+    "stats": {
+      "animaux_abattus_suisse_2024": 85000000,
+      "viande_consommation_moyenne_kg": 45.6,
+      "importations_foie_gras_2023_tonnes": 194,
+      "animaux_gaves_pour_foie_gras": 300000
+    },
+    "campagne": {
+      "titre": "Meat Exhaustion Day",
+      "message_cle": "La Suisse a atteint sa consommation maximale de viande recommandée dès le 6 mai 2024, soulignant une surconsommation préoccupante.",
+      "call_to_action": "Rejoignez-nous pour promouvoir une consommation responsable et le bien-être animal."
+    }
+  },
+  "de": {
+    "slogan": "Für ein besseres Leben für Tiere.",
+    "pitch_reference": "VIER PFOTEN ist eine internationale Tierschutzorganisation, die sich für eine Welt einsetzt, in der Tiere mit Respekt, Mitgefühl und Verständnis behandelt werden. In der Schweiz führen wir Kampagnen durch, um die Lebensbedingungen von Nutztieren, Wildtieren und Haustieren zu verbessern.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. WWF, Greenpeace)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von VIER PFOTEN"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit VIER PFOTEN für das Tierwohl engagieren.",
+    "stats": {
+      "geschlachtete_tiere_schweiz_2024": 85000000,
+      "fleischkonsum_durchschnitt_kg": 45.6,
+      "foie_gras_importe_2023_tonnen": 194,
+      "tiere_fuer_foie_gras_zwangsgefuttert": 300000
+    },
+    "kampagne": {
+      "titel": "Meat Exhaustion Day",
+      "schluesselbotschaft": "Die Schweiz hat ihren maximal empfohlenen Fleischkonsum bereits am 6. Mai 2024 erreicht, was auf einen besorgniserregenden Überkonsum hinweist.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um einen verantwortungsvollen Konsum und das Tierwohl zu fördern."
+    }
+  },
+  "it": {
+    "slogan": "Per una vita migliore per gli animali.",
+    "pitch_reference": "QUATTRO ZAMPE è un'organizzazione internazionale per la protezione degli animali che si impegna per un mondo in cui gli animali siano trattati con rispetto, compassione e comprensione. In Svizzera, conduciamo campagne per migliorare le condizioni di vita degli animali da reddito, selvatici e domestici.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. WWF, Greenpeace)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di QUATTRO ZAMPE"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi per il benessere animale con QUATTRO ZAMPE.",
+    "stats": {
+      "animali_macellati_svizzera_2024": 85000000,
+      "consumo_medio_carne_kg": 45.6,
+      "importazioni_foie_gras_2023_tonnellate": 194,
+      "animali_ingozzati_per_foie_gras": 300000
+    },
+    "campagna": {
+      "titolo": "Meat Exhaustion Day",
+      "messaggio_chiave": "La Svizzera ha raggiunto il consumo massimo raccomandato di carne già il 6 maggio 2024, evidenziando un consumo eccessivo preoccupante.",
+      "invito_all_azione": "Unisciti a noi per promuovere un consumo responsabile e il benessere animale."
+    }
+  }
+}
