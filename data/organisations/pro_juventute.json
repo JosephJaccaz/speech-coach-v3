@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "nom": "Pro Juventute",
+    "type": "Fondation nationale",
+    "domaines": ["soutien aux enfants et aux jeunes", "santé mentale", "éducation", "conseil familial", "participation des jeunes"]
+  },
+  "fr": {
+    "slogan": "Pour chaque enfant en Suisse, une enfance épanouie.",
+    "pitch_reference": "Pro Juventute est la plus grande fondation suisse dédiée au soutien des enfants, des jeunes et de leurs familles. Nous offrons des services de conseil gratuits, des programmes éducatifs et des campagnes de sensibilisation pour promouvoir le bien-être et l'autonomie des jeunes en Suisse.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. UNICEF, Terre des Hommes)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de Pro Juventute"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour le bien-être des enfants et des jeunes avec Pro Juventute.",
+    "stats": {
+      "enfants_et_jeunes_soutenus": 300000,
+      "parents_soutenus": 140000,
+      "consultations_147_2024": 70000,
+      "augmentation_consultations_depuis_2020": "70%"
+    },
+    "campagne": {
+      "titre": "Là pour toi, nuit et jour.",
+      "message_cle": "Pro Juventute offre des services de conseil gratuits, confidentiels et accessibles 24h/24 pour les enfants, les jeunes et les parents.",
+      "call_to_action": "Rejoignez-nous pour soutenir le bien-être des jeunes en Suisse."
+    }
+  },
+  "de": {
+    "slogan": "Für jedes Kind in der Schweiz eine erfüllte Kindheit.",
+    "pitch_reference": "Pro Juventute ist die größte Schweizer Stiftung, die sich für die Unterstützung von Kindern, Jugendlichen und ihren Familien einsetzt. Wir bieten kostenlose Beratungsdienste, Bildungsprogramme und Sensibilisierungskampagnen an, um das Wohlbefinden und die Selbstständigkeit junger Menschen in der Schweiz zu fördern.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. UNICEF, Terre des Hommes)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von Pro Juventute"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit Pro Juventute für das Wohl von Kindern und Jugendlichen engagieren.",
+    "stats": {
+      "unterstützte_kinder_und_jugendliche": 300000,
+      "unterstützte_eltern": 140000,
+      "beratungen_147_2024": 70000,
+      "steigerung_beratungen_seit_2020": "70%"
+    },
+    "kampagne": {
+      "titel": "Da für dich, Tag und Nacht.",
+      "schluesselbotschaft": "Pro Juventute bietet kostenlose, vertrauliche und rund um die Uhr zugängliche Beratungsdienste für Kinder, Jugendliche und Eltern.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um das Wohl junger Menschen in der Schweiz zu unterstützen."
+    }
+  },
+  "it": {
+    "slogan": "Per ogni bambino in Svizzera, un'infanzia felice.",
+    "pitch_reference": "Pro Juventute è la più grande fondazione svizzera dedicata al sostegno di bambini, giovani e delle loro famiglie. Offriamo servizi di consulenza gratuiti, programmi educativi e campagne di sensibilizzazione per promuovere il benessere e l'autonomia dei giovani in Svizzera.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. UNICEF, Terre des Hommes)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di Pro Juventute"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi per il benessere di bambini e giovani con Pro Juventute.",
+    "stats": {
+      "bambini_e_giovani_supportati": 300000,
+      "genitori_supportati": 140000,
+      "consulenze_147_2024": 70000,
+      "aumento_consulenze_dal_2020": "70%"
+    },
+    "campagna": {
+      "titolo": "Sempre al tuo fianco, giorno e notte.",
+      "messaggio_chiave": "Pro Juventute offre servizi di consulenza gratuiti, confidenziali e accessibili 24 ore su 24 per bambini, giovani e genitori.",
+      "invito_all_azione": "Unisciti a noi per sostenere il benessere dei giovani in Svizzera."
+    }
+  }
+}
