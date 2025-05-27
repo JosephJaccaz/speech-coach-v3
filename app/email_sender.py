@@ -17,7 +17,7 @@ def send_feedback_email(to: str, html_content: str) -> None:
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-            server.login(st.secrets["email_user"], st.secrets["email_password"])
+            server.login(st.secrets["user_email"], st.secrets["email_password"])
             server.send_message(msg)
         st.success(f"✅ Feedback envoyé automatiquement à {to} !")
     except Exception as e:
