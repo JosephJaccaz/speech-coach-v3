@@ -71,10 +71,4 @@ email_password = "..."
 - L’outil est pensé pour un usage pédagogique, bienveillant, et respectueux de la vie privée
 - GPT-4 n’invente pas de chiffres, et les feedbacks sont toujours cadrés par les prompts
 
----
 
-## 🛠️ À venir
-- Ajout d’un bouton micro 🎙️ (push-to-talk)
-- Interface mobile améliorée
-- Entraînement personnalisé par ONG
-- Suivi de progression dans le temps
