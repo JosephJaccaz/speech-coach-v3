@@ -38,15 +38,21 @@ def run_app():
     ong_files = list(ong_dir.glob("*.json"))
 
     # On charge dynamiquement le nom localisé de chaque ONG
-    ong_display_names = []
-    ong_display_map = {}
+    ong_map_list = []
 
     for f in ong_files:
         with open(f, encoding="utf-8") as fp:
             data = json.load(fp)
-            display_name = data["meta"]["nom_par_langue"][langue_choisie]
-            ong_display_names.append(display_name)
-            ong_display_map[display_name] = f
+            name = data["meta"]["nom_par_langue"][langue_choisie]
+            ong_map_list.append((name, f))
+
+    # Tri par ordre alphabétique (respecte la casse locale)
+    ong_map_list.sort(key=lambda x: x[0].lower())
+
+    # Affichage + mapping
+    ong_display_names = [name for name, _ in ong_map_list]
+    ong_display_map = {name: path for name, path in ong_map_list}
+
 
     # Sélecteur avec les noms localisés
     ong_choisie = st.selectbox(t["ong_label"], ong_display_names)
