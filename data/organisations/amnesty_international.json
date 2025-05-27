@@ -1,6 +1,10 @@
 {
   "meta": {
-    "nom": "Amnesty International Suisse",
+  "nom_par_langue": {
+    "fr": "Amnesty International",
+    "de": "Amnesty International",
+    "it": "Amnesty International"
+  },
     "type": "ONG internationale",
     "domaines": ["droits humains", "justice internationale", "abolition de la peine de mort"]
   },
