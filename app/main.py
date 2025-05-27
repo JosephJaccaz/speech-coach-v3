@@ -35,7 +35,7 @@ def run_app():
     # Sélection ONG
     ong_dir = Path("data/organisations")
     ong_files = list(ong_dir.glob("*.json"))
-    ong_names = [f.stem.replace("_", " ").title() for f in ong_files]
+    ong_choisie = st.selectbox(t["ong_label"], ong_names)
     ong_map = dict(zip(ong_names, ong_files))
     ong_names = [
     json.load(open(f, encoding="utf-8"))["meta"]["nom_par_langue"][langue_choisie]
