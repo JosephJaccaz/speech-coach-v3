@@ -37,7 +37,11 @@ def run_app():
     ong_files = list(ong_dir.glob("*.json"))
     ong_names = [f.stem.replace("_", " ").title() for f in ong_files]
     ong_map = dict(zip(ong_names, ong_files))
-    ong_choisie = st.selectbox(t["ong_label"], ong_names)
+    ong_names = [
+    json.load(open(f, encoding="utf-8"))["meta"]["nom_par_langue"][langue_choisie]
+    for f in ong_files
+    ]
+
 
     audio_file = st.file_uploader(t["upload_label"], type=["mp3", "wav"])
     audio_bytes = audio_file.read() if audio_file else None
