@@ -5,16 +5,22 @@ from PIL import Image, ImageChops
 import io
 
 def draw_gauge(score):
+    import matplotlib.pyplot as plt
+    import numpy as np
+
     fig, ax = plt.subplots(figsize=(5, 1.8), dpi=160, subplot_kw={'projection': 'polar'})
-    ax.set_theta_zero_location('W')
+
+    # Mettre 0 à gauche (horizontal) et rotation antihoraire
+    ax.set_theta_zero_location('W')  # 0° : Bas
     ax.set_theta_direction(-1)
 
+    # Définition des zones
     zones = [
-        (0, 2, '#8B0000'),     # rouge foncé
-        (2, 4, '#FF4500'),     # orange vif
-        (4, 6, '#FFA500'),     # orange clair
-        (6, 8, '#ADFF2F'),     # vert clair
-        (8, 10, '#228B22')     # vert foncé
+        (0, 2, '#8B0000'),     # Rouge foncé
+        (2, 4, '#FF4500'),     # Orange vif
+        (4, 6, '#FFA500'),     # Orange clair
+        (6, 8, '#ADFF2F'),     # Vert clair
+        (8, 10, '#228B22')     # Vert foncé
     ]
 
     for start, end, color in zones:
@@ -30,27 +36,39 @@ def draw_gauge(score):
             linewidth=1.5
         )
 
+    # Aiguille
     angle = np.interp(score, [0, 10], [0, np.pi])
     ax.plot([angle, angle], [0, 1], color='black', lw=3)
     ax.plot(angle, 1, 'o', color='black', markersize=6)
 
+    # Nettoyage du style
     ax.set_ylim(0, 1.1)
     ax.axis('off')
-    fig.patch.set_alpha(0)
+    plt.subplots_adjust(left=0.05, right=0.95, top=1.05, bottom=-10)
+    fig.patch.set_alpha(0)  # Fond transparent (utile si tu veux l'intégrer avec d'autres éléments visuels)
 
+
+    from PIL import Image, ImageChops
+
+    # 1. Sauvegarde le graphique dans un buffer mémoire
     buf = io.BytesIO()
     fig.savefig(buf, format="png", bbox_inches="tight", pad_inches=0, transparent=True)
-    plt.close(fig)
+    plt.close(fig)  # nettoyage mémoire
     buf.seek(0)
     img = Image.open(buf)
 
-    bg = Image.new(img.mode, img.size, (255, 255, 255, 0))
+    # 2. Crop automatique du fond blanc transparent
+    bg = Image.new(img.mode, img.size, (255, 255, 255, 0))  # fond transparent
     diff = ImageChops.difference(img, bg)
     bbox = diff.getbbox()
 
-    img_cropped = img.crop(bbox) if bbox else img
-    st.image(img_cropped)
+    if bbox:
+        img_cropped = img.crop(bbox)
+    else:
+        img_cropped = img  # fallback : pas de différence détectée
 
+    # 3. Affichage sans le moindre bord inutile
+    st.image(img_cropped)
 
 def interpret_note(score, langue):
     labels = {
