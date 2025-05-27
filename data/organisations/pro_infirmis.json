@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "nom": "Pro Infirmis",
+    "type": "ONG nationale",
+    "domaines": ["inclusion", "autodétermination", "handicap", "conseil social", "participation politique"]
+  },
+  "fr": {
+    "slogan": "Faut t’y faire.",
+    "pitch_reference": "Pro Infirmis est la plus grande organisation suisse spécialisée dans le domaine du handicap. Nous conseillons, accompagnons et soutenons les personnes en situation de handicap et leurs proches dans toute la Suisse, afin de promouvoir leur inclusion et autodétermination.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. Handicap International, Inclusion Handicap)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de Pro Infirmis"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour une société inclusive avec Pro Infirmis.",
+    "stats": {
+      "nombre_personnes_handicap": 1800000,
+      "personnes_soutien_2023": 1433,
+      "deficit_2023_chf": 4600000,
+      "parlementaires_handicap_2023": 3
+    },
+    "campagne": {
+      "titre": "Faut t’y faire",
+      "message_cle": "1,8 million de personnes en situation de handicap en Suisse revendiquent leur place dans la société et le droit à l’autodétermination.",
+      "call_to_action": "Rejoignez-nous pour construire une société inclusive."
+    }
+  },
+  "de": {
+    "slogan": "Daran musst du dich gewöhnen.",
+    "pitch_reference": "Pro Infirmis ist die größte spezialisierte Organisation in der Schweiz im Bereich Behinderung. Wir beraten, begleiten und unterstützen Menschen mit Behinderungen und ihre Angehörigen in der ganzen Schweiz, um ihre Inklusion und Selbstbestimmung zu fördern.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. Handicap International, Inclusion Handicap)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von Pro Infirmis"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit Pro Infirmis für eine inklusive Gesellschaft engagieren.",
+    "stats": {
+      "anzahl_menschen_mit_behinderung": 1800000,
+      "unterstützte_personen_2023": 1433,
+      "defizit_2023_chf": 4600000,
+      "parlamentarier_mit_behinderung_2023": 3
+    },
+    "kampagne": {
+      "titel": "Daran musst du dich gewöhnen",
+      "schluesselbotschaft": "1,8 Millionen Menschen mit Behinderungen in der Schweiz fordern ihren Platz in der Gesellschaft und das Recht auf Selbstbestimmung.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um eine inklusive Gesellschaft zu gestalten."
+    }
+  },
+  "it": {
+    "slogan": "È ora di riconoscerlo.",
+    "pitch_reference": "Pro Infirmis è la più grande organizzazione specializzata in Svizzera nel campo della disabilità. Consigliamo, accompagniamo e sosteniamo le persone con disabilità e i loro familiari in tutta la Svizzera, per promuovere la loro inclusione e autodeterminazione.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. Handicap International, Inclusion Handicap)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di Pro Infirmis"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi per una società inclusiva con Pro Infirmis.",
+    "stats": {
+      "numero_persone_con_disabilita": 1800000,
+      "persone_supportate_2023": 1433,
+      "deficit_2023_chf": 4600000,
+      "parlamentari_con_disabilita_2023": 3
+    },
+    "campagna": {
+      "titolo": "È ora di riconoscerlo",
+      "messaggio_chiave": "1,8 milioni di persone con disabilità in Svizzera rivendicano il loro posto nella società e il diritto all'autodeterminazione.",
+      "invito_all_azione": "Unisciti a noi per costruire una società inclusiva."
+    }
+  }
+}
