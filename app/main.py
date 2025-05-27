@@ -6,6 +6,7 @@ from app.utils import draw_gauge, interpret_note, format_feedback_as_html
 from app.interface_texts import textes, barometre_legendes
 from pathlib import Path
 from app.email_sender import send_feedback_email
+import json
 
 
 def run_app():
