@@ -35,12 +35,21 @@ def run_app():
     # Sélection ONG
     ong_dir = Path("data/organisations")
     ong_files = list(ong_dir.glob("*.json"))
-    ong_choisie = st.selectbox(t["ong_label"], ong_names)
-    ong_map = dict(zip(ong_names, ong_files))
-    ong_names = [
-    json.load(open(f, encoding="utf-8"))["meta"]["nom_par_langue"][langue_choisie]
-    for f in ong_files
-    ]
+
+    # On charge dynamiquement le nom localisé de chaque ONG
+    ong_display_names = []
+    ong_display_map = {}
+
+    for f in ong_files:
+        with open(f, encoding="utf-8") as fp:
+            data = json.load(fp)
+            display_name = data["meta"]["nom_par_langue"][langue_choisie]
+            ong_display_names.append(display_name)
+            ong_display_map[display_name] = f
+
+    # Sélecteur avec les noms localisés
+    ong_choisie = st.selectbox(t["ong_label"], ong_display_names)
+
 
 
     audio_file = st.file_uploader(t["upload_label"], type=["mp3", "wav"])
@@ -57,7 +66,9 @@ def run_app():
         st.success(t["messages"]["transcription_done"])
         st.info(f"{t['messages']['langue_detectee']} {detected_lang.upper()}")
 
-        prompt = load_ong_context(ong_map[ong_choisie], langue_choisie, transcript)
+        ong_path = ong_display_map[ong_choisie]
+        prompt = load_ong_context(ong_path, langue_choisie, transcript)
+
 
         with st.spinner(t["messages"]["generation_feedback"]):
             feedback, note = generate_feedback(prompt)
