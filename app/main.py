@@ -7,6 +7,8 @@ from app.interface_texts import textes, barometre_legendes
 from pathlib import Path
 from app.email_sender import send_feedback_email
 import json
+from app.utils import extract_note
+
 
 
 def run_app():
