@@ -1,9 +1,14 @@
 {
   "meta": {
-    "nom": "QUATRE PATTES Suisse",
-    "type": "ONG internationale",
-    "domaines": ["protection animale", "bien-être animal", "sauvetage", "législation", "sensibilisation"]
+  "nom_par_langue": {
+    "fr": "Quatre Pattes",
+    "de": "Vier Pfoten",
+    "it": "Quattro Zampe"
   },
+  "type": "ONG internationale",
+  "domaines": ["protection animale", "bien-être animal", "sauvetage", "législation", "sensibilisation"]
+},
+
   "fr": {
     "slogan": "Pour une vie meilleure pour les animaux.",
     "pitch_reference": "QUATRE PATTES est une organisation internationale de protection des animaux qui s'engage pour un monde où les animaux sont traités avec respect, compassion et compréhension. En Suisse, nous menons des campagnes pour améliorer les conditions de vie des animaux de rente, des animaux sauvages et des animaux de compagnie.",
