@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Concordia Projets Sociaux",
+      "de": "Concordia Sozialprojekte",
+      "it": "Concordia Progetti Sociali"
+    },
+    "type": "ONG internationale",
+    "domaines": ["protection de l'enfance", "aide sociale", "éducation", "lutte contre la pauvreté", "développement communautaire"]
+  },
+  "fr": {
+    "slogan": "Pour une enfance protégée et un avenir meilleur.",
+    "pitch_reference": "Concordia Projets Sociaux est une organisation internationale indépendante qui soutient les enfants, les jeunes et les familles en détresse en Europe de l'Est. Grâce à des programmes éducatifs, sociaux et de développement communautaire, nous œuvrons pour offrir une vie digne et autonome à ceux qui en ont le plus besoin.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. Caritas, Terre des Hommes)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de Concordia"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour les enfants en détresse avec Concordia.",
+    "stats": {
+      "enfants_aides_par_an": 15000,
+      "pays_d_intervention": ["Roumanie", "Moldavie", "Bulgarie", "Kosovo", "Autriche"],
+      "projets_actifs": 100
+    },
+    "campagne": {
+      "titre": "Aide aux enfants vulnérables",
+      "message_cle": "Avec votre soutien, nous offrons des repas, des soins et une éducation aux enfants les plus pauvres d'Europe.",
+      "call_to_action": "Faites un don pour changer leur avenir."
+    }
+  },
+  "de": {
+    "slogan": "Für eine geschützte Kindheit und eine bessere Zukunft.",
+    "pitch_reference": "Concordia Sozialprojekte ist eine internationale, unabhängige Organisation, die Kinder, Jugendliche und Familien in Not in Osteuropa unterstützt. Durch Bildungs-, Sozial- und Gemeindeentwicklungsprogramme arbeiten wir daran, denen, die es am dringendsten benötigen, ein würdevolles und selbstbestimmtes Leben zu ermöglichen.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. Caritas, Terre des Hommes)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von Concordia"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit Concordia für Kinder in Not engagieren.",
+    "stats": {
+      "kinder_pro_jahr": 15000,
+      "einsatzländer": ["Rumänien", "Moldau", "Bulgarien", "Kosovo", "Österreich"],
+      "aktive_projekte": 100
+    },
+    "kampagne": {
+      "titel": "Hilfe für gefährdete Kinder",
+      "schluesselbotschaft": "Mit Ihrer Unterstützung bieten wir den ärmsten Kindern Europas Mahlzeiten, Pflege und Bildung.",
+      "aufruf_zum_handeln": "Spenden Sie, um ihre Zukunft zu verändern."
+    }
+  },
+  "it": {
+    "slogan": "Per un'infanzia protetta e un futuro migliore.",
+    "pitch_reference": "Concordia Progetti Sociali è un'organizzazione internazionale indipendente che sostiene bambini, giovani e famiglie in difficoltà nell'Europa orientale. Attraverso programmi educativi, sociali e di sviluppo comunitario, lavoriamo per offrire una vita dignitosa e autonoma a coloro che ne hanno più bisogno.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. Caritas, Terre des Hommes)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di Concordia"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi con Concordia per i bambini in difficoltà.",
+    "stats": {
+      "bambini_aiutati_annualmente": 15000,
+      "paesi_di_intervento": ["Romania", "Moldavia", "Bulgaria", "Kosovo", "Austria"],
+      "progetti_attivi": 100
+    },
+    "campagna": {
+      "titolo": "Aiuto ai bambini vulnerabili",
+      "messaggio_chiave": "Con il tuo sostegno, offriamo pasti, cure e istruzione ai bambini più poveri d'Europa.",
+      "invito_all_azione": "Fai una donazione per cambiare il loro futuro."
+    }
+  }
+}
