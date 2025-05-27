@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Green Cross Suisse",
+      "de": "Green Cross Schweiz",
+      "it": "Green Cross Svizzera"
+    },
+    "type": "ONG environnementale",
+    "domaines": ["environnement", "santé publique", "désarmement", "aide humanitaire", "développement durable"]
+  },
+  "fr": {
+    "slogan": "Pour un avenir durable et sain.",
+    "pitch_reference": "Green Cross Suisse est une organisation de développement qui s’engage en faveur des personnes touchées par les catastrophes industrielles et militaires. Elle œuvre pour éliminer les risques écologiques à l’échelle mondiale, tels que les armes chimiques ou les suites de catastrophes comme Tchernobyl, en mettant l’accent sur l’aide à l’entraide.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. Greenpeace, WWF)",
+      "Chiffres exagérés ou non vérifiables",
+      "Tonalité alarmiste ou culpabilisante",
+      "Absence de lien clair avec les missions de Green Cross"
+    ],
+    "formulation_formulaire": "Je souhaite soutenir les actions de Green Cross Suisse pour un avenir durable.",
+    "stats": {
+      "projets_en_cours": 4,
+      "pays_intervention": ["Ukraine", "Viêt Nam", "Bélarus", "Russie"],
+      "bénéficiaires_2024": 12000
+    },
+    "campagne": {
+      "titre": "Soutien aux victimes de catastrophes environnementales",
+      "message_cle": "Green Cross Suisse apporte une aide humanitaire et médicale aux populations affectées par des catastrophes industrielles et militaires.",
+      "call_to_action": "Rejoignez-nous pour construire un avenir plus sûr et durable."
+    }
+  },
+  "de": {
+    "slogan": "Für eine nachhaltige und gesunde Zukunft.",
+    "pitch_reference": "Green Cross Schweiz ist eine Entwicklungsorganisation, die sich für Menschen einsetzt, die von industriellen und militärischen Katastrophen betroffen sind. Sie arbeitet daran, globale ökologische Risiken wie chemische Waffen oder die Folgen von Katastrophen wie Tschernobyl zu beseitigen, mit dem Schwerpunkt auf Hilfe zur Selbsthilfe.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. Greenpeace, WWF)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Alarmistischer oder schuldzuweisender Ton",
+      "Kein klarer Bezug zu den Zielen von Green Cross"
+    ],
+    "formulation_formulaire": "Ich möchte die Arbeit von Green Cross Schweiz für eine nachhaltige Zukunft unterstützen.",
+    "stats": {
+      "laufende_projekte": 4,
+      "einsatzländer": ["Ukraine", "Vietnam", "Weißrussland", "Russland"],
+      "begünstigte_2024": 12000
+    },
+    "kampagne": {
+      "titel": "Unterstützung für Opfer von Umweltkatastrophen",
+      "schluesselbotschaft": "Green Cross Schweiz leistet humanitäre und medizinische Hilfe für Menschen, die von industriellen und militärischen Katastrophen betroffen sind.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um eine sicherere und nachhaltigere Zukunft zu gestalten."
+    }
+  },
+  "it": {
+    "slogan": "Per un futuro sostenibile e sano.",
+    "pitch_reference": "Green Cross Svizzera è un'organizzazione di sviluppo che si impegna a favore delle persone colpite da catastrofi industriali e militari. Lavora per eliminare i rischi ecologici a livello globale, come le armi chimiche o le conseguenze di catastrofi come Chernobyl, concentrandosi sull'aiuto all'autoaiuto.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. Greenpeace, WWF)",
+      "Dati esagerati o non verificabili",
+      "Tono allarmistico o colpevolizzante",
+      "Assenza di un chiaro collegamento con le missioni di Green Cross"
+    ],
+    "formulation_formulaire": "Desidero sostenere le azioni di Green Cross Svizzera per un futuro sostenibile.",
+    "stats": {
+      "progetti_in_corso": 4,
+      "paesi_intervento": ["Ucraina", "Vietnam", "Bielorussia", "Russia"],
+      "beneficiari_2024": 12000
+    },
+    "campagna": {
+      "titolo": "Sostegno alle vittime di catastrofi ambientali",
+      "messaggio_chiave": "Green Cross Svizzera fornisce assistenza umanitaria e medica alle popolazioni colpite da catastrofi industriali e militari.",
+      "invito_all_azione": "Unisciti a noi per costruire un futuro più sicuro e sostenibile."
+    }
+  }
+}
