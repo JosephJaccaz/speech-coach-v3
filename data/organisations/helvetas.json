@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Helvetas",
+      "de": "Helvetas",
+      "it": "Helvetas"
+    },
+    "type": "ONG suisse",
+    "domaines": [
+      "eau et assainissement",
+      "formation professionnelle",
+      "développement économique",
+      "gouvernance et participation",
+      "environnement et climat",
+      "aide humanitaire"
+    ]
+  },
+  "fr": {
+    "slogan": "Pour un monde équitable, partout.",
+    "pitch_reference": "Helvetas est une organisation suisse indépendante de coopération au développement et d’aide humanitaire, active dans 35 pays. Elle s’engage pour l’égalité des chances à travers l’accès à l’eau potable, à l’éducation, à des revenus durables et à la participation citoyenne.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. Caritas, Swissaid)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions d’Helvetas"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour un monde équitable avec Helvetas.",
+    "stats": {
+      "pays_d_intervention": 35,
+      "personnes_soutenues_par_an": 6000000,
+      "projets_actifs": 250
+    },
+    "campagne": {
+      "titre": "Eau pour tous",
+      "message_cle": "Plus de 2 milliards de personnes n'ont pas accès à une eau potable sûre. Ensemble, changeons cela.",
+      "call_to_action": "Soutenez nos projets pour un accès équitable à l'eau dans le monde."
+    }
+  },
+  "de": {
+    "slogan": "Für faire Chancen weltweit.",
+    "pitch_reference": "Helvetas ist eine unabhängige Schweizer Organisation für Entwicklungszusammenarbeit und humanitäre Hilfe, die in 35 Ländern aktiv ist. Sie setzt sich für faire Chancen durch Zugang zu sauberem Trinkwasser, Bildung, nachhaltigem Einkommen und Bürgerbeteiligung ein.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. Caritas, Swissaid)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von Helvetas"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit Helvetas für eine gerechte Welt engagieren.",
+    "stats": {
+      "einsatzländer": 35,
+      "unterstützte_personen_pro_jahr": 6000000,
+      "aktive_projekte": 250
+    },
+    "kampagne": {
+      "titel": "Wasser für alle",
+      "schluesselbotschaft": "Über 2 Milliarden Menschen haben keinen sicheren Zugang zu Trinkwasser. Gemeinsam können wir das ändern.",
+      "aufruf_zum_handeln": "Unterstützen Sie unsere Projekte für einen fairen Zugang zu Wasser weltweit."
+    }
+  },
+  "it": {
+    "slogan": "Per un mondo equo, ovunque.",
+    "pitch_reference": "Helvetas è un'organizzazione svizzera indipendente di cooperazione allo sviluppo e aiuto umanitario, attiva in 35 paesi. Si impegna per pari opportunità attraverso l'accesso all'acqua potabile, all'istruzione, a redditi sostenibili e alla partecipazione civica.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. Caritas, Swissaid)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di Helvetas"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi per un mondo equo con Helvetas.",
+    "stats": {
+      "paesi_di_intervento": 35,
+      "persone_supportate_all_anno": 6000000,
+      "progetti_attivi": 250
+    },
+    "campagna": {
+      "titolo": "Acqua per tutti",
+      "messaggio_chiave": "Oltre 2 miliardi di persone non hanno accesso a un'acqua potabile sicura. Insieme, possiamo cambiare questa realtà.",
+      "invito_all_azione": "Sostieni i nostri progetti per garantire un accesso equo all'acqua nel mondo."
+    }
+  }
+}
