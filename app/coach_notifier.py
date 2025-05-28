@@ -18,56 +18,23 @@ def get_email_coach(ong, langue, mapping):
     return None
 
 def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="fr"):
-    """
-    Envoie un email au coach responsable de l'ONG + langue, dans la langue de l'interface.
-    """
     t = textes.get(langue_interface, textes["fr"])
-    mapping = charger_mapping_coachs()
-    coach_email = get_email_coach(ong, langue, mapping)
+    email_texts = t["email_coach"]
 
-    if not coach_email:
-        st.warning(t["coach_notification_failed"])
-        return False
-
-    # 📨 Sujet par langue
-    sujets = {
-        "fr": f"[Speech Coach IA] Nouveau pitch - {nom_dialogueur}",
-        "de": f"[Speech Coach IA] Neuer Pitch von {nom_dialogueur}",
-        "it": f"[Speech Coach IA] Nuovo pitch - {nom_dialogueur}"
-    }
-    sujet = sujets.get(langue_interface, sujets["fr"])
-
-    # 💬 Corps de mail localisé
-    corps = {
-        "fr": f"""
-        <p>Bonjour,</p>
-        <p>Un·e dialogueur·euse a soumis un nouveau pitch pour l'ONG <b>{ong}</b> en langue <b>{langue.upper()}</b>.</p>
-        <p><b>Email du dialogueur :</b> {nom_dialogueur}</p>
-        <p><b>🧠 Feedback IA :</b></p>
-        <pre>{feedback_ia}</pre>
-        <p>Merci pour ton suivi ✨<br>– Speech Coach IA</p>
-        """,
-        "de": f"""
-        <p>Hallo,</p>
-        <p>Ein*e Fundraiser*in hat einen neuen Pitch f&uuml;r die NGO <b>{ong}</b> auf <b>{langue.upper()}</b> eingereicht.</p>
-        <p><b>Email der Person:</b> {nom_dialogueur}</p>
-        <p><b>🧠 Feedback der KI:</b></p>
-        <pre>{feedback_ia}</pre>
-        <p>Danke f&uuml;r dein Coaching ✨<br>– Speech Coach IA</p>
-        """,
-        "it": f"""
-        <p>Ciao,</p>
-        <p>Un* dialogator* ha inviato un nuovo pitch per l'ONG <b>{ong}</b> in lingua <b>{langue.upper()}</b>.</p>
-        <p><b>Email del dialogatore:</b> {nom_dialogueur}</p>
-        <p><b>🧠 Feedback IA:</b></p>
-        <pre>{feedback_ia}</pre>
-        <p>Grazie per il tuo coaching ✨<br>– Speech Coach IA</p>
-        """
-    }
-    html_content = corps.get(langue_interface, corps["fr"])
+    html_content = f"""
+    <p>{email_texts['salutation']}</p>
+    <p>{email_texts['intro'].format(ong=ong, langue=langue.upper())}</p>
+    <ul>
+        <li><b>{email_texts['nom_dialogueur']}</b> {nom_dialogueur}</li>
+    </ul>
+    <p><b>{email_texts['feedback']}</b></p>
+    <pre>{feedback_ia}</pre>
+    <p>{email_texts['merci']}</p>
+    <p>{email_texts['signature']}</p>
+    """
 
     msg = MIMEText(html_content, "html", "utf-8")
-    msg["Subject"] = sujet
+    msg["Subject"] = f"[Speech Coach IA] Nouveau pitch ({ong}, {langue})"
     msg["From"] = st.secrets["email_user"]
     msg["To"] = coach_email
 
@@ -80,3 +47,4 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
     except Exception as e:
         st.error(f"{t['coach_notification_error']} {e}")
         return False
+
