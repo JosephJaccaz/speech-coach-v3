@@ -17,7 +17,6 @@ def get_email_coach(ong, langue, mapping):
         return ong_entry.get(langue)
     return None
 
-
 def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="fr"):
     st.warning(f"🌍 Langue reçue dans notifier_coach : {langue_interface}")
     t = textes.get(langue_interface, textes["fr"])
@@ -30,20 +29,28 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
         st.warning(t["coach_notification_failed"])
         return False
 
+    subject = t["email_subject_coach"].format(ong=ong)
+
     html_content = f"""
-    <p>{email_texts['salutation']}</p>
-    <p>{email_texts['intro'].format(ong=ong, langue=langue.upper())}</p>
-    <ul>
-        <li><b>{email_texts['nom_dialogueur']}</b> {nom_dialogueur}</li>
-    </ul>
-    <p><b>{email_texts['feedback']}</b></p>
-    <div>{feedback_ia}</div>
-    <p>{email_texts['merci']}</p>
-    <p>{email_texts['signature']}</p>
+    <html>
+      <body style="font-family:Arial, sans-serif; line-height:1.6; font-size:15px; color:#222;">
+        <p>{email_texts['salutation']}</p>
+        <p>{email_texts['intro'].format(ong=ong, langue=langue.upper())}</p>
+        <ul>
+            <li><b>{email_texts['nom_dialogueur']}</b> {nom_dialogueur}</li>
+        </ul>
+        <p><b>{email_texts['feedback']}</b></p>
+        <div style="border-left: 4px solid #ccc; padding-left: 12px; margin-top: 10px; margin-bottom: 10px;">
+            {feedback_ia}
+        </div>
+        <p>{email_texts['merci']}</p>
+        <p>{email_texts['signature']}</p>
+      </body>
+    </html>
     """
 
     msg = MIMEText(html_content, "html", "utf-8")
-    msg["Subject"] = t["email_subject_coach"].format(ong=ong)
+    msg["Subject"] = subject
     msg["From"] = st.secrets["email_user"]
     msg["To"] = coach_email
 
