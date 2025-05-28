@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "FAIRMED",
+      "de": "FAIRMED",
+      "it": "FAIRMED"
+    },
+    "type": "Organisation non gouvernementale (ONG)",
+    "domaines": [
+      "santé pour les plus démunis",
+      "maladies tropicales négligées",
+      "accès aux soins de santé primaires",
+      "lutte contre la pauvreté",
+      "inclusion des personnes handicapées"
+    ]
+  },
+  "fr": {
+    "slogan": "Santé pour les plus démunis.",
+    "pitch_reference": "FAIRMED est une organisation suisse de développement qui s'engage depuis 1959 pour que même les personnes les plus pauvres d'Afrique et d'Asie aient accès à des soins médicaux de base. Notre objectif est d'éviter qu'une personne ne souffre ou ne meure d'une maladie curable. Nous travaillons exclusivement avec du personnel local dans nos bureaux nationaux au Sri Lanka, au Népal, en Inde, au Cameroun et en République centrafricaine. Nos projets sont conçus de manière à ce que les structures restent en place même après notre rôle actif. Dès le début, nous impliquons les personnes sur place dans la conception des projets. En outre, nous travaillons en permanence avec des organisations partenaires, des gouvernements, des autorités sanitaires et des bénévoles.",
+    "redflags": [
+      "Confusion avec d'autres organisations (ex. Médecins Sans Frontières)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de FAIRMED"
+    ],
+    "formulation_formulaire": "Je souhaite soutenir les actions de FAIRMED pour offrir des soins de santé aux plus démunis.",
+    "stats": {
+      "annee_fondation": 1959,
+      "collaborateurs_suisse": 50,
+      "collaborateurs_etranger": 200,
+      "pays_intervention": 5,
+      "projets_actifs": 10
+    },
+    "campagne": {
+      "titre": "Ensemble pour la santé des plus démunis",
+      "message_cle": "FAIRMED s'engage pour que personne ne souffre ou ne meure d'une maladie curable, en offrant un accès aux soins de santé de base aux populations les plus pauvres.",
+      "call_to_action": "Rejoignez-nous pour faire la différence."
+    }
+  },
+  "de": {
+    "slogan": "Gesundheit für die Ärmsten.",
+    "pitch_reference": "FAIRMED ist eine Schweizer Entwicklungsorganisation, die sich seit 1959 dafür einsetzt, dass auch die ärmsten Menschen in Afrika und Asien Zugang zu grundlegender medizinischer Versorgung erhalten. Unser Ziel ist es, zu verhindern, dass jemand an einer heilbaren Krankheit leidet oder stirbt. Wir arbeiten ausschließlich mit lokalem Personal in unseren Landesbüros in Sri Lanka, Nepal, Indien, Kamerun und der Zentralafrikanischen Republik. Unsere Projekte sind so konzipiert, dass die Strukturen auch nach unserem aktiven Einsatz bestehen bleiben. Von Anfang an beziehen wir die Menschen vor Ort in die Projektgestaltung ein. Darüber hinaus arbeiten wir kontinuierlich mit Partnerorganisationen, Regierungen, Gesundheitsbehörden und Freiwilligen zusammen.",
+    "redflags": [
+      "Verwechslung mit anderen Organisationen (z. B. Ärzte ohne Grenzen)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von FAIRMED"
+    ],
+    "formulation_formulaire": "Ich möchte die Arbeit von FAIRMED unterstützen, um den Ärmsten Zugang zu Gesundheitsversorgung zu ermöglichen.",
+    "stats": {
+      "gründungsjahr": 1959,
+      "mitarbeitende_schweiz": 50,
+      "mitarbeitende_ausland": 200,
+      "einsatzländer": 5,
+      "aktive_projekte": 10
+    },
+    "kampagne": {
+      "titel": "Gemeinsam für die Gesundheit der Ärmsten",
+      "schluesselbotschaft": "FAIRMED setzt sich dafür ein, dass niemand an einer heilbaren Krankheit leidet oder stirbt, indem den ärmsten Bevölkerungsgruppen der Zugang zu grundlegender Gesundheitsversorgung ermöglicht wird.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um einen Unterschied zu machen."
+    }
+  },
+  "it": {
+    "slogan": "Salute per i più poveri.",
+    "pitch_reference": "FAIRMED è un'organizzazione svizzera di sviluppo che dal 1959 si impegna affinché anche le persone più povere in Africa e Asia abbiano accesso a cure mediche di base. Il nostro obiettivo è evitare che qualcuno soffra o muoia a causa di una malattia curabile. Lavoriamo esclusivamente con personale locale nei nostri uffici nazionali in Sri Lanka, Nepal, India, Camerun e Repubblica Centrafricana. I nostri progetti sono concepiti in modo che le strutture rimangano operative anche dopo il nostro intervento attivo. Fin dall'inizio, coinvolgiamo le persone locali nella progettazione dei progetti. Inoltre, collaboriamo costantemente con organizzazioni partner, governi, autorità sanitarie e volontari.",
+    "redflags": [
+      "Confusione con altre organizzazioni (es. Medici Senza Frontiere)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di FAIRMED"
+    ],
+    "formulation_formulaire": "Desidero sostenere le azioni di FAIRMED per offrire assistenza sanitaria ai più poveri.",
+    "stats": {
+      "anno_fondazione": 1959,
+      "collaboratori_svizzera": 50,
+      "collaboratori_estero": 200,
+      "paesi_intervento": 5,
+      "progetti_attivi": 10
+    },
+    "campagna": {
+      "titolo": "Insieme per la salute dei più poveri",
+      "messaggio_chiave": "FAIRMED si impegna affinché nessuno soffra o muoia a causa di una malattia curabile, offrendo accesso alle cure sanitarie di base alle popolazioni più povere.",
+      "invito_all_azione": "Unisciti a noi per fare la differenza."
+    }
+  }
+}
