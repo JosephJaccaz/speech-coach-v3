@@ -22,10 +22,10 @@ textes = {
         "coach_notification_success": "📨 Le coach a bien été notifié.",
         "coach_notification_failed": "⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).",
         "coach_notification_error": "❌ Erreur lors de la notification du coach :",
-        "email_subject_coach": "📩 Nouveau pitch à analyser ({ong})",
+        "email_subject_coach": "📩 Nouveau speech à analyser ({ong})",
         "email_coach": {
             "salutation": "Bonjour,",
-            "intro": "Un·e dialogueur·euse a soumis un pitch pour l'ONG <b>{ong}</b> en <b>{langue}</b>.",
+            "intro": "Un·e dialogueur·euse a soumis un speech pour l'ONG <b>{ong}</b> en <b>{langue}</b>.",
             "nom_dialogueur": "Nom (email) du·de la dialogueur·euse :",
             "feedback": "🧠 Feedback IA :",
             "merci": "Merci pour ton coaching ✨",
@@ -34,10 +34,10 @@ textes = {
     },
     "de": {
         "intro": "Willkommen in deinem persönlichen Coaching-Bereich 🧠\n\n"
-                 "Hier kannst du eine Aufnahme deines Pitchs hochladen und ein strukturiertes, wohlwollendes und hilfreiches Feedback erhalten, um dich weiterzuentwickeln.\n\n"
+                 "Hier kannst du eine Aufnahme deines dialogs hochladen und ein strukturiertes, wohlwollendes und hilfreiches Feedback erhalten, um dich weiterzuentwickeln.\n\n"
                  "Die Analyse folgt den 7 Schritten aus dem Training – vom Einstieg bis zur Erklärung des Formulars. Zu jedem Teil erhältst du eine klare Rückmeldung mit konkreten Verbesserungsvorschlägen.\n\n"
                  "Die Verarbeitung erfolgt mithilfe künstlicher Intelligenz (KI), aber deine Stimme wird weder gespeichert noch für Trainingszwecke verwendet. Deine Datei bleibt vollständig vertraulich.\n\n"
-                 "Dieses Tool soll dir helfen, deinen Pitch in deinem Tempo und ganz selbstständig zu verfeinern.\n\n"
+                 "Dieses Tool soll dir helfen, deinen dialog in deinem Tempo und ganz selbstständig zu verfeinern.\n\n"
                  "Bereit für dein Training? Lade deine Datei hoch und erhalte dein persönliches Feedback 🎤",
         "upload_label": "📁 Hier deine Audiodatei hochladen (nur MP3 oder WAV)",
         "email_label": "✉️ E-Mail-Adresse des Fundraisers (für den Erhalt des Feedbacks)",
@@ -55,10 +55,10 @@ textes = {
         "coach_notification_success": "📨 Der Coach wurde benachrichtigt.",
         "coach_notification_failed": "⚠️ Der Coach konnte nicht benachrichtigt werden (coach.json überprüfen).",
         "coach_notification_error": "❌ Fehler beim Benachrichtigen des Coachs:",
-        "email_subject_coach": "📩 Neuer Pitch zur Analyse ({ong})",
+        "email_subject_coach": "📩 Neuer dialog zur Analyse ({ong})",
         "email_coach": {
             "salutation": "Hallo,",
-            "intro": "Ein*e Dialoger*in hat einen Pitch für die NGO <b>{ong}</b> auf <b>{langue}</b> eingereicht.",
+            "intro": "Ein*e Dialoger*in hat einen dialog für die NGO <b>{ong}</b> auf <b>{langue}</b> eingereicht.",
             "nom_dialogueur": "Name (E-Mail) des*der Dialogers*in:",
             "feedback": "🧠 KI-Feedback:",
             "merci": "Vielen Dank für dein Coaching ✨",
@@ -68,7 +68,7 @@ textes = {
     },
     "it": {
         "intro": "Benvenuto nel tuo spazio di coaching personalizzato 🧠\n\n"
-                 "Qui puoi caricare una registrazione del tuo pitch e ricevere un feedback strutturato, benevolo e utile per migliorare.\n\n"
+                 "Qui puoi caricare una registrazione del tuo dialogo e ricevere un feedback strutturato, benevolo e utile per migliorare.\n\n"
                  "L’analisi segue i 7 passaggi visti durante la formazione: dall’aggancio iniziale fino alla spiegazione del modulo. Per ogni parte riceverai un commento chiaro con suggerimenti concreti.\n\n"
                  "L’elaborazione avviene tramite intelligenza artificiale (IA), ma la tua voce non viene mai conservata né utilizzata per addestrare altri sistemi. Il file resta completamente confidenziale.\n\n"
                  "Questo strumento è pensato per aiutarti a perfezionare il tuo discorso, al tuo ritmo e in piena autonomia.\n\n"
@@ -89,10 +89,10 @@ textes = {
         "coach_notification_success": "📨 Il coach è stato notificato con successo.",
         "coach_notification_failed": "⚠️ Il coach non ha potuto essere notificato (verifica coachs.json).",
         "coach_notification_error": "❌ Errore durante la notifica al coach:",
-        "email_subject_coach": "📩 Nuovo pitch da analizzare ({ong})",
+        "email_subject_coach": "📩 Nuovo dialogo da analizzare ({ong})",
         "email_coach": {
             "salutation": "Ciao,",
-            "intro": "Un* dialogatore*trice ha inviato un pitch per l'ONG <b>{ong}</b> in <b>{langue}</b>.",
+            "intro": "Un* dialogatore*trice ha inviato un dialogo per l'ONG <b>{ong}</b> in <b>{langue}</b>.",
             "nom_dialogueur": "Nome (email) del*la dialogatore*trice:",
             "feedback": "🧠 Feedback IA:",
             "merci": "Grazie per il tuo coaching ✨",
@@ -114,7 +114,7 @@ barometre_legendes = {
 - 🟢 **Exzellent (9–10)** : Perfekte Übereinstimmung mit dem Dialogkonzept – inspirierend, klar und ethisch.
 - 🟢 **Gut (7–8)** : Du bist auf dem richtigen Weg – kleine Verbesserungen sind noch möglich.
 - 🟠 **Mittel (5–6)** : Emotionale Balance instabil – einzelne Schwächen im Aufbau oder Ton.
-- 🔴 **Schwach (3–4)** : Der Pitch verliert an Wirkung – problematische Tonalität oder Struktur.
+- 🔴 **Schwach (3–4)** : Der dialogo verliert an Wirkung – problematische Tonalität oder Struktur.
 - ⛔ **Problematisch (1–2)** : Muss vollständig überarbeitet werden – fehlende ehrliche Zustimmung.
 """,
     "it": """
