@@ -62,7 +62,6 @@ def run_app():
 
         st.success(t["messages"]["transcription_done"])
 
-        # 🛡️ Vérification contenu inapproprié
         if detect_troll_content(transcript):
             send_feedback_email(
                 to="joseph.jaccaz@corris.com",
@@ -101,13 +100,14 @@ def run_app():
 
         send_feedback_email(to=user_email, html_content=html_feedback)
 
-        # 📨 Envoi du même feedback au coach
+        # Envoi au coach
         langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
         mapping = charger_mapping_coachs()
         coach_email = get_email_coach(ong_path.stem, langue_envoyee, mapping)
 
         if coach_email:
-            send_feedback_email(to=coach_email, html_content=html_feedback)
-            st.success(f"📬 Feedback envoyé aussi au coach : {coach_email}")
+            subject_coach = f"Nouveau pitch à analyser ({ong_path.stem}) – {user_email}"
+            send_feedback_email(to=coach_email, html_content=html_feedback, custom_subject=subject_coach)
+            st.success(f"📬 Feedback aussi envoyé au coach : {coach_email}")
         else:
             st.warning("⚠️ Aucun coach trouvé pour cette ONG/langue.")
