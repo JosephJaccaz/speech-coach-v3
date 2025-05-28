@@ -5,7 +5,7 @@ from app.ong_context import load_ong_context
 from app.utils import draw_gauge, interpret_note, format_feedback_as_html, extract_note, detect_troll_content
 from app.interface_texts import textes, barometre_legendes
 from app.email_sender import send_feedback_email
-from app.coach_notifier import notifier_coach
+from app.coach_notifier import get_email_coach, charger_mapping_coachs
 from pathlib import Path
 import json
 
@@ -102,30 +102,13 @@ def run_app():
 
         send_feedback_email(to=user_email, html_content=html_feedback)
 
-        from app.coach_notifier import get_email_coach, charger_mapping_coachs
-
+        # 📨 Envoi du même feedback au coach
+        langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
         mapping = charger_mapping_coachs()
         coach_email = get_email_coach(ong_path.stem, langue_envoyee, mapping)
 
         if coach_email:
             send_feedback_email(to=coach_email, html_content=html_feedback)
-
-
-        # 📨 Notification au coach (ONG + langue)
-        langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
-
-        try:
-            success = notifier_coach(
-                ong=ong_path.stem,
-                langue=langue_envoyee,
-                nom_dialogueur=user_email,
-                feedback_ia=feedback,
-                langue_interface=langue_choisie
-            )
-
-            if success:
-                st.success(t["coach_notification_success"])
-            else:
-                st.warning(t["coach_notification_failed"])
-        except Exception as e:
-            st.error(f"{t['coach_notification_error']} {e}")
+            st.success(f"📬 Feedback envoyé aussi au coach : {coach_email}")
+        else:
+            st.warning("⚠️ Aucun coach trouvé pour cette ONG/langue.")
