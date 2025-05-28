@@ -37,7 +37,7 @@ textes = {
                  "Hier kannst du eine Aufnahme deines dialogs hochladen und ein strukturiertes, wohlwollendes und hilfreiches Feedback erhalten, um dich weiterzuentwickeln.\n\n"
                  "Die Analyse folgt den 7 Schritten aus dem Training – vom Einstieg bis zur Erklärung des Formulars. Zu jedem Teil erhältst du eine klare Rückmeldung mit konkreten Verbesserungsvorschlägen.\n\n"
                  "Die Verarbeitung erfolgt mithilfe künstlicher Intelligenz (KI), aber deine Stimme wird weder gespeichert noch für Trainingszwecke verwendet. Deine Datei bleibt vollständig vertraulich.\n\n"
-                 "Dieses Tool soll dir helfen, deinen dialog in deinem Tempo und ganz selbstständig zu verfeinern.\n\n"
+                 "Dieses Tool soll dir helfen, deinen Dialogin deinem Tempo und ganz selbstständig zu verfeinern.\n\n"
                  "Bereit für dein Training? Lade deine Datei hoch und erhalte dein persönliches Feedback 🎤",
         "upload_label": "📁 Hier deine Audiodatei hochladen (nur MP3 oder WAV)",
         "email_label": "✉️ E-Mail-Adresse des Fundraisers (für den Erhalt des Feedbacks)",
@@ -55,7 +55,7 @@ textes = {
         "coach_notification_success": "📨 Der Coach wurde benachrichtigt.",
         "coach_notification_failed": "⚠️ Der Coach konnte nicht benachrichtigt werden (coach.json überprüfen).",
         "coach_notification_error": "❌ Fehler beim Benachrichtigen des Coachs:",
-        "email_subject_coach": "📩 Neuer dialog zur Analyse ({ong})",
+        "email_subject_coach": "📩 Neuer Dialogzur Analyse ({ong})",
         "email_coach": {
             "salutation": "Hallo,",
             "intro": "Ein*e Dialoger*in hat einen dialog für die NGO <b>{ong}</b> auf <b>{langue}</b> eingereicht.",
