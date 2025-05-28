@@ -104,8 +104,6 @@ def run_app():
 
         # 📨 Notification au coach (ONG + langue)
         langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
-        st.info(f"🔍 Appel notification : ONG = {ong_path.stem}, Langue utilisée = {langue_envoyee}")
-
         lien_audio = "(audio disponible dans l’interface seulement, non envoyé)"
 
         try:
@@ -114,13 +112,13 @@ def run_app():
                 langue=langue_envoyee,
                 nom_dialogueur=user_email,
                 lien_audio=lien_audio,
-                feedback_ia=feedback
+                feedback_ia=feedback,
+                langue_interface=langue_choisie  # ✅ passé pour affichage multilingue
             )
 
             if success:
                 st.success(t["coach_notification_success"])
             else:
                 st.warning(t["coach_notification_failed"])
-            except Exception as e:
-                st.error(f"{t['coach_notification_error']} {e}")
-
+        except Exception as e:
+            st.error(f"{t['coach_notification_error']} {e}")
