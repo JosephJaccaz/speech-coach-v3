@@ -17,6 +17,9 @@ def get_email_coach(ong, langue, mapping):
         return ong_entry.get(langue)
     return None
 
+st.warning(f"LANGUE INTERFACE REÇUE : {langue_interface}")
+
+
 def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="fr"):
     t = textes.get(langue_interface, textes["fr"])
     email_texts = t["email_coach"]
