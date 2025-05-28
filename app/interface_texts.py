@@ -18,7 +18,10 @@ textes = {
             "transcription_spinner": "⏳ Transcription en cours...",
             "generation_feedback": "💬 Génération du feedback pédagogique...",
             "feedback_envoye": "✅ Feedback envoyé automatiquement à"
-        }
+        },
+        "coach_notification_success": "📨 Le coach a bien été notifié.",
+        "coach_notification_failed": "⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).",
+        "coach_notification_error": "❌ Erreur lors de la notification du coach :",
     },
     "de": {
         "intro": "Willkommen in deinem persönlichen Coaching-Bereich 🧠\n\n"
@@ -39,7 +42,11 @@ textes = {
             "transcription_spinner": "⏳ Transkription läuft...",
             "generation_feedback": "💬 Generierung des pädagogischen Feedbacks...",
             "feedback_envoye": "✅ Feedback wurde automatisch gesendet an"
-        }
+        },
+        "coach_notification_success": "📨 Der Coach wurde benachrichtigt.",
+        "coach_notification_failed": "⚠️ Der Coach konnte nicht benachrichtigt werden (coach.json überprüfen).",
+        "coach_notification_error": "❌ Fehler beim Benachrichtigen des Coachs:",
+
     },
     "it": {
         "intro": "Benvenuto nel tuo spazio di coaching personalizzato 🧠\n\n"
@@ -60,7 +67,11 @@ textes = {
             "transcription_spinner": "⏳ Trascrizione in corso...",
             "generation_feedback": "💬 Generazione del feedback pedagogico...",
             "feedback_envoye": "✅ Feedback inviato automaticamente a"
-        }
+        },
+        "coach_notification_success": "📨 Il coach è stato notificato con successo.",
+        "coach_notification_failed": "⚠️ Il coach non ha potuto essere notificato (verifica coachs.json).",
+        "coach_notification_error": "❌ Errore durante la notifica al coach:",
+
     }
 }
 
