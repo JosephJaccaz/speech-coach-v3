@@ -1,31 +1,53 @@
-# Speech Coach IA — Version modulaire
+🎤 Speech Coach IA — Version modulaire
+Speech Coach IA est un outil pédagogique d’analyse vocale conçu pour les dialogueurs·euses d’ONG. Il permet de recevoir un retour intelligent, structuré et multilingue à partir d’un simple fichier audio.
 
-**Speech Coach IA** est un outil de feedback intelligent pour les pitchs vocaux des dialogueurs·euses d’ONG. Il permet d’analyser un enregistrement audio, de l’évaluer selon une grille pédagogique claire, et de proposer un retour structuré en 7 étapes.
+Cette version repose sur une architecture modulaire, claire, évolutive et adaptée à une collaboration d’équipe.
 
-Cette version repose sur une **architecture modulaire**, plus propre, plus maintenable et prête pour la collaboration.
+🧠 Fonctionnalités principales
+📤 Upload d’un fichier audio (MP3 ou WAV)
 
----
+🎧 Transcription automatique avec Whisper (OpenAI)
 
-## 🧠 Fonctionnalités
-- 📤 Upload d’un fichier audio (MP3 ou WAV)
-- 🎧 Transcription automatique avec Whisper (OpenAI)
-- 🧠 Analyse rhétorique personnalisée avec GPT-4
-- 📝 Feedback structuré (7 étapes + baromètre)
-- 🇫🇷 🇩🇪 🇮🇹 Multilingue
-- ✉️ Envoi automatique du feedback par mail
+🧠 Analyse personnalisée avec GPT-4, adaptée à l’ONG choisie
 
----
+📝 Feedback structuré selon les 7 étapes de formation
 
-## 🗂️ Structure du projet
-```
-speech-coach-v2/
+📊 Baromètre visuel de performance
+
+🇫🇷 🇩🇪 🇮🇹 Interface et prompts entièrement multilingues
+
+✉️ Envoi automatique du feedback :
+
+au dialogueur (par mail)
+
+au coach associé à l’ONG/langue (via coachs.json)
+
+📬 Système de notification e-mail
+Dialogueur : reçoit un feedback richement formaté (HTML) avec indicateurs, sections claires, suggestions…
+
+Coach : reçoit le même feedback, avec un objet personnalisé :
+
+java
+Copier
+Modifier
+Nouveau pitch à analyser (nom_ong) – email_du_dialogueur
+Le mapping coachs est défini dans data/coachs.json sous forme :
+"ong": { "fr": "email", "de": "email", "it": "email" }
+
+🗂️ Structure du projet
+bash
+Copier
+Modifier
+speech-coach-v3/
 ├── app/
-│   ├── main.py                 ← interface Streamlit principale
-│   ├── feedback.py             ← fonction GPT pour générer le retour
-│   ├── transcription.py        ← traitement de l’audio avec Whisper
-│   ├── ong_context.py          ← chargement des données ONG
-│   ├── utils.py                ← fonctions génériques : gauge, note, etc.
-│   └── interface_texts.py      ← textes d’interface multilingues
+│   ├── main.py                 ← Interface Streamlit (appelée via streamlit_app.py)
+│   ├── feedback.py             ← Génération de feedback avec GPT
+│   ├── transcription.py        ← Transcription audio via Whisper
+│   ├── ong_context.py          ← Chargement du contexte ONG pour le prompt
+│   ├── utils.py                ← Fonctions utilitaires (gauge, note, format HTML...)
+│   ├── email_sender.py         ← Fonction d’envoi du feedback par mail
+│   ├── coach_notifier.py       ← Mapping ONG/langue → e-mail coach
+│   └── interface_texts.py      ← Textes multilingues de l’interface + baromètre
 │
 ├── prompts/
 │   ├── prompt_fr.txt
@@ -33,16 +55,16 @@ speech-coach-v2/
 │   └── prompt_it.txt
 │
 ├── data/
-│   └── organisations/*.json    ← infos ONG (slogan, redflags, speech modèle...)
+│   ├── coachs.json             ← Mapping ONG/langue vers e-mails des coachs
+│   └── organisations/          ← Données JSON pour chaque ONG (modèle, slogan, redflags…)
 │
-├── streamlit_app.py            ← point d’entrée de l’app (à la racine)
-├── requirements.txt
-└── README.md                   ← ce fichier
-```
+├── streamlit_app.py            ← Point d’entrée de l’application
+├── requirements.txt            ← Dépendances Python
+└── README.md                   ← Ce fichier
+📌 Notes importantes
+🔒 Aucun fichier audio n’est stocké ni partagé : tout reste local à la session.
 
-## 📌 Notes importantes
-- Aucun fichier audio n’est stocké : tout reste local à la session
-- L’outil est pensé pour un usage pédagogique, bienveillant, et respectueux de la vie privée
-- GPT-4 n’invente pas de chiffres, et les feedbacks sont toujours cadrés par les prompts
+💡 L’outil respecte une logique bienveillante, formative, et confidentielle.
 
+🤖 Le prompt GPT est cadré pour éviter toute invention ou hallucination.
 
