@@ -3,7 +3,7 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 import streamlit as st
-
+from app.interface_texts import textes  # ✅ pour accéder aux traductions
 
 def charger_mapping_coachs(json_path="data/coachs.json"):
     if not os.path.exists(json_path):
@@ -17,21 +17,17 @@ def get_email_coach(ong, langue, mapping):
         return ong_entry.get(langue)
     return None
 
-def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia):
+def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia, langue_interface="fr"):
     """
-    Envoie un email au coach responsable de l'ONG + langue.
+    Envoie un email au coach responsable de l'ONG + langue, avec interface dans la bonne langue.
     """
-    # st.info("✅ Chargement du mapping des coachs...")
+    t = textes.get(langue_interface, textes["fr"])  # fallback au français
     mapping = charger_mapping_coachs()
-
-    # st.info(f"🎯 Recherche coach pour ONG = {ong}, langue = {langue}")
     coach_email = get_email_coach(ong, langue, mapping)
 
     if not coach_email:
-        st.warning(f"❗ Aucun coach défini pour ONG={ong}, langue={langue}")
+        st.warning(t["coach_notification_failed"])
         return False
-
-    # st.info(f"📬 Email du coach trouvé : {coach_email}")
 
     html_content = f"""
     <p>Bonjour,</p>
@@ -52,13 +48,11 @@ def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia):
     msg["To"] = coach_email
 
     try:
-        # st.info("🔐 Connexion à Gmail...")
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
             server.login(st.secrets["email_user"], st.secrets["email_password"])
-            # st.info("✉️ Envoi de l’e-mail en cours...")
             server.send_message(msg)
-        st.success(f"📨 Notification envoyée au coach : {coach_email}")
+        st.success(t["coach_notification_success"])
         return True
     except Exception as e:
-        st.error(f"❌ Erreur lors de l'envoi de l'e-mail au coach : {e}")
+        st.error(f"{t['coach_notification_error']} {e}")
         return False
