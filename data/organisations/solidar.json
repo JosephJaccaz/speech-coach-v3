@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Solidar Suisse",
+      "de": "Solidar Suisse",
+      "it": "Solidar Suisse"
+    },
+    "type": "Organisation non gouvernementale (ONG)",
+    "domaines": [
+      "travail décent",
+      "justice sociale",
+      "participation démocratique",
+      "aide humanitaire",
+      "égalité des genres",
+      "justice climatique"
+    ]
+  },
+  "fr": {
+    "slogan": "Nous combattons les inégalités.",
+    "pitch_reference": "Solidar Suisse est une ONG suisse engagée dans la coopération au développement et l'aide humanitaire. Active dans une quinzaine de pays en Afrique, Asie, Amérique latine et Europe du Sud-Est, elle lutte pour des conditions de travail décentes, la justice sociale, la démocratie et contre les inégalités extrêmes. Fondée en 1936 sous le nom d'Œuvre suisse d'entraide ouvrière (OSEO), elle est devenue indépendante en 2005 et a adopté le nom de Solidar Suisse en 2011.",
+    "redflags": [
+      "Confusion avec d'autres organisations (ex. OSEO, Caritas)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de Solidar Suisse"
+    ],
+    "formulation_formulaire": "Je souhaite soutenir les actions de Solidar Suisse pour un monde plus juste.",
+    "stats": {
+      "annee_fondation": 1936,
+      "collaborateurs_suisse": 45,
+      "collaborateurs_etranger": 135,
+      "pays_intervention": 15,
+      "projets_actifs": 80
+    },
+    "campagne": {
+      "titre": "Agir pour un monde plus équitable",
+      "message_cle": "Solidar Suisse s'engage pour des conditions de travail décentes, la justice sociale et la participation démocratique, en luttant contre les inégalités extrêmes.",
+      "call_to_action": "Rejoignez-nous pour faire la différence."
+    }
+  },
+  "de": {
+    "slogan": "Wir bekämpfen Ungleichheit.",
+    "pitch_reference": "Solidar Suisse ist eine Schweizer NGO, die sich für Entwicklungszusammenarbeit und humanitäre Hilfe engagiert. Aktiv in rund 15 Ländern in Afrika, Asien, Lateinamerika und Südosteuropa, setzt sie sich für menschenwürdige Arbeitsbedingungen, soziale Gerechtigkeit, Demokratie und gegen extreme Ungleichheiten ein. Gegründet 1936 als Schweizerisches Arbeiterhilfswerk (SAH), wurde sie 2005 unabhängig und trägt seit 2011 den Namen Solidar Suisse.",
+    "redflags": [
+      "Verwechslung mit anderen Organisationen (z. B. SAH, Caritas)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von Solidar Suisse"
+    ],
+    "formulation_formulaire": "Ich möchte die Arbeit von Solidar Suisse für eine gerechtere Welt unterstützen.",
+    "stats": {
+      "gründungsjahr": 1936,
+      "mitarbeitende_schweiz": 45,
+      "mitarbeitende_ausland": 135,
+      "einsatzländer": 15,
+      "aktive_projekte": 80
+    },
+    "kampagne": {
+      "titel": "Einsatz für eine gerechtere Welt",
+      "schluesselbotschaft": "Solidar Suisse engagiert sich für menschenwürdige Arbeitsbedingungen, soziale Gerechtigkeit und demokratische Teilhabe und bekämpft extreme Ungleichheiten.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um einen Unterschied zu machen."
+    }
+  },
+  "it": {
+    "slogan": "Combattiamo le disuguaglianze.",
+    "pitch_reference": "Solidar Suisse è un'ONG svizzera attiva nella cooperazione allo sviluppo e nell'aiuto umanitario. Presente in circa 15 paesi in Africa, Asia, America Latina e Europa sudorientale, si impegna per condizioni di lavoro dignitose, giustizia sociale, democrazia e contro le disuguaglianze estreme. Fondata nel 1936 come Opera svizzera di aiuto operaio (OSEO), è diventata indipendente nel 2005 e ha adottato il nome Solidar Suisse nel 2011.",
+    "redflags": [
+      "Confusione con altre organizzazioni (es. OSEO, Caritas)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di Solidar Suisse"
+    ],
+    "formulation_formulaire": "Desidero sostenere le azioni di Solidar Suisse per un mondo più giusto.",
+    "stats": {
+      "anno_fondazione": 1936,
+      "collaboratori_svizzera": 45,
+      "collaboratori_estero": 135,
+      "paesi_intervento": 15,
+      "progetti_attivi": 80
+    },
+    "campagna": {
+      "titolo": "Agire per un mondo più equo",
+      "messaggio_chiave": "Solidar Suisse si impegna per condizioni di lavoro dignitose, giustizia sociale e partecipazione democratica, combattendo le disuguaglianze estreme.",
+      "invito_all_azione": "Unisciti a noi per fare la differenza."
+    }
+  }
+}
