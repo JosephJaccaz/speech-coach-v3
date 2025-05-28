@@ -104,16 +104,14 @@ def run_app():
 
         # 📨 Notification au coach (ONG + langue)
         langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
-        lien_audio = "(audio disponible dans l’interface seulement, non envoyé)"
 
         try:
             success = notifier_coach(
                 ong=ong_path.stem,
                 langue=langue_envoyee,
                 nom_dialogueur=user_email,
-                lien_audio=lien_audio,
                 feedback_ia=feedback,
-                langue_interface=langue_choisie  # ✅ passé pour affichage multilingue
+                langue_interface=langue_choisie
             )
 
             if success:
