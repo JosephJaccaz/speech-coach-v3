@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Médecins Sans Frontières Suisse",
+      "de": "Ärzte ohne Grenzen Schweiz",
+      "it": "Medici Senza Frontiere Svizzera"
+    },
+    "type": "ONG médicale humanitaire",
+    "domaines": [
+      "aide médicale d'urgence",
+      "conflits armés",
+      "épidémies",
+      "catastrophes naturelles",
+      "exclusion des soins"
+    ]
+  },
+  "fr": {
+    "slogan": "Soigner et témoigner, partout où c'est nécessaire.",
+    "pitch_reference": "Médecins Sans Frontières (MSF) est une organisation médicale humanitaire internationale indépendante qui apporte une aide d’urgence aux populations sans accès à des soins de santé, touchées par des conflits armés, des épidémies ou des catastrophes naturelles. En 2024, MSF Suisse a mené 116 projets opérationnels dans 28 pays.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. CICR, Médecins du Monde)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de MSF"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour l'accès aux soins avec MSF.",
+    "stats": {
+      "projets_operationnels": 116,
+      "pays_intervention": 28,
+      "employes_suisse": 400,
+      "employes_total": 1354
+    },
+    "campagne": {
+      "titre": "Accès aux soins en zones de conflit",
+      "message_cle": "Des millions de personnes vivent dans des zones de conflit sans accès aux soins de base. MSF intervient pour leur apporter une assistance médicale d'urgence.",
+      "call_to_action": "Soutenez nos actions pour garantir l'accès aux soins là où c'est vital."
+    }
+  },
+  "de": {
+    "slogan": "Behandeln und berichten – überall, wo es nötig ist.",
+    "pitch_reference": "Ärzte ohne Grenzen (MSF) ist eine internationale, unabhängige medizinische Hilfsorganisation, die in Konfliktgebieten, bei Epidemien und Naturkatastrophen Nothilfe leistet. Im Jahr 2024 führte MSF Schweiz 116 Projekte in 28 Ländern durch.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. IKRK, Ärzte der Welt)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von MSF"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit MSF für den Zugang zu medizinischer Hilfe engagieren.",
+    "stats": {
+      "operationelle_projekte": 116,
+      "einsatzlaender": 28,
+      "mitarbeitende_schweiz": 400,
+      "mitarbeitende_total": 1354
+    },
+    "kampagne": {
+      "titel": "Zugang zu medizinischer Versorgung in Konfliktgebieten",
+      "schluesselbotschaft": "Millionen Menschen leben in Konfliktzonen ohne Zugang zu grundlegender medizinischer Versorgung. MSF leistet dort dringend benötigte Hilfe.",
+      "aufruf_zum_handeln": "Unterstützen Sie unsere Arbeit, um medizinische Hilfe dort zu gewährleisten, wo sie am dringendsten benötigt wird."
+    }
+  },
+  "it": {
+    "slogan": "Curare e testimoniare, ovunque sia necessario.",
+    "pitch_reference": "Medici Senza Frontiere (MSF) è un'organizzazione medica umanitaria internazionale indipendente che fornisce assistenza d'emergenza alle popolazioni prive di accesso alle cure sanitarie, colpite da conflitti armati, epidemie o catastrofi naturali. Nel 2024, MSF Svizzera ha condotto 116 progetti operativi in 28 paesi.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. CICR, Medici del Mondo)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di MSF"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi con MSF per garantire l'accesso alle cure mediche.",
+    "stats": {
+      "progetti_operativi": 116,
+      "paesi_intervento": 28,
+      "dipendenti_svizzera": 400,
+      "dipendenti_totale": 1354
+    },
+    "campagna": {
+      "titolo": "Accesso alle cure nelle zone di conflitto",
+      "messaggio_chiave": "Milioni di persone vivono in zone di conflitto senza accesso alle cure mediche di base. MSF interviene per fornire assistenza medica d'emergenza.",
+      "invito_all_azione": "Sostieni le nostre azioni per garantire l'accesso alle cure dove è più vitale."
+    }
+  }
+}
