@@ -20,9 +20,16 @@ def get_email_coach(ong, langue, mapping):
 
 def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="fr"):
     st.warning(f"🌍 Langue reçue dans notifier_coach : {langue_interface}")
-
     t = textes.get(langue_interface, textes["fr"])
     email_texts = t["email_coach"]
+
+    mapping = charger_mapping_coachs()
+    coach_email = get_email_coach(ong, langue, mapping)
+
+    if not coach_email:
+        st.warning(t["coach_notification_failed"])
+        return False
+
 
     html_content = f"""
     <p>{email_texts['salutation']}</p>
