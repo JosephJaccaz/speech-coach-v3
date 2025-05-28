@@ -22,6 +22,7 @@ textes = {
         "coach_notification_success": "📨 Le coach a bien été notifié.",
         "coach_notification_failed": "⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).",
         "coach_notification_error": "❌ Erreur lors de la notification du coach :",
+        "email_subject_coach": "📩 Nouveau pitch à analyser ({ong})",
         "email_coach": {
             "salutation": "Bonjour,",
             "intro": "Un·e dialogueur·euse a soumis un pitch pour l'ONG <b>{ong}</b> en <b>{langue}</b>.",
@@ -54,6 +55,7 @@ textes = {
         "coach_notification_success": "📨 Der Coach wurde benachrichtigt.",
         "coach_notification_failed": "⚠️ Der Coach konnte nicht benachrichtigt werden (coach.json überprüfen).",
         "coach_notification_error": "❌ Fehler beim Benachrichtigen des Coachs:",
+        "email_subject_coach": "📩 Neuer Pitch zur Analyse ({ong})",
         "email_coach": {
             "salutation": "Hallo,",
             "intro": "Ein*e Dialoger*in hat einen Pitch für die NGO <b>{ong}</b> auf <b>{langue}</b> eingereicht.",
@@ -87,6 +89,7 @@ textes = {
         "coach_notification_success": "📨 Il coach è stato notificato con successo.",
         "coach_notification_failed": "⚠️ Il coach non ha potuto essere notificato (verifica coachs.json).",
         "coach_notification_error": "❌ Errore durante la notifica al coach:",
+        "email_subject_coach": "📩 Nuovo pitch da analizzare ({ong})",
         "email_coach": {
             "salutation": "Ciao,",
             "intro": "Un* dialogatore*trice ha inviato un pitch per l'ONG <b>{ong}</b> in <b>{langue}</b>.",
