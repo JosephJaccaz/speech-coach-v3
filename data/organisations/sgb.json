@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Fédération Suisse des Sourds (SGB-FSS)",
+      "de": "Schweizerischer Gehörlosenbund (SGB-FSS)",
+      "it": "Federazione Svizzera dei Sordi (SGB-FSS)"
+    },
+    "type": "Organisation faîtière nationale",
+    "domaines": [
+      "reconnaissance des langues des signes",
+      "accessibilité universelle",
+      "égalité des droits et des chances",
+      "éducation inclusive",
+      "intégration professionnelle",
+      "santé sans barrières"
+    ]
+  },
+  "fr": {
+    "slogan": "Pour une société sans barrières, inclusive et accessible à toutes et tous.",
+    "pitch_reference": "La Fédération Suisse des Sourds (SGB-FSS), fondée en 1946, est l'organisation faîtière nationale qui représente les intérêts des personnes sourdes et malentendantes en Suisse. Elle œuvre pour la reconnaissance officielle des langues des signes, l'élimination des barrières d'accès dans tous les domaines de la vie et la promotion de l'égalité des droits et des chances. La SGB-FSS est membre de la Fédération Mondiale des Sourds et de l'Union Européenne des Sourds.",
+    "redflags": [
+      "Mention d'une autre organisation (ex. Sonos, Pro Infirmis)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de la SGB-FSS"
+    ],
+    "formulation_formulaire": "Je souhaite soutenir l'égalité des droits pour les personnes sourdes avec la SGB-FSS.",
+    "stats": {
+      "annee_fondation": 1946,
+      "membres_collectifs": 50,
+      "membres_individuels": 2000,
+      "employes": 50
+    },
+    "campagne": {
+      "titre": "Reconnaissance des langues des signes",
+      "message_cle": "Les langues des signes sont des langues vivantes qui enrichissent notre société. Leur reconnaissance officielle est essentielle pour une inclusion véritable des personnes sourdes.",
+      "call_to_action": "Agissez avec nous pour une Suisse sans barrières."
+    }
+  },
+  "de": {
+    "slogan": "Für eine barrierefreie, inklusive und zugängliche Gesellschaft für alle.",
+    "pitch_reference": "Der Schweizerische Gehörlosenbund (SGB-FSS), gegründet 1946, ist der nationale Dachverband, der die Interessen gehörloser und hörbehinderter Menschen in der Schweiz vertritt. Er setzt sich für die offizielle Anerkennung der Gebärdensprachen, den Abbau von Zugangsbarrieren in allen Lebensbereichen und die Förderung der Gleichberechtigung ein. Der SGB-FSS ist Mitglied der Weltföderation der Gehörlosen und der Europäischen Union der Gehörlosen.",
+    "redflags": [
+      "Erwähnung einer anderen Organisation (z. B. Sonos, Pro Infirmis)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen des SGB-FSS"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit dem SGB-FSS für die Gleichberechtigung gehörloser Menschen einsetzen.",
+    "stats": {
+      "gründungsjahr": 1946,
+      "kollektive_mitglieder": 50,
+      "einzelmitglieder": 2000,
+      "mitarbeitende": 50
+    },
+    "kampagne": {
+      "titel": "Anerkennung der Gebärdensprachen",
+      "schluesselbotschaft": "Gebärdensprachen sind lebendige Sprachen, die unsere Gesellschaft bereichern. Ihre offizielle Anerkennung ist entscheidend für die echte Inklusion gehörloser Menschen.",
+      "aufruf_zum_handeln": "Setzen Sie sich mit uns für eine barrierefreie Schweiz ein."
+    }
+  },
+  "it": {
+    "slogan": "Per una società senza barriere, inclusiva e accessibile a tutti.",
+    "pitch_reference": "La Federazione Svizzera dei Sordi (SGB-FSS), fondata nel 1946, è l'organizzazione nazionale che rappresenta gli interessi delle persone sorde e con problemi di udito in Svizzera. Si impegna per il riconoscimento ufficiale delle lingue dei segni, l'eliminazione delle barriere in tutti gli ambiti della vita e la promozione dell'uguaglianza dei diritti e delle opportunità. La SGB-FSS è membro della Federazione Mondiale dei Sordi e dell'Unione Europea dei Sordi.",
+    "redflags": [
+      "Menzione di un'altra organizzazione (es. Sonos, Pro Infirmis)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni della SGB-FSS"
+    ],
+    "formulation_formulaire": "Desidero sostenere l'uguaglianza dei diritti per le persone sorde con la SGB-FSS.",
+    "stats": {
+      "anno_fondazione": 1946,
+      "membri_collettivi": 50,
+      "membri_individuali": 2000,
+      "dipendenti": 50
+    },
+    "campagna": {
+      "titolo": "Riconoscimento delle lingue dei segni",
+      "messaggio_chiave": "Le lingue dei segni sono lingue vive che arricchiscono la nostra società. Il loro riconoscimento ufficiale è fondamentale per una vera inclusione delle persone sorde.",
+      "invito_all_azione": "Agisci con noi per una Svizzera senza barriere."
+    }
+  }
+}
