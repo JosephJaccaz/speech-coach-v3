@@ -127,8 +127,6 @@ def format_feedback_as_html(feedback_text, langue):
     html = html.replace("Verbesserungsvorschlag", "<span style='color:#007BFF; font-weight:bold;'>Verbesserungsvorschlag</span>")
     html = html.replace("Suggerimento di miglioramento", "<span style='color:#007BFF; font-weight:bold;'>Suggerimento di miglioramento</span>")
 
-    html = re.sub(r"([.?!])\s+", r"\1<br><br>", html)
-
     paragraphs = html.split("\n")
     html_body = ""
     for line in paragraphs:
@@ -136,9 +134,9 @@ def format_feedback_as_html(feedback_text, langue):
         if not line:
             continue
         if line.startswith(("🟢", "📊", "🔍", "🎯", "🤝", "💢", "🌱", "🚀", "➡️", "📝")) or any(key in line for key in ["Conclusion", "Conclusione", "Fazit"]):
-            html_body += f"<div style='margin-top:32px; margin-bottom:8px; font-weight:bold; font-size:16px;'>{line}</div>"
+            html_body += f"<p style='margin:20px 0 4px 0; font-weight:bold;'>{line}</p>"
         else:
-            html_body += f"<div style='margin-bottom:12px;'>{line}</div>"
+            html_body += f"<p style='margin:4px 0;'>{line}</p>"
 
     intro, signature = {
         "fr": (
