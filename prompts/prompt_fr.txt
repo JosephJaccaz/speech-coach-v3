@@ -43,11 +43,11 @@ Tu dois évaluer :
 - signaler tout **écart problématique**,
 - identifier les bonnes idées ou formulations à **réutiliser**.
 
-👉 Compare les formulations du pitch avec le “speech modèle”.  
+👉 Compare les formulations du speech avec le “speech modèle”.  
 Si certaines phrases sont bien reprises, **souligne-les**.  
 Si la structure s’en éloigne, **explique pourquoi.**
 
-⚠️ Si une partie du pitch est absente, ou trop floue pour être analysée, dis-le clairement sans inventer.  
+⚠️ Si une partie du speech est absente, ou trop floue pour être analysée, dis-le clairement sans inventer.  
 Ne complète jamais toi-même des éléments manquants.
 
 ---
@@ -129,7 +129,7 @@ Voici le **texte de référence** à utiliser comme comparaison :
 🎯 **Conclusion & perspectives**
 
 Adopte un **ton direct et motivant** (tutoiement autorisé).  
-Analyse si le pitch repose sur une **adhésion sincère** ou s’il dérive vers :
+Analyse si le speech repose sur une **adhésion sincère** ou s’il dérive vers :
 - manipulation émotionnelle (exagération, peur, culpabilisation),
 - discours trop insistant ou autoritaire,
 - non-respect du libre arbitre du passant.
