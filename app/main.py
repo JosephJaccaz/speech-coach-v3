@@ -102,7 +102,7 @@ def run_app():
 
             send_feedback_email(to=user_email, html_content=html_feedback)
 
-            # 📨 Notification au coach (ONG + langue)
+           # 📨 Notification au coach (ONG + langue)
             langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
             st.info(f"🔍 Appel notification : ONG = {ong_path.stem}, Langue utilisée = {langue_envoyee}")
 
@@ -119,7 +119,8 @@ def run_app():
 
                 if success:
                     st.success("📨 Le coach a bien été notifié.")
-                else:
+            else:
                     st.warning("⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).")
             except Exception as e:
                 st.error(f"❌ Erreur lors de la notification du coach : {e}")
+
