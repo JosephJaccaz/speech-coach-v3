@@ -9,26 +9,29 @@ def charger_mapping_coachs(json_path="data/coachs.json"):
     with open(json_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def get_email_coach(ong, mapping):
-    return mapping.get(ong)
+def get_email_coach(ong, langue, mapping):
+    ong_entry = mapping.get(ong)
+    if ong_entry:
+        return ong_entry.get(langue)
+    return None
 
-def notifier_coach(ong, nom_dialogueur, lien_audio, feedback_ia, expediteur="noreply@corris.com", mot_de_passe="votre_mot_de_passe"):
+def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia, expediteur="noreply@corris.com", mot_de_passe="votre_mot_de_passe"):
     mapping = charger_mapping_coachs()
-    coach_email = get_email_coach(ong, mapping)
-    
+    coach_email = get_email_coach(ong, langue, mapping)
+
     if not coach_email:
-        print(f"⚠️ Aucun coach défini pour l’ONG : {ong}")
+        print(f"⚠️ Aucun coach défini pour ONG={ong}, langue={langue}")
         return False
 
     message = EmailMessage()
-    message["Subject"] = f"[Speech Coach IA] Nouveau pitch - {nom_dialogueur}"
+    message["Subject"] = f"[Speech Coach IA] Nouveau pitch - {nom_dialogueur} ({ong}, {langue})"
     message["From"] = expediteur
     message["To"] = coach_email
 
     message.set_content(f"""
 Bonjour,
 
-Un·e dialogueur·euse a soumis un pitch pour l'ONG **{ong}**.
+Un·e dialogueur·euse a soumis un pitch pour l'ONG **{ong}** en langue **{langue}**.
 
 👤 Dialogueur·euse : {nom_dialogueur}
 🎧 Audio : {lien_audio}
@@ -51,4 +54,3 @@ Merci pour ton suivi personnalisé !
     except Exception as e:
         print(f"❌ Erreur lors de l’envoi de l’email : {e}")
         return False
-
