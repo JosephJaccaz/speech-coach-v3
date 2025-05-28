@@ -102,6 +102,15 @@ def run_app():
 
         send_feedback_email(to=user_email, html_content=html_feedback)
 
+        from app.coach_notifier import get_email_coach, charger_mapping_coachs
+
+        mapping = charger_mapping_coachs()
+        coach_email = get_email_coach(ong_path.stem, langue_envoyee, mapping)
+
+        if coach_email:
+            send_feedback_email(to=coach_email, html_content=html_feedback)
+
+
         # 📨 Notification au coach (ONG + langue)
         langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
 
