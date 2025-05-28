@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Croix-Rouge suisse",
+      "de": "Schweizerisches Rotes Kreuz",
+      "it": "Croce Rossa Svizzera"
+    },
+    "type": "Organisation humanitaire nationale",
+    "domaines": [
+      "aide humanitaire",
+      "santé et soins",
+      "intégration sociale",
+      "formation et premiers secours",
+      "coopération internationale"
+    ]
+  },
+  "fr": {
+    "slogan": "Pour plus d'humanité.",
+    "pitch_reference": "Fondée en 1866, la Croix-Rouge suisse (CRS) est la plus ancienne et la plus grande organisation humanitaire du pays. Elle regroupe 24 associations cantonales, quatre organisations de sauvetage et deux institutions. En 2023, la CRS a mené 159 projets dans 40 pays en collaboration avec des Sociétés nationales de la Croix-Rouge et du Croissant-Rouge ainsi qu'avec les populations locales. Elle compte environ 50 000 bénévoles et 5 651 collaborateurs.",
+    "redflags": [
+      "Confusion avec le CICR (Comité international de la Croix-Rouge)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de la CRS"
+    ],
+    "formulation_formulaire": "Je souhaite soutenir les actions humanitaires de la Croix-Rouge suisse.",
+    "stats": {
+      "annee_fondation": 1866,
+      "bénévoles": 50000,
+      "collaborateurs": 5651,
+      "projets_internationaux": 159,
+      "pays_intervention": 40
+    },
+    "campagne": {
+      "titre": "Agir ensemble pour plus d'humanité",
+      "message_cle": "Chaque jour, la Croix-Rouge suisse s'engage pour venir en aide aux personnes vulnérables, en Suisse et à l'étranger.",
+      "call_to_action": "Rejoignez-nous pour faire la différence."
+    }
+  },
+  "de": {
+    "slogan": "Für mehr Menschlichkeit.",
+    "pitch_reference": "Das Schweizerische Rote Kreuz (SRK), gegründet 1866, ist die älteste und größte humanitäre Organisation des Landes. Es umfasst 24 Kantonalverbände, vier Rettungsorganisationen und zwei Institutionen. Im Jahr 2023 führte das SRK 159 Projekte in 40 Ländern durch, in Zusammenarbeit mit nationalen Rotkreuz- und Rothalbmondgesellschaften sowie lokalen Gemeinschaften. Es zählt rund 50.000 Freiwillige und 5.651 Mitarbeitende.",
+    "redflags": [
+      "Verwechslung mit dem IKRK (Internationales Komitee vom Roten Kreuz)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen des SRK"
+    ],
+    "formulation_formulaire": "Ich möchte die humanitären Aktionen des Schweizerischen Roten Kreuzes unterstützen.",
+    "stats": {
+      "gründungsjahr": 1866,
+      "freiwillige": 50000,
+      "mitarbeitende": 5651,
+      "internationale_projekte": 159,
+      "einsatzländer": 40
+    },
+    "kampagne": {
+      "titel": "Gemeinsam für mehr Menschlichkeit",
+      "schluesselbotschaft": "Jeden Tag engagiert sich das Schweizerische Rote Kreuz für Menschen in Not, in der Schweiz und weltweit.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um einen Unterschied zu machen."
+    }
+  },
+  "it": {
+    "slogan": "Per più umanità.",
+    "pitch_reference": "Fondata nel 1866, la Croce Rossa Svizzera (CRS) è la più antica e grande organizzazione umanitaria del paese. Comprende 24 associazioni cantonali, quattro organizzazioni di salvataggio e due istituzioni. Nel 2023, la CRS ha realizzato 159 progetti in 40 paesi in collaborazione con Società nazionali della Croce Rossa e della Mezzaluna Rossa e con le comunità locali. Conta circa 50.000 volontari e 5.651 collaboratori.",
+    "redflags": [
+      "Confusione con il CICR (Comitato Internazionale della Croce Rossa)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni della CRS"
+    ],
+    "formulation_formulaire": "Desidero sostenere le azioni umanitarie della Croce Rossa Svizzera.",
+    "stats": {
+      "anno_fondazione": 1866,
+      "volontari": 50000,
+      "collaboratori": 5651,
+      "progetti_internazionali": 159,
+      "paesi_intervento": 40
+    },
+    "campagna": {
+      "titolo": "Agire insieme per più umanità",
+      "messaggio_chiave": "Ogni giorno, la Croce Rossa Svizzera si impegna ad aiutare le persone vulnerabili, in Svizzera e all'estero.",
+      "invito_all_azione": "Unisciti a noi per fare la differenza."
+    }
+  }
+}
