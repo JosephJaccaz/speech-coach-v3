@@ -61,7 +61,6 @@ def run_app():
             transcript, detected_lang = transcribe_audio(audio_bytes)
 
         st.success(t["messages"]["transcription_done"])
-        st.info(f"{t['messages']['langue_detectee']} {detected_lang.upper()}")
 
         # 🛡️ Vérification contenu inapproprié
         if detect_troll_content(transcript):
