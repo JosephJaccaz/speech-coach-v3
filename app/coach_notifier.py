@@ -21,17 +21,17 @@ def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia):
     """
     Envoie un email au coach responsable de l'ONG + langue.
     """
-    st.info("✅ Chargement du mapping des coachs...")
+    # st.info("✅ Chargement du mapping des coachs...")
     mapping = charger_mapping_coachs()
 
-    st.info(f"🎯 Recherche coach pour ONG = {ong}, langue = {langue}")
+    # st.info(f"🎯 Recherche coach pour ONG = {ong}, langue = {langue}")
     coach_email = get_email_coach(ong, langue, mapping)
 
     if not coach_email:
         st.warning(f"❗ Aucun coach défini pour ONG={ong}, langue={langue}")
         return False
 
-    st.info(f"📬 Email du coach trouvé : {coach_email}")
+    # st.info(f"📬 Email du coach trouvé : {coach_email}")
 
     html_content = f"""
     <p>Bonjour,</p>
@@ -52,10 +52,10 @@ def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia):
     msg["To"] = coach_email
 
     try:
-        st.info("🔐 Connexion à Gmail...")
+        # st.info("🔐 Connexion à Gmail...")
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
             server.login(st.secrets["email_user"], st.secrets["email_password"])
-            st.info("✉️ Envoi de l’e-mail en cours...")
+            # st.info("✉️ Envoi de l’e-mail en cours...")
             server.send_message(msg)
         st.success(f"📨 Notification envoyée au coach : {coach_email}")
         return True
