@@ -118,8 +118,9 @@ def run_app():
             )
 
             if success:
-                st.success("📨 Le coach a bien été notifié.")
+                st.success(t["coach_notification_success"])
             else:
-                st.warning("⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).")
-        except Exception as e:
-            st.error(f"❌ Erreur lors de la notification du coach : {e}")
+                st.warning(t["coach_notification_failed"])
+            except Exception as e:
+                st.error(f"{t['coach_notification_error']} {e}")
+
