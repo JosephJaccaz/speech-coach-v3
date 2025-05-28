@@ -4,14 +4,14 @@ import streamlit as st
 
 def send_feedback_email(to: str, html_content: str, custom_subject: str = None) -> None:
     """
-    Envoie le feedback par email au destinataire, avec sujet personnalisable.
+    Envoie le feedback par email au dialogueur ou au coach.
 
     Args:
         to: adresse e-mail du destinataire
-        html_content: contenu HTML du message
-        custom_subject: sujet de l’e-mail (facultatif)
+        html_content: contenu HTML du feedback
+        custom_subject: objet personnalisé du mail (facultatif)
     """
-    subject = custom_subject or "💬 Speech Coach IA : Feedback de ton speech"
+    subject = custom_subject if custom_subject else "💬 Speech Coach IA : Feedback de ton speech"
 
     msg = MIMEText(html_content, "html", "utf-8")
     msg["Subject"] = subject
