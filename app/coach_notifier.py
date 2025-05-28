@@ -4,6 +4,7 @@ import smtplib
 from email.mime.text import MIMEText
 import streamlit as st
 
+
 def charger_mapping_coachs(json_path="data/coachs.json"):
     if not os.path.exists(json_path):
         raise FileNotFoundError(f"Fichier introuvable : {json_path}")
@@ -26,6 +27,8 @@ def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia):
     if not coach_email:
         st.warning(f"❗ Aucun coach défini pour ONG={ong}, langue={langue}")
         return False
+
+    st.info(f"📬 Envoi à : {coach_email}")
 
     html_content = f"""
     <p>Bonjour,</p>
