@@ -38,18 +38,9 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
         <ul>
             <li><b>{email_texts['nom_dialogueur']}</b> {nom_dialogueur}</li>
         </ul>
-        <p><b>{email_texts['feedback']}</b></p>
-        <div style="
-          border-left: 4px solid #ccc;
-          padding: 16px;
-          margin: 24px 0;
-          background-color: #f9f9f9;
-          font-size: 15px;
-          line-height: 1.8;
-        ">
-          {feedback_ia}
-        </div>
 
+        <p><b>{email_texts['feedback']}</b></p>
+        {feedback_ia}
         <p>{email_texts['merci']}</p>
         <p>{email_texts['signature']}</p>
       </body>
