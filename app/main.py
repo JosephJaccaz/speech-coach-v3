@@ -5,9 +5,9 @@ from app.ong_context import load_ong_context
 from app.utils import draw_gauge, interpret_note, format_feedback_as_html, extract_note, detect_troll_content
 from app.interface_texts import textes, barometre_legendes
 from app.email_sender import send_feedback_email
+from app.coach_notifier import notifier_coach
 from pathlib import Path
 import json
-
 
 def run_app():
     st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
@@ -83,9 +83,9 @@ def run_app():
 
             if note:
                 st.markdown({
-                    "fr": "### 🎯 Baromètre de performance",
-                    "de": "### 🎯 Leistungsbarometer",
-                    "it": "### 🎯 Barometro di performance"
+                    "fr": "### 🌟 Baromètre de performance",
+                    "de": "### 🌟 Leistungsbarometer",
+                    "it": "### 🌟 Barometro di performance"
                 }[langue_choisie])
                 draw_gauge(note)
                 st.markdown(f"**{interpret_note(note, langue_choisie)}**")
@@ -101,3 +101,21 @@ def run_app():
             st.markdown(html_feedback, unsafe_allow_html=True)
 
             send_feedback_email(to=user_email, html_content=html_feedback)
+
+            # 📨 Notification au coach (ONG + langue)
+            lien_audio = "(audio disponible dans l’interface seulement, non envoyé)"
+
+            try:
+                success = notifier_coach(
+                    ong=ong_path.stem,
+                    langue=detected_lang,
+                    nom_dialogueur=user_email,
+                    lien_audio=lien_audio,
+                    feedback_ia=feedback
+                )
+                if success:
+                    st.success("📨 Le coach a bien été notifié.")
+                else:
+                    st.warning("⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).")
+            except Exception as e:
+                st.error(f"❌ Erreur lors de la notification du coach : {e}")
