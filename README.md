@@ -1,59 +1,34 @@
-# 🎤 Speech Coach IA — Version modulaire
+# Speech Coach AI — Modular Version
 
-**Speech Coach IA** est un outil pédagogique d’analyse vocale conçu pour les dialogueurs·euses d’ONG. Il permet de recevoir un retour intelligent, structuré et multilingue à partir d’un simple fichier audio.
+**Speech Coach AI** is an intelligent feedback tool for NGO fundraisers. It analyzes a vocal pitch recording, evaluates it using a structured educational framework, and delivers clear, constructive feedback in 7 steps.
 
-Cette version repose sur une **architecture modulaire**, claire, évolutive et adaptée à une collaboration d’équipe.
-
----
-
-## 🧠 Fonctionnalités principales
-
-- 📤 Upload d’un fichier audio (MP3 ou WAV)
-- 🎧 Transcription automatique avec Whisper (OpenAI)
-- 🧠 Analyse personnalisée avec GPT-4, adaptée à l’ONG choisie
-- 📝 Feedback structuré selon les **7 étapes de formation**
-- 📊 Baromètre visuel de performance
-- 🇫🇷 🇩🇪 🇮🇹 Interface et prompts entièrement multilingues
-- ✉️ Envoi automatique du feedback :
-  - au dialogueur (par mail)
-  - au coach associé à l’ONG/langue (via `coachs.json`)
+This version uses a **modular architecture** — cleaner, more maintainable, and designed for team collaboration.
 
 ---
 
-## 📬 Système de notification e-mail
-
-- **Dialogueur** : reçoit un feedback richement formaté (HTML) avec indicateurs, sections claires, suggestions…
-- **Coach** : reçoit le **même feedback**, avec un objet personnalisé :
-  ```
-  Nouveau pitch à analyser (nom_ong) – email_du_dialogueur
-  ```
-- Le mapping coachs est défini dans `data/coachs.json` sous forme :
-  ```json
-  {
-    "amnesty_international": {
-      "fr": "coach_fr@corris.com",
-      "de": "coach_de@corris.com",
-      "it": "coach_it@corris.com"
-    },
-    ...
-  }
-  ```
+## 🧠 Features
+- 📤 Upload an audio file (MP3 or WAV)
+- 🎧 Automatic transcription using Whisper (OpenAI)
+- 🧠 Custom rhetorical analysis using GPT-4
+- 📝 Structured feedback (7 steps + performance gauge)
+- 🌍 Multilingual: 🇫🇷 French, 🇩🇪 German, 🇮🇹 Italian
+- ✉️ Automatic email delivery of feedback to the user and the coach
 
 ---
 
-## 🗂️ Structure du projet
+## 🗂️ Project Structure
 
 ```
 speech-coach-v3/
 ├── app/
-│   ├── main.py                 ← Interface Streamlit (appelée via streamlit_app.py)
-│   ├── feedback.py             ← Génération de feedback avec GPT
-│   ├── transcription.py        ← Transcription audio via Whisper
-│   ├── ong_context.py          ← Chargement du contexte ONG pour le prompt
-│   ├── utils.py                ← Fonctions utilitaires (gauge, note, format HTML...)
-│   ├── email_sender.py         ← Fonction d’envoi du feedback par mail
-│   ├── coach_notifier.py       ← Mapping ONG/langue → e-mail coach
-│   └── interface_texts.py      ← Textes multilingues de l’interface + baromètre
+│   ├── main.py                 ← main Streamlit interface
+│   ├── feedback.py             ← GPT logic to generate feedback
+│   ├── transcription.py        ← audio processing via Whisper
+│   ├── ong_context.py          ← load context from NGO files
+│   ├── utils.py                ← utilities: gauge, note parsing, etc.
+│   ├── interface_texts.py      ← multilingual UI and email text definitions
+│   ├── coach_notifier.py       ← coach email mapping & lookup
+│   └── email_sender.py         ← generic email sending logic
 │
 ├── prompts/
 │   ├── prompt_fr.txt
@@ -61,18 +36,20 @@ speech-coach-v3/
 │   └── prompt_it.txt
 │
 ├── data/
-│   ├── coachs.json             ← Mapping ONG/langue vers e-mails des coachs
-│   └── organisations/          ← Données JSON pour chaque ONG (modèle, slogan, redflags…)
+│   ├── coachs.json             ← NGO-language → coach email mapping
+│   └── organisations/*.json    ← NGO information (slogan, redflags, model speech...)
 │
-├── streamlit_app.py            ← Point d’entrée de l’application
-├── requirements.txt            ← Dépendances Python
-└── README.md                   ← Ce fichier
+├── streamlit_app.py            ← entry point to launch the app
+├── requirements.txt
+└── README.md                   ← this file
 ```
 
 ---
 
-## 📌 Notes importantes
+## 📌 Important Notes
 
-- 🔒 Aucun fichier audio n’est stocké ni partagé : tout reste local à la session.
-- 💡 L’outil respecte une logique **bienveillante**, **formative**, et **confidentielle**.
-- 🤖 Le prompt GPT est cadré pour éviter toute invention ou hallucination.
+- Audio files are **not stored**: they remain local to the session
+- The app is intended for **educational**, supportive, and privacy-respecting use
+- GPT-4 is guided by clear prompts and does **not invent facts or statistics**
+
+---
