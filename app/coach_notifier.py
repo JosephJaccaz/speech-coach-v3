@@ -18,7 +18,7 @@ def get_email_coach(ong, langue, mapping):
     return None
 
 def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="fr"):
-    st.warning(f"🌍 Langue reçue dans notifier_coach : {langue_interface}")
+    # st.warning(f"🌍 Langue reçue dans notifier_coach : {langue_interface}")
     t = textes.get(langue_interface, textes["fr"])
     email_texts = t["email_coach"]
 
@@ -48,7 +48,7 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
           font-size: 15px;
           line-height: 1.8;
         ">
-          {feedback_ia.replace('\\n', '<br><br>')}
+          {feedback_ia}
         </div>
 
         <p>{email_texts['merci']}</p>
@@ -63,11 +63,5 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
     msg["To"] = coach_email
 
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-            server.login(st.secrets["email_user"], st.secrets["email_password"])
-            server.send_message(msg)
-        st.success(t["coach_notification_success"])
-        return True
-    except Exception as e:
-        st.error(f"{t['coach_notification_error']} {e}")
-        return False
+        with sm
+
