@@ -116,24 +116,19 @@ def interpret_note(score, langue):
             return label
     return "❓ Note non interprétable"
 
-
 import re
 
 def format_feedback_as_html(feedback_text, langue):
-    # Convertir le gras Markdown en <strong>
     html = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", feedback_text)
 
-    # Mise en forme spécifique
     html = html.replace("✓", "<span style='color:green; font-weight:bold;'>✓</span>")
     html = html.replace("⚠️", "<span style='color:red; font-weight:bold;'>⚠️</span>")
     html = html.replace("Suggestion d'amélioration", "<span style='color:#007BFF; font-weight:bold;'>Suggestion d'amélioration</span>")
     html = html.replace("Verbesserungsvorschlag", "<span style='color:#007BFF; font-weight:bold;'>Verbesserungsvorschlag</span>")
     html = html.replace("Suggerimento di miglioramento", "<span style='color:#007BFF; font-weight:bold;'>Suggerimento di miglioramento</span>")
 
-    # Ajout automatique de <br><br> après les fins de phrases
     html = re.sub(r"([.?!])\s+", r"\1<br><br>", html)
 
-    # Séparer les paragraphes
     paragraphs = html.split("\n")
     html_body = ""
     for line in paragraphs:
@@ -141,11 +136,10 @@ def format_feedback_as_html(feedback_text, langue):
         if not line:
             continue
         if line.startswith(("🟢", "📊", "🔍", "🎯", "🤝", "💢", "🌱", "🚀", "➡️", "📝")) or any(key in line for key in ["Conclusion", "Conclusione", "Fazit"]):
-            html_body += f"<div style='margin-top:24px; font-weight:bold;'>{line}</div>"
+            html_body += f"<div style='margin-top:32px; margin-bottom:8px; font-weight:bold; font-size:16px;'>{line}</div>"
         else:
-            html_body += f"<div style='margin-bottom:16px;'>{line}</div>"
+            html_body += f"<div style='margin-bottom:12px;'>{line}</div>"
 
-    # Intros & signatures localisées
     intro, signature = {
         "fr": (
             "<p>Bonjour 👋<br>Voici ton feedback personnalisé suite à l’analyse de ton pitch vocal :</p><br>",
