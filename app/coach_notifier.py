@@ -44,7 +44,7 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
     """
 
     msg = MIMEText(html_content, "html", "utf-8")
-    msg["Subject"] = f"[Speech Coach IA] Nouveau pitch ({ong}, {langue})"
+    msg["Subject"] = t["email_subject_coach"].format(ong=ong)
     msg["From"] = st.secrets["email_user"]
     msg["To"] = coach_email
 
