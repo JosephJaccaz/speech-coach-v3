@@ -103,19 +103,17 @@ def run_app():
             send_feedback_email(to=user_email, html_content=html_feedback)
 
             # 📨 Notification au coach (ONG + langue)
-
-            st.info(f"🔍 Appel notification : ONG = {ong_path.stem}, Langue = {detected_lang}")
             langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
-
+            st.info(f"🔍 Appel notification : ONG = {ong_path.stem}, Langue utilisée = {langue_envoyee}")
 
             lien_audio = "(audio disponible dans l’interface seulement, non envoyé)"
 
             try:
-                ssuccess = notifier_coach(
+                success = notifier_coach(
                     ong=ong_path.stem,
                     langue=langue_envoyee,
                     nom_dialogueur=user_email,
-                    lien_audio="(audio dans l'interface seulement)",
+                    lien_audio=lien_audio,
                     feedback_ia=feedback
                 )
 
