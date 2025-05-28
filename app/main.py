@@ -97,30 +97,29 @@ def run_app():
                 }[langue_choisie]):
                     st.markdown(barometre_legendes[langue_choisie])
 
-            html_feedback = format_feedback_as_html(feedback, detected_lang)
-            st.markdown(html_feedback, unsafe_allow_html=True)
+        html_feedback = format_feedback_as_html(feedback, detected_lang)
+        st.markdown(html_feedback, unsafe_allow_html=True)
 
-            send_feedback_email(to=user_email, html_content=html_feedback)
+        send_feedback_email(to=user_email, html_content=html_feedback)
 
-           # 📨 Notification au coach (ONG + langue)
-            langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
-            st.info(f"🔍 Appel notification : ONG = {ong_path.stem}, Langue utilisée = {langue_envoyee}")
+        # 📨 Notification au coach (ONG + langue)
+        langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
+        st.info(f"🔍 Appel notification : ONG = {ong_path.stem}, Langue utilisée = {langue_envoyee}")
 
-            lien_audio = "(audio disponible dans l’interface seulement, non envoyé)"
+        lien_audio = "(audio disponible dans l’interface seulement, non envoyé)"
 
-            try:
-                success = notifier_coach(
-                    ong=ong_path.stem,
-                    langue=langue_envoyee,
-                    nom_dialogueur=user_email,
-                    lien_audio=lien_audio,
-                    feedback_ia=feedback
-                )
+        try:
+            success = notifier_coach(
+                ong=ong_path.stem,
+                langue=langue_envoyee,
+                nom_dialogueur=user_email,
+                lien_audio=lien_audio,
+                feedback_ia=feedback
+            )
 
-                if success:
-                    st.success("📨 Le coach a bien été notifié.")
+            if success:
+                st.success("📨 Le coach a bien été notifié.")
             else:
-                    st.warning("⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).")
-            except Exception as e:
-                st.error(f"❌ Erreur lors de la notification du coach : {e}")
-
+                st.warning("⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).")
+        except Exception as e:
+            st.error(f"❌ Erreur lors de la notification du coach : {e}")
