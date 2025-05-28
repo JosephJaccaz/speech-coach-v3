@@ -22,6 +22,14 @@ textes = {
         "coach_notification_success": "📨 Le coach a bien été notifié.",
         "coach_notification_failed": "⚠️ Le coach n’a pas pu être notifié (vérifie coachs.json).",
         "coach_notification_error": "❌ Erreur lors de la notification du coach :",
+        "email_coach": {
+            "salutation": "Bonjour,",
+            "intro": "Un·e dialogueur·euse a soumis un pitch pour l'ONG <b>{ong}</b> en <b>{langue}</b>.",
+            "nom_dialogueur": "Nom (email) du·de la dialogueur·euse :",
+            "feedback": "🧠 Feedback IA :",
+            "merci": "Merci pour ton coaching ✨",
+            "signature": "– Speech Coach IA"
+        }
     },
     "de": {
         "intro": "Willkommen in deinem persönlichen Coaching-Bereich 🧠\n\n"
@@ -46,6 +54,14 @@ textes = {
         "coach_notification_success": "📨 Der Coach wurde benachrichtigt.",
         "coach_notification_failed": "⚠️ Der Coach konnte nicht benachrichtigt werden (coach.json überprüfen).",
         "coach_notification_error": "❌ Fehler beim Benachrichtigen des Coachs:",
+        "email_coach": {
+            "salutation": "Hallo,",
+            "intro": "Ein*e Dialoger*in hat einen Pitch für die NGO <b>{ong}</b> auf <b>{langue}</b> eingereicht.",
+            "nom_dialogueur": "Name (E-Mail) des*der Dialogers*in:",
+            "feedback": "🧠 KI-Feedback:",
+            "merci": "Vielen Dank für dein Coaching ✨",
+            "signature": "– Speech Coach IA"
+        }
 
     },
     "it": {
@@ -71,6 +87,14 @@ textes = {
         "coach_notification_success": "📨 Il coach è stato notificato con successo.",
         "coach_notification_failed": "⚠️ Il coach non ha potuto essere notificato (verifica coachs.json).",
         "coach_notification_error": "❌ Errore durante la notifica al coach:",
+        "email_coach": {
+            "salutation": "Ciao,",
+            "intro": "Un* dialogatore*trice ha inviato un pitch per l'ONG <b>{ong}</b> in <b>{langue}</b>.",
+            "nom_dialogueur": "Nome (email) del*la dialogatore*trice:",
+            "feedback": "🧠 Feedback IA:",
+            "merci": "Grazie per il tuo coaching ✨",
+            "signature": "– Speech Coach IA"
+        }
 
     }
 }
