@@ -1,7 +1,8 @@
 import json
 import os
-from email.message import EmailMessage
 import smtplib
+from email.mime.text import MIMEText
+import streamlit as st
 
 def charger_mapping_coachs(json_path="data/coachs.json"):
     if not os.path.exists(json_path):
@@ -15,42 +16,41 @@ def get_email_coach(ong, langue, mapping):
         return ong_entry.get(langue)
     return None
 
-def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia, expediteur="noreply@corris.com", mot_de_passe="votre_mot_de_passe"):
+def notifier_coach(ong, langue, nom_dialogueur, lien_audio, feedback_ia):
+    """
+    Envoie un email au coach responsable de l'ONG + langue.
+    """
     mapping = charger_mapping_coachs()
     coach_email = get_email_coach(ong, langue, mapping)
 
     if not coach_email:
-        print(f"⚠️ Aucun coach défini pour ONG={ong}, langue={langue}")
+        st.warning(f"❗ Aucun coach défini pour ONG={ong}, langue={langue}")
         return False
 
-    message = EmailMessage()
-    message["Subject"] = f"[Speech Coach IA] Nouveau pitch - {nom_dialogueur} ({ong}, {langue})"
-    message["From"] = expediteur
-    message["To"] = coach_email
+    html_content = f"""
+    <p>Bonjour,</p>
+    <p>Un·e dialogueur·euse a soumis un pitch pour l'ONG <b>{ong}</b> en <b>{langue.upper()}</b>.</p>
+    <ul>
+        <li><b>Nom (email) du dialogueur :</b> {nom_dialogueur}</li>
+        <li><b>Audio :</b> {lien_audio}</li>
+    </ul>
+    <p><b>🧠 Feedback IA :</b></p>
+    <pre>{feedback_ia}</pre>
+    <p>Merci pour ton coaching ✨</p>
+    <p>– Speech Coach IA</p>
+    """
 
-    message.set_content(f"""
-Bonjour,
-
-Un·e dialogueur·euse a soumis un pitch pour l'ONG **{ong}** en langue **{langue}**.
-
-👤 Dialogueur·euse : {nom_dialogueur}
-🎧 Audio : {lien_audio}
-
-🧠 Feedback IA :
-{feedback_ia}
-
-Merci pour ton suivi personnalisé !
-
-— Speech Coach IA
-""")
+    msg = MIMEText(html_content, "html", "utf-8")
+    msg["Subject"] = f"[Speech Coach IA] Nouveau pitch ({ong}, {langue})"
+    msg["From"] = st.secrets["email_user"]
+    msg["To"] = coach_email
 
     try:
-        with smtplib.SMTP("smtp.corris.com", 587) as smtp:
-            smtp.starttls()
-            smtp.login(expediteur, mot_de_passe)
-            smtp.send_message(message)
-        print(f"✅ Notification envoyée à {coach_email}")
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(st.secrets["email_user"], st.secrets["email_password"])
+            server.send_message(msg)
+        st.success(f"📨 Notification envoyée au coach : {coach_email}")
         return True
     except Exception as e:
-        print(f"❌ Erreur lors de l’envoi de l’email : {e}")
+        st.error(f"❌ Erreur lors de l'envoi de l'e-mail au coach : {e}")
         return False
