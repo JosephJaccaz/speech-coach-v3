@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "Entraide Protestante Suisse (EPER)",
+      "de": "Hilfswerk der Evangelisch-reformierten Kirche Schweiz (HEKS)",
+      "it": "Aiuto delle Chiese evangeliche svizzere (ACES)"
+    },
+    "type": "ONG confessionnelle",
+    "domaines": [
+      "justice climatique",
+      "droit à la terre et à l'alimentation",
+      "asile et migration",
+      "intégration sociale",
+      "aide humanitaire"
+    ]
+  },
+  "fr": {
+    "slogan": "Pour un monde plus juste et une vie digne pour toutes et tous.",
+    "pitch_reference": "L'Entraide Protestante Suisse (EPER) est une fondation d'utilité publique créée en 1946 par la Fédération des Églises protestantes de Suisse. Elle soutient des projets de coopération au développement dans plus de 30 pays afin de lutter contre la pauvreté et l'injustice. En Suisse, l'EPER défend les droits des personnes réfugiées et socialement défavorisées, en promouvant l'inclusion et l'égalité des chances.",
+    "redflags": [
+      "Mention d'une autre ONG (ex. Caritas, Croix-Rouge)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de l'EPER"
+    ],
+    "formulation_formulaire": "Je souhaite m'engager pour un monde plus juste avec l'EPER.",
+    "stats": {
+      "pays_intervention": 30,
+      "projets_monde": 250,
+      "employes_suisse": 451,
+      "employes_total": 1354
+    },
+    "campagne": {
+      "titre": "Justice climatique maintenant",
+      "message_cle": "Les populations les plus vulnérables subissent de plein fouet les effets du changement climatique. L'EPER agit pour une justice climatique équitable.",
+      "call_to_action": "Agissez avec nous pour un avenir durable et solidaire."
+    }
+  },
+  "de": {
+    "slogan": "Für eine gerechtere Welt und ein Leben in Würde für alle.",
+    "pitch_reference": "Das Hilfswerk der Evangelisch-reformierten Kirche Schweiz (HEKS) ist eine gemeinnützige Stiftung, die 1946 gegründet wurde. HEKS unterstützt Entwicklungsprojekte in über 30 Ländern zur Bekämpfung von Armut und Ungerechtigkeit. In der Schweiz setzt sich HEKS für die Rechte von Geflüchteten und sozial benachteiligten Menschen ein und fördert deren soziale Integration.",
+    "redflags": [
+      "Erwähnung einer anderen NGO (z. B. Caritas, Rotes Kreuz)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von HEKS"
+    ],
+    "formulation_formulaire": "Ich möchte mich mit HEKS für eine gerechtere Welt engagieren.",
+    "stats": {
+      "laender_einsaetze": 30,
+      "projekte_weltweit": 250,
+      "mitarbeitende_schweiz": 451,
+      "mitarbeitende_total": 1354
+    },
+    "kampagne": {
+      "titel": "Klimagerechtigkeit jetzt",
+      "schluesselbotschaft": "Die verletzlichsten Bevölkerungsgruppen leiden am stärksten unter den Folgen des Klimawandels. HEKS setzt sich für eine gerechte Klimapolitik ein.",
+      "aufruf_zum_handeln": "Handeln Sie mit uns für eine nachhaltige und solidarische Zukunft."
+    }
+  },
+  "it": {
+    "slogan": "Per un mondo più giusto e una vita dignitosa per tutti.",
+    "pitch_reference": "L'Aiuto delle Chiese evangeliche svizzere (ACES) è una fondazione di pubblica utilità fondata nel 1946. Sostiene progetti di cooperazione allo sviluppo in oltre 30 paesi per combattere la povertà e l'ingiustizia. In Svizzera, ACES difende i diritti dei rifugiati e delle persone socialmente svantaggiate, promuovendo l'inclusione e le pari opportunità.",
+    "redflags": [
+      "Menzione di un'altra ONG (es. Caritas, Croce Rossa)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di ACES"
+    ],
+    "formulation_formulaire": "Desidero impegnarmi per un mondo più giusto con ACES.",
+    "stats": {
+      "paesi_intervento": 30,
+      "progetti_mondo": 250,
+      "dipendenti_svizzera": 451,
+      "dipendenti_totale": 1354
+    },
+    "campagna": {
+      "titolo": "Giustizia climatica ora",
+      "messaggio_chiave": "Le popolazioni più vulnerabili subiscono le conseguenze più gravi dei cambiamenti climatici. ACES agisce per una giustizia climatica equa.",
+      "invito_all_azione": "Agisci con noi per un futuro sostenibile e solidale."
+    }
+  }
+}
