@@ -117,15 +117,20 @@ def interpret_note(score, langue):
     return "❓ Note non interprétable"
 
 
+import re
+
 def format_feedback_as_html(feedback_text, langue):
-    html = feedback_text
+    # ✅ Convertir les **gras** en <strong>...</strong>
+    html = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", feedback_text)
+
+    # ✅ Coloration et mots-clés
     html = html.replace("✓", "<span style='color:green; font-weight:bold;'>✓</span>")
     html = html.replace("⚠️", "<span style='color:red; font-weight:bold;'>⚠️</span>")
     html = html.replace("Suggestion d'amélioration", "<span style='color:#007BFF; font-weight:bold;'>Suggestion d'amélioration</span>")
     html = html.replace("Verbesserungsvorschlag", "<span style='color:#007BFF; font-weight:bold;'>Verbesserungsvorschlag</span>")
     html = html.replace("Suggerimento di miglioramento", "<span style='color:#007BFF; font-weight:bold;'>Suggerimento di miglioramento</span>")
-    html = html.replace("**", "")
 
+    # ✅ Aération du texte
     paragraphs = html.split("\n")
     html_body = ""
     for line in paragraphs:
@@ -134,12 +139,13 @@ def format_feedback_as_html(feedback_text, langue):
             continue
         if line.startswith(("🟢", "📊", "🔍", "🎯", "🤝", "💢", "🌱", "🚀", "➡️", "📝")):
             html_body += f"<p style='margin:20px 0 6px 0; font-weight:bold;'>{line}</p>"
-        elif line.startswith("🎯 **Conclusion") or line.startswith("🎯 **Fazit") or line.startswith("🎯 **Conclusione"):
+        elif any(key in line for key in ["Conclusion", "Conclusione", "Fazit"]):
             html_body += "<hr style='margin:24px 0; border:none; border-top:2px solid #eee;'>"
             html_body += f"<p style='margin:20px 0 6px 0; font-weight:bold;'>{line}</p>"
         else:
             html_body += f"<p style='margin:4px 0;'>{line}</p>"
 
+    # ✅ Introduction et signature localisées
     intro, signature = {
         "fr": (
             "<p>Bonjour 👋<br>Voici ton feedback personnalisé suite à l’analyse de ton pitch vocal :</p><br>",
@@ -165,6 +171,7 @@ def format_feedback_as_html(feedback_text, langue):
             {signature}
         </div>
     """
+
 def detect_troll_content(transcript: str) -> bool:
     """
     Retourne True si le texte contient des termes problématiques (insultes, provocations, troll) en français, allemand ou italien.
