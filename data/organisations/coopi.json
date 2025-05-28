@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "nom_par_langue": {
+      "fr": "COOPI Suisse",
+      "de": "COOPI Schweiz",
+      "it": "COOPI Svizzera"
+    },
+    "type": "Organisation non gouvernementale (ONG)",
+    "domaines": [
+      "coopération au développement",
+      "aide humanitaire",
+      "sécurité alimentaire",
+      "éducation d'urgence",
+      "protection",
+      "eau, assainissement et hygiène",
+      "réduction des risques de catastrophe",
+      "sécurité nutritionnelle"
+    ]
+  },
+  "fr": {
+    "slogan": "Contre toutes les formes de pauvreté.",
+    "pitch_reference": "COOPI Suisse est une ONG basée à Lugano, fondée en 2012, membre du réseau international COOPI. Elle intervient dans les contextes les plus vulnérables, accompagnant les communautés vers la reprise et le développement durable. En 13 ans, COOPI Suisse a mené 63 projets dans 19 pays, atteignant plus de 384 000 bénéficiaires directs et 2,4 millions de bénéficiaires indirects.",
+    "redflags": [
+      "Confusion avec d'autres organisations (ex. COOPI Italie)",
+      "Chiffres exagérés ou invérifiables",
+      "Tonalité culpabilisante ou alarmiste",
+      "Absence de lien clair avec les missions de COOPI Suisse"
+    ],
+    "formulation_formulaire": "Je souhaite soutenir les actions de COOPI Suisse pour lutter contre la pauvreté.",
+    "stats": {
+      "annee_fondation": 2012,
+      "projets_realises": 63,
+      "pays_intervention": 19,
+      "beneficiaires_directs": 384000,
+      "beneficiaires_indirects": 2400000
+    },
+    "campagne": {
+      "titre": "Ensemble contre la pauvreté",
+      "message_cle": "COOPI Suisse s'engage dans les contextes les plus vulnérables pour accompagner les communautés vers un développement durable.",
+      "call_to_action": "Rejoignez-nous pour faire la différence."
+    }
+  },
+  "de": {
+    "slogan": "Gegen alle Formen von Armut.",
+    "pitch_reference": "COOPI Schweiz ist eine in Lugano ansässige NGO, gegründet im Jahr 2012 und Mitglied des internationalen COOPI-Netzwerks. Sie interveniert in den verletzlichsten Kontexten und begleitet Gemeinschaften auf dem Weg zu nachhaltiger Erholung und Entwicklung. In 13 Jahren hat COOPI Schweiz 63 Projekte in 19 Ländern durchgeführt und über 384.000 direkte und 2,4 Millionen indirekte Begünstigte erreicht.",
+    "redflags": [
+      "Verwechslung mit anderen Organisationen (z. B. COOPI Italien)",
+      "Übertriebene oder nicht überprüfbare Zahlen",
+      "Schuldzuweisender oder alarmistischer Ton",
+      "Kein klarer Bezug zu den Zielen von COOPI Schweiz"
+    ],
+    "formulation_formulaire": "Ich möchte die Arbeit von COOPI Schweiz im Kampf gegen Armut unterstützen.",
+    "stats": {
+      "gründungsjahr": 2012,
+      "durchgeführte_projekte": 63,
+      "einsatzländer": 19,
+      "direkte_begünstigte": 384000,
+      "indirekte_begünstigte": 2400000
+    },
+    "kampagne": {
+      "titel": "Gemeinsam gegen Armut",
+      "schluesselbotschaft": "COOPI Schweiz engagiert sich in den verletzlichsten Kontexten, um Gemeinschaften auf dem Weg zu nachhaltiger Entwicklung zu begleiten.",
+      "aufruf_zum_handeln": "Schließen Sie sich uns an, um einen Unterschied zu machen."
+    }
+  },
+  "it": {
+    "slogan": "Contro ogni forma di povertà.",
+    "pitch_reference": "COOPI Svizzera è un'ONG con sede a Lugano, fondata nel 2012, membro della rete internazionale COOPI. Interviene nei contesti più vulnerabili, accompagnando le comunità verso la ripresa e lo sviluppo sostenibile. In 13 anni, COOPI Svizzera ha realizzato 63 progetti in 19 paesi, raggiungendo oltre 384.000 beneficiari diretti e 2,4 milioni di beneficiari indiretti.",
+    "redflags": [
+      "Confusione con altre organizzazioni (es. COOPI Italia)",
+      "Dati esagerati o non verificabili",
+      "Tono colpevolizzante o allarmistico",
+      "Assenza di un chiaro collegamento con le missioni di COOPI Svizzera"
+    ],
+    "formulation_formulaire": "Desidero sostenere le azioni di COOPI Svizzera per combattere la povertà.",
+    "stats": {
+      "anno_fondazione": 2012,
+      "progetti_realizzati": 63,
+      "paesi_intervento": 19,
+      "beneficiari_diretti": 384000,
+      "beneficiari_indiretti": 2400000
+    },
+    "campagna": {
+      "titolo": "Insieme contro la povertà",
+      "messaggio_chiave": "COOPI Svizzera si impegna nei contesti più vulnerabili per accompagnare le comunità verso uno sviluppo sostenibile.",
+      "invito_all_azione": "Unisciti a noi per fare la differenza."
+    }
+  }
+}
