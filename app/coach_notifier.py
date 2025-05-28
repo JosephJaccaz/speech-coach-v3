@@ -30,7 +30,6 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
         st.warning(t["coach_notification_failed"])
         return False
 
-
     html_content = f"""
     <p>{email_texts['salutation']}</p>
     <p>{email_texts['intro'].format(ong=ong, langue=langue.upper())}</p>
@@ -38,7 +37,7 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
         <li><b>{email_texts['nom_dialogueur']}</b> {nom_dialogueur}</li>
     </ul>
     <p><b>{email_texts['feedback']}</b></p>
-    <pre>{feedback_ia}</pre>
+    <div>{feedback_ia}</div>
     <p>{email_texts['merci']}</p>
     <p>{email_texts['signature']}</p>
     """
@@ -57,4 +56,3 @@ def notifier_coach(ong, langue, nom_dialogueur, feedback_ia, langue_interface="f
     except Exception as e:
         st.error(f"{t['coach_notification_error']} {e}")
         return False
-
