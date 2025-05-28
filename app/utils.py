@@ -119,8 +119,6 @@ def interpret_note(score, langue):
 
 import re
 
-import re
-
 def format_feedback_as_html(feedback_text, langue):
     html = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", feedback_text)
     html = html.replace("✓", "<span style='color:green; font-weight:bold;'>✓</span>")
@@ -165,6 +163,7 @@ def format_feedback_as_html(feedback_text, langue):
             {signature}
         </div>
     """
+
 
 def detect_troll_content(transcript: str) -> bool:
     """
