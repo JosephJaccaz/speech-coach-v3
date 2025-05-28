@@ -174,7 +174,7 @@ def detect_troll_content(transcript: str) -> bool:
 
     mots_suspects = [
         # 🇫🇷 Français
-        r"\b(connard|enculé|nique|merde|putain|ta gueule|bordel|bite|nègre|bougnoule)\b",
+        r"\b(connard|enculé|nique|merde|putain|ta gueule|bordel|bite|nègre|bougnoule|connasse|salope|batard|pute|enfoiré)\b",
         r"\b(c’est une blague|je me fous|aucun sens|parle pour rien dire)\b",
         r"\b(gpt|openai|chatgpt|robot)\b.*(test|bidon|n’importe quoi)",
 
