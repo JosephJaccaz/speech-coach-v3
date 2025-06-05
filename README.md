@@ -31,9 +31,9 @@ speech-coach-v3/
 │   └── email_sender.py         ← generic email sending logic
 │
 ├── prompts/
-│   ├── prompt_fr.txt           ← Based on a perfect pitch as defined by fundraising training standards in FCH.
-│   ├── prompt_de.txt           ← Based on a perfect pitch as defined by fundraising training standards in DCH.
-│   └── prompt_it.txt           ← Based on a perfect pitch as defined by fundraising training standards in ICH.
+│   ├── prompt_fr.txt           ← Based on a perfect pitch as defined with coachs for FCH.
+│   ├── prompt_de.txt           ← Based on a perfect pitch as defined with coachs for DCH.
+│   └── prompt_it.txt           ← Based on a perfect pitch as defined with coachs for ICH.
 │
 ├── data/
 │   ├── coachs.json             ← NGO-language → coach email mapping
