@@ -9,6 +9,11 @@ from app.coach_notifier import get_email_coach, charger_mapping_coachs
 from pathlib import Path
 import json
 
+# --- Vérification de session utilisateur ---
+if "logged_in" not in st.session_state or not st.session_state["logged_in"]:
+    st.warning("⚠️ Merci de vous connecter avant d'accéder à l'application.")
+    st.stop()
+
 def run_app():
     st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
 
