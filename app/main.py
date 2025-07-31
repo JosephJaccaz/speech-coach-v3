@@ -14,6 +14,16 @@ from app.email_sender import send_feedback_email
 from app.coach_notifier import get_email_coach
 from app.auth import login_user as login, logout_user as logout
 
+st.write("🔍 DEBUG - login:", login, type(login))
+
+try:
+    if not callable(login):
+        st.error("⚠️ ERREUR : 'login' n'est pas une fonction !")
+        st.stop()
+except Exception as e:
+    st.error(f"Exception lors du test de login(): {e}")
+    st.stop()
+
 # --- Authentification ---
 if not st.session_state.get("authenticated", False):
     if not login():
