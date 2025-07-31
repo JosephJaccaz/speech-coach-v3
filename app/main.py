@@ -15,6 +15,8 @@ if not st.session_state.get("authenticated", False):
     logged_in = login()
     if not logged_in:
         st.stop()  # Empêche le reste du code de s'exécuter
+else:
+    logout()  # 👈 Ajout du bouton déconnexion
 
 def run_app():
     st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
