@@ -6,6 +6,10 @@ VALID_USERS = {
     "admin": "admin123"
 }
 
+# Initialiser l'état d'authentification
+if "authenticated" not in st.session_state:
+    st.session_state["authenticated"] = False
+
 def login():
     st.title("🔑 Connexion")
     username = st.text_input("Nom d'utilisateur")
@@ -20,7 +24,7 @@ def login():
         else:
             st.error("❌ Identifiants invalides")
 
-    return st.session_state.get("authenticated", False)
+    return st.session_state["authenticated"]
 
 
 def logout():
