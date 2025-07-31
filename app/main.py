@@ -8,7 +8,6 @@ from app.email_sender import send_feedback_email
 from app.coach_notifier import get_email_coach, charger_mapping_coachs
 from pathlib import Path
 from app.auth import login_user as login, logout_user as logout
-
 import json
 
 # --- Vérification de l'authentification ---
@@ -17,7 +16,9 @@ if not st.session_state.get("authenticated", False):
     if not logged_in:
         st.stop()  # Empêche le reste du code de s'exécuter
 else:
-    logout()  # Bouton déconnexion
+    if st.button("Se déconnecter"):
+        logout()
+        st.stop()
 
 # --- Application principale ---
 def run_app():
@@ -101,37 +102,14 @@ def run_app():
             st.markdown({
                 "fr": "### 🌟 Baromètre de performance",
                 "de": "### 🌟 Leistungsbarometer",
-                "it": "### 🌟 Barometro di performance"
+                "it": "### 🌟 Barometro delle performance"
             }[langue_choisie])
-            draw_gauge(note)
-            st.markdown(f"**{interpret_note(note, langue_choisie)}**")
+
+            draw_gauge(note, barometre_legendes[langue_choisie])
 
         # --- Affichage feedback ---
-        st.markdown("### 📝 Feedback")
         st.markdown(format_feedback_as_html(feedback), unsafe_allow_html=True)
 
-        # --- Envoi email à l'utilisateur ---
-        send_feedback_email(
-            to=user_email,
-            html_content=format_feedback_as_html(feedback)
-        )
-
-        # --- Notification coach ---
-        mapping = charger_mapping_coachs()
-        coach_email = get_email_coach(mapping, ong_choisie)
-        if coach_email:
-            send_feedback_email(
-                to=coach_email,
-                html_content=f"""
-                <p><b>Nouveau speech analysé</b></p>
-                <p><b>Utilisateur :</b> {user_email}</p>
-                <p><b>ONG :</b> {ong_choisie}</p>
-                <p><b>Note :</b> {note}</p>
-                <p><b>Transcription :</b></p>
-                <pre>{transcript}</pre>
-                """
-            )
-
-# Lancement
+# Lancement de l'application
 if __name__ == "__main__":
     run_app()
