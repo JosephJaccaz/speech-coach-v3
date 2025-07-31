@@ -14,7 +14,6 @@ from app.email_sender import send_feedback_email
 from app.coach_notifier import get_email_coach
 from app.auth import login_user as login, logout_user as logout
 
-st.write("🔍 DEBUG - login:", login, type(login))
 
 try:
     if not callable(login):
