@@ -90,41 +90,41 @@ def run_app():
         with st.spinner(t["messages"]["generation_feedback"]):
             feedback, note = generate_feedback(prompt)
 
-            if note:
-                st.markdown({
-                    "fr": "### 🌟 Baromètre de performance",
-                    "de": "### 🌟 Leistungsbarometer",
-                    "it": "### 🌟 Barometro di performance"
-                }[langue_choisie])
-                draw_gauge(note)
-                st.markdown(f"**{interpret_note(note, langue_choisie)}**")
+        # Affichage baromètre
+        if note:
+            st.markdown({
+                "fr": "### 🌟 Baromètre de performance",
+                "de": "### 🌟 Leistungsbarometer",
+                "it": "### 🌟 Barometro di performance"
+            }[langue_choisie])
+            draw_gauge(note)
+            st.markdown(f"**{interpret_note(note, langue_choisie)}**")
 
-                with st.expander({
-                    "fr": "ℹ️ Que signifie le baromètre ?",
-                    "de": "ℹ️ Was bedeutet das Barometer?",
-                    "it": "ℹ️ Cosa significa il barometro?"
-                }[langue_choisie]):
-                    for leg in barometre_legendes[langue_choisie]:
-                        st.markdown(f"- {leg}")
-
-            st.markdown("### 📝 Feedback")
+        # Affichage feedback formaté
+        if feedback:
             st.markdown(format_feedback_as_html(feedback), unsafe_allow_html=True)
 
-            # Notifier le coach associé à l'ONG
-            mapping_coachs = charger_mapping_coachs()
-            email_coach = get_email_coach(mapping_coachs, ong_choisie)
-            if email_coach:
-                send_feedback_email(
-                    to=email_coach,
-                    html_content=f"""
-                    <p><b>Nouveau pitch reçu</b></p>
-                    <p><b>Utilisateur :</b> {user_email}</p>
-                    <p><b>ONG :</b> {ong_choisie}</p>
-                    <p><b>Note :</b> {note}</p>
-                    <p><b>Feedback IA :</b></p>
-                    <pre>{feedback}</pre>
-                    """
-                )
+        # Envoi du feedback à l'email utilisateur
+        if user_email:
+            send_feedback_email(
+                to=user_email,
+                html_content=format_feedback_as_html(feedback)
+            )
+
+        # Notification coach si mapping trouvé
+        mapping = charger_mapping_coachs()
+        email_coach = get_email_coach(mapping, ong_choisie)
+        if email_coach:
+            send_feedback_email(
+                to=email_coach,
+                html_content=f"""
+                <p><b>Nouvelle analyse Speech Coach IA</b></p>
+                <p>Utilisateur : {user_email}</p>
+                <p>ONG : {ong_choisie}</p>
+                <hr/>
+                {format_feedback_as_html(feedback)}
+                """
+            )
 
 if __name__ == "__main__":
     run_app()
