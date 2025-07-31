@@ -24,7 +24,6 @@ def login():
 
 
 def logout():
-    """Bouton de déconnexion"""
-    if st.button("Se déconnecter"):
+    if st.button("🔓 Déconnexion"):
         st.session_state["authenticated"] = False
         st.rerun()
