@@ -11,9 +11,6 @@ from app.auth import login
 
 import json
 
-def login():
-    return True
-
 
 # Vérification de l'authentification
 if not st.session_state.get("authenticated", False):
