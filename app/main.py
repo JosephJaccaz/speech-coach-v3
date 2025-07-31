@@ -44,16 +44,26 @@ def run_app():
     # Email utilisateur
     user_email = st.text_input(t["email_label"])
 
-    # Sélection ONG
-    ong_dir = Path("data/organisations")
-    ong_files = list(ong_dir.glob("*.json"))
-    ong_map = {}
+    # Sélection ONG (mise en cache pour accélérer)
+    @st.cache_data
+    def load_ong_files():
+        ong_dir = Path("data/organisations")
+        ong_files = list(ong_dir.glob("*.json"))
+        ong_map = {}
+        for f in ong_files:
+            try:
+                with open(f, encoding="utf-8") as fp:
+                    data = json.load(fp)
+                    name = data["meta"]["nom_par_langue"].get(langue_choisie, f.stem)
+                    ong_map[name] = f
+            except Exception as e:
+                st.error(f"Erreur de lecture du fichier {f.name}: {e}")
+        return ong_map
 
-    for f in ong_files:
-        with open(f, encoding="utf-8") as fp:
-            data = json.load(fp)
-            name = data["meta"]["nom_par_langue"].get(langue_choisie, f.stem)
-            ong_map[name] = f
+    ong_map = load_ong_files()
+    if not ong_map:
+        st.error("Aucune ONG trouvée dans le dossier `data/organisations`.")
+        st.stop()
 
     ong_choisie = st.selectbox(t["ong_label"], sorted(ong_map.keys()))
 
@@ -64,10 +74,10 @@ def run_app():
     if st.button(t["analyse_button"]):
         if not user_email:
             st.warning("⚠️ Merci d'entrer ton adresse email.")
-            return
+            st.stop()
         if not audio_file:
             st.warning("⚠️ Merci d'uploader un fichier audio.")
-            return
+            st.stop()
 
         st.success(t["messages"]["speech_ready"])
 
@@ -107,6 +117,8 @@ def run_app():
                 to=email_coach,
                 html_content=f"<p>Analyse terminée pour <b>{user_email}</b> (ONG : {ong_choisie})</p>"
             )
+        else:
+            st.info("ℹ️ Aucun coach défini pour cette ONG.")
 
 # --- Lancement ---
 if __name__ == "__main__":
