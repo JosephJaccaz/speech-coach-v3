@@ -1,39 +1,25 @@
 import streamlit as st
 
-def login():
-    # Si l'utilisateur est déjà connecté
-    if st.session_state.get("authenticated", False):
-        st.success("✅ Vous êtes connecté(e).")
-        return True
-
-    # Formulaire de connexion
-    with st.form("login_form"):
-        username = st.text_input("Nom d'utilisateur")
-        password = st.text_input("Mot de passe", type="password")
-        submitted = st.form_submit_button("Se connecter")
-
-        if submitted:
-            if username == "admin" and password == "1234":  # à remplacer par une vraie vérification
-                st.session_state["authenticated"] = True
-                st.success("✅ Connexion réussie !")
-                st.rerun()
-            else:
-                st.error("❌ Identifiants incorrects")
-
-    return False
-
-
-
 # ---- Données d'authentification (à remplacer plus tard par une vraie BDD)
 USER_CREDENTIALS = {
     "coach": "password123",
-    "dialogueur": "test1234"
+    "dialogueur": "test1234",
+    "admin": "1234"
 }
 
-# ---- Gestion de l'authentification
+# ---- Fonction de connexion
 def login():
     st.title("🔐 Connexion à Speech Coach")
 
+    # Vérifier si déjà connecté
+    if st.session_state.get("logged_in", False):
+        st.success(f"✅ Bienvenue, {st.session_state['username']} 👋")
+        if st.button("Se déconnecter"):
+            st.session_state.clear()
+            st.experimental_rerun()
+        return True
+
+    # Formulaire de connexion
     username = st.text_input("Nom d'utilisateur")
     password = st.text_input("Mot de passe", type="password")
 
@@ -44,13 +30,10 @@ def login():
             st.success("Connexion réussie ✅")
             st.experimental_rerun()
         else:
-            st.error("Nom d'utilisateur ou mot de passe incorrect ❌")
+            st.error("❌ Nom d'utilisateur ou mot de passe incorrect")
 
-# ---- Protection de page
-if "logged_in" not in st.session_state or not st.session_state["logged_in"]:
+    return False
+
+# ---- Appel de la fonction (utile si le fichier est exécuté directement)
+if __name__ == "__main__":
     login()
-else:
-    st.success(f"Bienvenue, {st.session_state['username']} 👋")
-    if st.button("Se déconnecter"):
-        st.session_state.clear()
-        st.experimental_rerun()
