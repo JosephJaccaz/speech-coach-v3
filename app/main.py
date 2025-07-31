@@ -102,14 +102,26 @@ def run_app():
             st.markdown({
                 "fr": "### 🌟 Baromètre de performance",
                 "de": "### 🌟 Leistungsbarometer",
-                "it": "### 🌟 Barometro delle performance"
+                "it": "### 🌟 Barometro di performance"
             }[langue_choisie])
-
             draw_gauge(note, barometre_legendes[langue_choisie])
 
-        # --- Affichage feedback ---
-        st.markdown(format_feedback_as_html(feedback), unsafe_allow_html=True)
+            interpretation = interpret_note(note, langue_choisie)
+            st.markdown(f"**{interpretation}**")
 
-# Lancement de l'application
+        # --- Affichage feedback ---
+        if feedback:
+            st.markdown("### 📋 Feedback détaillé")
+            st.markdown(format_feedback_as_html(feedback), unsafe_allow_html=True)
+
+        # --- Envoi du feedback par mail ---
+        if st.button(t["send_feedback_button"]):
+            coach_mapping = charger_mapping_coachs()
+            email_coach = get_email_coach(coach_mapping, ong_choisie)
+            send_feedback_email(to=user_email, html_content=format_feedback_as_html(feedback))
+            if email_coach:
+                send_feedback_email(to=email_coach, html_content=format_feedback_as_html(feedback))
+            st.success(t["messages"]["feedback_sent"])
+
 if __name__ == "__main__":
     run_app()
