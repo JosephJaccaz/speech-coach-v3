@@ -8,9 +8,7 @@ from app.email_sender import send_feedback_email
 from app.coach_notifier import get_email_coach, charger_mapping_coachs
 from pathlib import Path
 from app.auth import login
-
 import json
-
 
 # Vérification de l'authentification
 if not st.session_state.get("authenticated", False):
@@ -71,6 +69,7 @@ def run_app():
 
         st.success(t["messages"]["transcription_done"])
 
+        # Détection contenu inapproprié
         if detect_troll_content(transcript):
             send_feedback_email(
                 to="joseph.jaccaz@corris.com",
@@ -82,6 +81,7 @@ def run_app():
                 """
             )
 
+        # Chargement contexte ONG
         ong_path = ong_display_map[ong_choisie]
         prompt = load_ong_context(ong_path, langue_choisie, transcript)
 
@@ -100,23 +100,29 @@ def run_app():
                 with st.expander({
                     "fr": "ℹ️ Que signifie le baromètre ?",
                     "de": "ℹ️ Was bedeutet das Barometer?",
-                    "it": "ℹ️ Cosa indica il barometro?"
+                    "it": "ℹ️ Cosa significa il barometro?"
                 }[langue_choisie]):
-                    st.markdown(barometre_legendes[langue_choisie])
+                    for leg in barometre_legendes[langue_choisie]:
+                        st.markdown(f"- {leg}")
 
-        html_feedback = format_feedback_as_html(feedback, detected_lang)
-        st.markdown(html_feedback, unsafe_allow_html=True)
+            st.markdown("### 📝 Feedback")
+            st.markdown(format_feedback_as_html(feedback), unsafe_allow_html=True)
 
-        send_feedback_email(to=user_email, html_content=html_feedback)
+            # Notifier le coach associé à l'ONG
+            mapping_coachs = charger_mapping_coachs()
+            email_coach = get_email_coach(mapping_coachs, ong_choisie)
+            if email_coach:
+                send_feedback_email(
+                    to=email_coach,
+                    html_content=f"""
+                    <p><b>Nouveau pitch reçu</b></p>
+                    <p><b>Utilisateur :</b> {user_email}</p>
+                    <p><b>ONG :</b> {ong_choisie}</p>
+                    <p><b>Note :</b> {note}</p>
+                    <p><b>Feedback IA :</b></p>
+                    <pre>{feedback}</pre>
+                    """
+                )
 
-        # Envoi au coach
-        langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
-        mapping = charger_mapping_coachs()
-        coach_email = get_email_coach(ong_path.stem, langue_envoyee, mapping)
-
-        if coach_email:
-            subject_coach = f"Nouveau pitch à analyser ({ong_path.stem}) – {user_email}"
-            send_feedback_email(to=coach_email, html_content=html_feedback, custom_subject=subject_coach)
-            st.success(f"📬 Feedback aussi envoyé au coach : {coach_email}")
-        else:
-            st.warning("⚠️ Aucun coach trouvé pour cette ONG/langue.")
+if __name__ == "__main__":
+    run_app()
