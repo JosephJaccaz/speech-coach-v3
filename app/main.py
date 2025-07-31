@@ -2,6 +2,8 @@ import streamlit as st
 from pathlib import Path
 import json
 
+st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
+
 from app.transcription import transcribe_audio
 from app.feedback import generate_feedback
 from app.ong_context import load_ong_context
@@ -13,7 +15,7 @@ from app.auth import login_user as login, logout_user as logout
 
 # --- Authentification ---
 if not st.session_state.get("authenticated", False):
-    if login() is False:
+    if not login():
         st.stop()
 else:
     if st.button("Se déconnecter"):
