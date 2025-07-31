@@ -3,6 +3,11 @@ from auth import init_auth_state, is_authenticated, login_user, logout_user
 
 def login():
     init_auth_state()
+    
+    # 🔹 Empêche les erreurs si 'username' n'existe pas encore
+    if "username" not in st.session_state:
+        st.session_state["username"] = ""
+
     st.title("🔐 Connexion à Speech Coach")
 
     # Si l'utilisateur est déjà connecté
@@ -19,6 +24,7 @@ def login():
 
     if st.button("Se connecter"):
         if login_user(username, password):
+            st.session_state["username"] = username  # 🔹 on garde l'utilisateur en session
             st.success("Connexion réussie, chargement de l'application...")
             st.experimental_rerun()
         else:
