@@ -14,6 +14,18 @@ from app.email_sender import send_feedback_email
 from app.coach_notifier import get_email_coach
 from app.auth import login_user as login, logout_user as logout
 
+from app.auth import login  # ← vérifie que le chemin est bon
+
+try:
+    if not callable(login):
+        st.error("⚠️ Erreur : la fonction login() n'est pas définie correctement.")
+        st.stop()
+    if not login():  # login doit retourner True si connecté
+        st.stop()
+except Exception as e:
+    st.error(f"Erreur dans login() : {e}")
+    st.stop()
+
 # --- Authentification ---
 if not st.session_state.get("authenticated", False):
     if not login():
