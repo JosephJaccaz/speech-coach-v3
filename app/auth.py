@@ -21,25 +21,24 @@ def is_authenticated() -> bool:
     """Retourne True si l'utilisateur est connecté."""
     return st.session_state.get("authenticated", False)
 
-def login_user(username: str, password: str) -> bool:
-    """
-    Vérifie les identifiants fournis et met à jour la session si valides.
-    Retourne True si la connexion réussit, sinon False.
-    """
-    init_auth_state()  # ✅ Sécurité pour éviter les KeyErrors
+def login_user():
+    # Exemple de login basique
+    if "authenticated" not in st.session_state:
+        st.session_state.authenticated = False
 
-    if username in VALID_USERS and VALID_USERS[username] == password:
-        st.session_state["authenticated"] = True
-        st.session_state["username"] = username
-        st.session_state["login_attempts"] = 0  # Reset après succès
-        return True
-    
-    # En cas d'échec
-    st.session_state["login_attempts"] += 1
-    return False
+    if not st.session_state.authenticated:
+        user = st.text_input("Utilisateur")
+        pwd = st.text_input("Mot de passe", type="password")
+        if st.button("Connexion"):
+            if user == "admin" and pwd == "1234":
+                st.session_state.authenticated = True
+                st.success("✅ Connecté")
+                return True
+            else:
+                st.error("❌ Identifiants invalides")
+                return False
+        return False
+    return True
 
 def logout_user():
-    """Déconnecte l'utilisateur et réinitialise les variables de session."""
-    init_auth_state()
-    st.session_state["authenticated"] = False
-    st.session_state["username"] = ""
+    st.session_state.authenticated = False
