@@ -34,101 +34,105 @@ else:
 
 # --- App principale ---
 def run_app():
-    # Logo + titre
+    st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
+
+    # Logo + titre centré
     st.markdown("""
-        <div style="text-align:center; margin-bottom:30px;">
-            <img src="https://www.thejob.ch/wp-content/themes/corris2014/images/corris_logo.svg" width="200"/>
-            <h1>Speech Coach IA</h1>
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-bottom: 40px;">
+            <img src="https://www.thejob.ch/wp-content/themes/corris2014/images/corris_logo.svg" width="200" style="margin-bottom: 10px;" />
+            <h1 style="font-family: 'Zen Kaku Gothic Antique', sans-serif; font-weight: 500; font-size: 32px; text-align: center; margin: 0;">
+                &emsp;Speech Coach IA
+            </h1>
         </div>
     """, unsafe_allow_html=True)
 
-    # Sélection de la langue
+    # Langue
     langue_choisie = st.selectbox(
         "Choisis ta langue / Wähle deine Sprache / Scegli la tua lingua",
-        ["fr", "de", "it"],
+        options=["fr", "de", "it"],
         format_func=lambda x: {"fr": "Français 🇫🇷", "de": "Deutsch 🇩🇪", "it": "Italiano 🇮🇹"}[x]
     )
     t = textes[langue_choisie]
 
-    # Email utilisateur
-    user_email = st.text_input(t["email_label"])
+    st.write(t["intro"])
+    user_email = st.text_input(t["email_label"], key="email")
 
-    # Sélection ONG (mise en cache pour accélérer)
-    @st.cache_data
-    def load_ong_files():
-        ong_dir = Path("data/organisations")
-        ong_files = list(ong_dir.glob("*.json"))
-        ong_map = {}
-        for f in ong_files:
-            try:
-                with open(f, encoding="utf-8") as fp:
-                    data = json.load(fp)
-                    name = data["meta"]["nom_par_langue"].get(langue_choisie, f.stem)
-                    ong_map[name] = f
-            except Exception as e:
-                st.error(f"Erreur de lecture du fichier {f.name}: {e}")
-        return ong_map
+    # Sélection ONG
+    ong_dir = Path("data/organisations")
+    ong_files = list(ong_dir.glob("*.json"))
 
-    ong_map = load_ong_files()
-    if not ong_map:
-        st.error("Aucune ONG trouvée dans le dossier `data/organisations`.")
-        st.stop()
+    ong_map_list = []
+    for f in ong_files:
+        with open(f, encoding="utf-8") as fp:
+            data = json.load(fp)
+            name = data["meta"]["nom_par_langue"][langue_choisie]
+            ong_map_list.append((name, f))
 
-    ong_choisie = st.selectbox(t["ong_label"], sorted(ong_map.keys()))
+    ong_map_list.sort(key=lambda x: x[0].lower())
+    ong_display_names = [name for name, _ in ong_map_list]
+    ong_display_map = {name: path for name, path in ong_map_list}
 
-    # Upload audio
+    ong_choisie = st.selectbox(t["ong_label"], ong_display_names)
     audio_file = st.file_uploader(t["upload_label"], type=["mp3", "wav"])
+    audio_bytes = audio_file.read() if audio_file else None
 
-    # Lancement analyse
-    if st.button(t["analyse_button"]):
-        if not user_email:
-            st.warning("⚠️ Merci d'entrer ton adresse email.")
-            st.stop()
-        if not audio_file:
-            st.warning("⚠️ Merci d'uploader un fichier audio.")
-            st.stop()
+    st.markdown(t["info_format"])
 
+    if user_email and audio_bytes and ong_choisie:
         st.success(t["messages"]["speech_ready"])
 
-        # Transcription
         with st.spinner(t["messages"]["transcription_spinner"]):
-            transcript, detected_lang = transcribe_audio(audio_file.read())
+            transcript, detected_lang = transcribe_audio(audio_bytes)
+
         st.success(t["messages"]["transcription_done"])
 
-        # Détection contenu suspect
         if detect_troll_content(transcript):
             send_feedback_email(
                 to="joseph.jaccaz@corris.com",
-                html_content=f"<p>⚠️ Contenu suspect envoyé par {user_email}</p><pre>{transcript}</pre>"
+                html_content=f"""
+                <p><b>⚠️ Alerte contenu inapproprié détecté</b></p>
+                <p><b>Utilisateur :</b> {user_email}</p>
+                <p><b>Transcription suspecte :</b></p>
+                <pre>{transcript}</pre>
+                """
             )
 
-        # Charger contexte ONG
-        prompt = load_ong_context(ong_map[ong_choisie], langue_choisie, transcript)
+        ong_path = ong_display_map[ong_choisie]
+        prompt = load_ong_context(ong_path, langue_choisie, transcript)
 
-        # Génération feedback
         with st.spinner(t["messages"]["generation_feedback"]):
-            feedback = generate_feedback(prompt)
-        note = extract_note(feedback)
+            feedback, note = generate_feedback(prompt)
 
-        # --- Baromètre ---
-        if note is not None:
-            draw_gauge(note, langue_choisie)
+            if note:
+                st.markdown({
+                    "fr": "### 🌟 Baromètre de performance",
+                    "de": "### 🌟 Leistungsbarometer",
+                    "it": "### 🌟 Barometro di performance"
+                }[langue_choisie])
+                draw_gauge(note)
+                st.markdown(f"**{interpret_note(note, langue_choisie)}**")
+
+                with st.expander({
+                    "fr": "ℹ️ Que signifie le baromètre ?",
+                    "de": "ℹ️ Was bedeutet das Barometer?",
+                    "it": "ℹ️ Cosa indica il barometro?"
+                }[langue_choisie]):
+                    st.markdown(barometre_legendes[langue_choisie])
+
+        html_feedback = format_feedback_as_html(feedback, detected_lang)
+        st.markdown(html_feedback, unsafe_allow_html=True)
+
+        send_feedback_email(to=user_email, html_content=html_feedback)
+
+        # Envoi au coach
+        langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
+        mapping = charger_mapping_coachs()
+        coach_email = get_email_coach(ong_path.stem, langue_envoyee, mapping)
+
+        if coach_email:
+            subject_coach = f"Nouveau pitch à analyser ({ong_path.stem}) – {user_email}"
+            send_feedback_email(to=coach_email, html_content=html_feedback, custom_subject=subject_coach)
+            st.success(f"📬 Feedback aussi envoyé au coach : {coach_email}")
         else:
-            st.warning("⚠️ Note non détectée dans le feedback.")
+            st.warning("⚠️ Aucun coach trouvé pour cette ONG/langue.")
 
-        # --- Feedback ---
-        st.markdown(format_feedback_as_html(feedback), unsafe_allow_html=True)
-
-        # --- Notification coach ---
-        email_coach = get_email_coach(ong_choisie)
-        if email_coach:
-            send_feedback_email(
-                to=email_coach,
-                html_content=f"<p>Analyse terminée pour <b>{user_email}</b> (ONG : {ong_choisie})</p>"
-            )
-        else:
-            st.info("ℹ️ Aucun coach défini pour cette ONG.")
-
-# --- Lancement ---
-if __name__ == "__main__":
-    run_app()
