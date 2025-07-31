@@ -2,6 +2,7 @@ import streamlit as st
 from pathlib import Path
 import json
 
+# --- Configuration initiale ---
 st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
 
 from app.transcription import transcribe_audio
@@ -20,12 +21,10 @@ if not st.session_state.get("authenticated", False):
 else:
     if st.button("Se déconnecter"):
         logout()
-        st.stop()
+        st.experimental_rerun()
 
 # --- App principale ---
 def run_app():
-    st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
-
     # Logo + titre
     st.markdown("""
         <div style="text-align:center; margin-bottom:30px;">
@@ -61,7 +60,15 @@ def run_app():
     # Upload audio
     audio_file = st.file_uploader(t["upload_label"], type=["mp3", "wav"])
 
-    if st.button(t["analyse_button"]) and user_email and audio_file:
+    # Lancement analyse
+    if st.button(t["analyse_button"]):
+        if not user_email:
+            st.warning("⚠️ Merci d'entrer ton adresse email.")
+            return
+        if not audio_file:
+            st.warning("⚠️ Merci d'uploader un fichier audio.")
+            return
+
         st.success(t["messages"]["speech_ready"])
 
         # Transcription
@@ -101,5 +108,6 @@ def run_app():
                 html_content=f"<p>Analyse terminée pour <b>{user_email}</b> (ONG : {ong_choisie})</p>"
             )
 
+# --- Lancement ---
 if __name__ == "__main__":
     run_app()
