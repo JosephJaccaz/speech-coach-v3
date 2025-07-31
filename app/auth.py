@@ -7,17 +7,20 @@ VALID_USERS = {
 }
 
 def login():
+    # Initialiser l'état si absent
+    if "authenticated" not in st.session_state:
+        st.session_state["authenticated"] = False
+
     st.title("🔑 Connexion")
     username = st.text_input("Nom d'utilisateur")
     password = st.text_input("Mot de passe", type="password")
-    login_button = st.button("Se connecter")
 
-    if login_button:
-        if username in VALID_USERS and VALID_USERS[username] == password:
+    if st.button("Se connecter"):
+        if VALID_USERS.get(username) == password:
             st.session_state["authenticated"] = True
             st.success("✅ Connexion réussie, chargement de l'application...")
             st.rerun()
         else:
             st.error("❌ Identifiants invalides")
 
-    return st.session_state.get("authenticated", False)
+    return st.session_state["authenticated"]
