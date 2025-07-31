@@ -7,7 +7,7 @@ from app.interface_texts import textes, barometre_legendes
 from app.email_sender import send_feedback_email
 from app.coach_notifier import get_email_coach, charger_mapping_coachs
 from pathlib import Path
-from app.auth import login
+from app.auth import login, logout
 import json
 
 # Vérification de l'authentification
