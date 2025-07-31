@@ -10,14 +10,15 @@ from pathlib import Path
 from app.auth import login, logout
 import json
 
-# Vérification de l'authentification
+# --- Vérification de l'authentification ---
 if not st.session_state.get("authenticated", False):
     logged_in = login()
     if not logged_in:
         st.stop()  # Empêche le reste du code de s'exécuter
 else:
-    logout()  # 👈 Ajout du bouton déconnexion
+    logout()  # Bouton déconnexion
 
+# --- Application principale ---
 def run_app():
     st.set_page_config(page_title="Speech Coach IA", page_icon="🎤")
 
@@ -31,7 +32,7 @@ def run_app():
         </div>
     """, unsafe_allow_html=True)
 
-    # Langue
+    # Sélection langue
     langue_choisie = st.selectbox(
         "Choisis ta langue / Wähle deine Sprache / Scegli la tua lingua",
         options=["fr", "de", "it"],
@@ -39,10 +40,11 @@ def run_app():
     )
     t = textes[langue_choisie]
 
+    # Email utilisateur
     st.write(t["intro"])
     user_email = st.text_input(t["email_label"], key="email")
 
-    # Sélection ONG
+    # --- Sélection ONG ---
     ong_dir = Path("data/organisations")
     ong_files = list(ong_dir.glob("*.json"))
 
@@ -58,11 +60,14 @@ def run_app():
     ong_display_map = {name: path for name, path in ong_map_list}
 
     ong_choisie = st.selectbox(t["ong_label"], ong_display_names)
+
+    # Upload audio
     audio_file = st.file_uploader(t["upload_label"], type=["mp3", "wav"])
     audio_bytes = audio_file.read() if audio_file else None
 
     st.markdown(t["info_format"])
 
+    # --- Traitement ---
     if user_email and audio_bytes and ong_choisie:
         st.success(t["messages"]["speech_ready"])
 
@@ -83,15 +88,15 @@ def run_app():
                 """
             )
 
-        # Chargement contexte ONG
+        # Charger contexte ONG
         ong_path = ong_display_map[ong_choisie]
         prompt = load_ong_context(ong_path, langue_choisie, transcript)
 
         with st.spinner(t["messages"]["generation_feedback"]):
             feedback, note = generate_feedback(prompt)
 
-        # Affichage baromètre
-        if note:
+        # --- Affichage baromètre ---
+        if note is not None:
             st.markdown({
                 "fr": "### 🌟 Baromètre de performance",
                 "de": "### 🌟 Leistungsbarometer",
@@ -100,31 +105,32 @@ def run_app():
             draw_gauge(note)
             st.markdown(f"**{interpret_note(note, langue_choisie)}**")
 
-        # Affichage feedback formaté
-        if feedback:
-            st.markdown(format_feedback_as_html(feedback), unsafe_allow_html=True)
+        # --- Affichage feedback ---
+        st.markdown("### 📝 Feedback")
+        st.markdown(format_feedback_as_html(feedback), unsafe_allow_html=True)
 
-        # Envoi du feedback à l'email utilisateur
-        if user_email:
-            send_feedback_email(
-                to=user_email,
-                html_content=format_feedback_as_html(feedback)
-            )
+        # --- Envoi email à l'utilisateur ---
+        send_feedback_email(
+            to=user_email,
+            html_content=format_feedback_as_html(feedback)
+        )
 
-        # Notification coach si mapping trouvé
+        # --- Notification coach ---
         mapping = charger_mapping_coachs()
-        email_coach = get_email_coach(mapping, ong_choisie)
-        if email_coach:
+        coach_email = get_email_coach(mapping, ong_choisie)
+        if coach_email:
             send_feedback_email(
-                to=email_coach,
+                to=coach_email,
                 html_content=f"""
-                <p><b>Nouvelle analyse Speech Coach IA</b></p>
-                <p>Utilisateur : {user_email}</p>
-                <p>ONG : {ong_choisie}</p>
-                <hr/>
-                {format_feedback_as_html(feedback)}
+                <p><b>Nouveau speech analysé</b></p>
+                <p><b>Utilisateur :</b> {user_email}</p>
+                <p><b>ONG :</b> {ong_choisie}</p>
+                <p><b>Note :</b> {note}</p>
+                <p><b>Transcription :</b></p>
+                <pre>{transcript}</pre>
                 """
             )
 
+# Lancement
 if __name__ == "__main__":
     run_app()
