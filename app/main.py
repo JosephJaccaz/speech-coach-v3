@@ -14,8 +14,7 @@ from app.auth import login_user as login, logout_user as logout
 # --- Authentification ---
 if not st.session_state.get("authenticated", False):
     if login() is False:
-    st.stop()
-
+        st.stop()
 else:
     if st.button("Se déconnecter"):
         logout()
@@ -37,7 +36,7 @@ def run_app():
     langue_choisie = st.selectbox(
         "Choisis ta langue / Wähle deine Sprache / Scegli la tua lingua",
         ["fr", "de", "it"],
-        format_func=lambda x: {"fr":"Français 🇫🇷","de":"Deutsch 🇩🇪","it":"Italiano 🇮🇹"}[x]
+        format_func=lambda x: {"fr": "Français 🇫🇷", "de": "Deutsch 🇩🇪", "it": "Italiano 🇮🇹"}[x]
     )
     t = textes[langue_choisie]
 
