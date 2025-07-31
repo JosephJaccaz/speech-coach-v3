@@ -13,8 +13,9 @@ from app.auth import login_user as login, logout_user as logout
 
 # --- Authentification ---
 if not st.session_state.get("authenticated", False):
-    if not login():
-        st.stop()
+    if login() is False:
+    st.stop()
+
 else:
     if st.button("Se déconnecter"):
         logout()
