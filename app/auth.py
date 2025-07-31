@@ -1,16 +1,23 @@
-# app/auth.py
-
 import streamlit as st
 
+# --- Exemple d'identifiants ---
+VALID_USERS = {
+    "joseph": "motdepasse123",
+    "admin": "admin123"
+}
+
 def login():
-    """Fonction de login temporaire"""
-    st.sidebar.title("Connexion")
-    username = st.sidebar.text_input("Nom d'utilisateur")
-    password = st.sidebar.text_input("Mot de passe", type="password")
-    
-    if st.sidebar.button("Se connecter"):
-        if username and password:
-            st.session_state["logged_in"] = True
-            st.success("Connexion réussie")
+    st.title("🔑 Connexion")
+    username = st.text_input("Nom d'utilisateur")
+    password = st.text_input("Mot de passe", type="password")
+    login_button = st.button("Se connecter")
+
+    if login_button:
+        if username in VALID_USERS and VALID_USERS[username] == password:
+            st.session_state["authenticated"] = True
+            st.success("✅ Connexion réussie, chargement de l'application...")
+            st.experimental_rerun()
         else:
-            st.error("Veuillez entrer un nom d'utilisateur et un mot de passe")
+            st.error("❌ Identifiants invalides")
+
+    return st.session_state.get("authenticated", False)
