@@ -8,6 +8,7 @@ from app.email_sender import send_feedback_email
 from app.coach_notifier import get_email_coach, charger_mapping_coachs
 from pathlib import Path
 from app.auth import login_user as login, logout_user as logout
+
 import json
 
 # --- Vérification de l'authentification ---
