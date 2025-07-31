@@ -2,15 +2,12 @@ import streamlit as st
 from app.transcription import transcribe_audio
 from app.feedback import generate_feedback
 from app.ong_context import load_ong_context
-from app.utils import draw_gauge, interpret_note, format_feedback_as_html, extract_note, detect_troll_content
+from app.utils import draw_gauge, interpret_note, detect_troll_content
 from app.interface_texts import textes, barometre_legendes
 from app.email_sender import send_feedback_email
-from app.coach_notifier import get_email_coach, charger_mapping_coachs
 from pathlib import Path
 from app.auth import login
-
 import json
-
 
 # Vérification de l'authentification
 if not st.session_state.get("authenticated", False):
@@ -59,7 +56,7 @@ def run_app():
 
     ong_choisie = st.selectbox(t["ong_label"], ong_display_names)
     audio_file = st.file_uploader(t["upload_label"], type=["mp3", "wav"])
-    audio_bytes = audio_file.read() if audio_file else None
+    audio_bytes = audio_file.read() if audio_file is not None else None
 
     st.markdown(t["info_format"])
 
@@ -71,6 +68,7 @@ def run_app():
 
         st.success(t["messages"]["transcription_done"])
 
+        # Détection contenu inapproprié
         if detect_troll_content(transcript):
             send_feedback_email(
                 to="joseph.jaccaz@corris.com",
@@ -82,13 +80,14 @@ def run_app():
                 """
             )
 
+        # Génération feedback
         ong_path = ong_display_map[ong_choisie]
         prompt = load_ong_context(ong_path, langue_choisie, transcript)
 
         with st.spinner(t["messages"]["generation_feedback"]):
             feedback, note = generate_feedback(prompt)
 
-            if note:
+            if note is not None:
                 st.markdown({
                     "fr": "### 🌟 Baromètre de performance",
                     "de": "### 🌟 Leistungsbarometer",
@@ -100,23 +99,11 @@ def run_app():
                 with st.expander({
                     "fr": "ℹ️ Que signifie le baromètre ?",
                     "de": "ℹ️ Was bedeutet das Barometer?",
-                    "it": "ℹ️ Cosa indica il barometro?"
+                    "it": "ℹ️ Cosa significa il barometro?"
                 }[langue_choisie]):
                     st.markdown(barometre_legendes[langue_choisie])
+            else:
+                st.warning("⚠️ Aucune note n'a pu être générée pour ce pitch.")
 
-        html_feedback = format_feedback_as_html(feedback, detected_lang)
-        st.markdown(html_feedback, unsafe_allow_html=True)
-
-        send_feedback_email(to=user_email, html_content=html_feedback)
-
-        # Envoi au coach
-        langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
-        mapping = charger_mapping_coachs()
-        coach_email = get_email_coach(ong_path.stem, langue_envoyee, mapping)
-
-        if coach_email:
-            subject_coach = f"Nouveau pitch à analyser ({ong_path.stem}) – {user_email}"
-            send_feedback_email(to=coach_email, html_content=html_feedback, custom_subject=subject_coach)
-            st.success(f"📬 Feedback aussi envoyé au coach : {coach_email}")
-        else:
-            st.warning("⚠️ Aucun coach trouvé pour cette ONG/langue.")
+if __name__ == "__main__":
+    run_app()
