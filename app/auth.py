@@ -16,7 +16,7 @@ def login():
         if username in VALID_USERS and VALID_USERS[username] == password:
             st.session_state["authenticated"] = True
             st.success("✅ Connexion réussie, chargement de l'application...")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("❌ Identifiants invalides")
 
