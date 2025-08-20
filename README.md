@@ -21,17 +21,17 @@ This version uses a **modular architecture** — cleaner, more maintainable, and
 ```
 speech-coach-v3/
 app
-├── __init__.py            # Initializes the app package, allowing it to be imported as a module.
-├── auth.py                # Handles user authentication and access verification for the application.
-├── coach_notifier.py      # Sends automatic notifications to coaches based on the selected NGO.
-├── email_sender.py        # Contains functions to compose and send emails using the configured Gmail account.
-├── feedback.py            # Analyzes transcriptions and generates AI-powered feedback to assess dialogue pitches.
-├── interface_texts.py     # Centralizes all user interface texts, supporting multiple languages (FR/DE/IT).
-├── login.py               # Implements the user login page logic for the application.
-├── main.py                # Main entry point of the Streamlit application, orchestrating pages and features.
-├── ong_context.py         # Loads and provides context-specific data related to each NGO.
-├── transcription.py       # Converts uploaded audio files into text before AI analysis.
-└── utils.py               # Reusable utility functions shared across multiple modules.
+├── __init__.py                 ← Initializes the app package, allowing it to be imported as a module.
+├── auth.py                     ← Handles user authentication and access verification for the application.
+├── coach_notifier.py           ← Sends automatic notifications to coaches based on the selected NGO.
+├── email_sender.py             ← Contains functions to compose and send emails using the configured Gmail account.
+├── feedback.py                 ← Analyzes transcriptions and generates AI-powered feedback to assess dialogue pitches.
+├── interface_texts.py          ← Centralizes all user interface texts, supporting multiple languages (FR/DE/IT).
+├── login.py                    ← Implements the user login page logic for the application.
+├── main.py                     ← Main entry point of the Streamlit application, orchestrating pages and features.
+├── ong_context.py              ← Loads and provides context-specific data related to each NGO.
+├── transcription.py            ← Converts uploaded audio files into text before AI analysis.
+└── utils.py                    ← Reusable utility functions shared across multiple modules.
 │
 ├── prompts/
 │   ├── prompt_fr.txt           ← Based on a perfect pitch as defined with coachs for FCH.
