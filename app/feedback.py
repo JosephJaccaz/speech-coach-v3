@@ -13,7 +13,7 @@ def generate_feedback(prompt: str) -> tuple[str, float | None]:
         note (float | None): la note extraite (si trouvée), sinon None
     """
     response = openai.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4.1",
         messages=[
             {"role": "system", "content": "Tu es un coach bienveillant et structuré pour des ONG."},
             {"role": "user", "content": prompt}
