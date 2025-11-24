@@ -124,15 +124,18 @@ def run_app():
 
         send_feedback_email(to=user_email, html_content=html_feedback)
 
-        # Envoi au coach
+        # Envoi au coach (désactivé car mapping non défini)
         langue_envoyee = detected_lang[:2] if detected_lang in ["fr", "de", "it"] else "fr"
-        mapping = charger_mapping_coachs()
-        coach_email = get_email_coach(ong_path.stem, langue_envoyee, mapping)
+
+        # Désactivation propre
+        coach_email = None
+        # coach_email = get_email_coach(ong_path.stem, langue_envoyee, mapping)
 
         if coach_email:
             subject_coach = f"Nouveau pitch à analyser ({ong_path.stem}) – {user_email}"
             send_feedback_email(to=coach_email, html_content=html_feedback, custom_subject=subject_coach)
             st.success(f"📬 Feedback aussi envoyé au coach : {coach_email}")
         else:
-            st.warning("⚠️ Aucun coach trouvé pour cette ONG/langue.")
+            st.warning("⚠️ Aucun coach trouvé pour cette ONG/langue (fonctionalité non activée).")
+
 
